@@ -33,16 +33,16 @@
             this.txtDesign = new DevExpress.XtraEditors.TextEdit();
             this.txtClient = new DevExpress.XtraEditors.TextEdit();
             this.splitContainer = new DevExpress.XtraEditors.SplitContainerControl();
-            this.lblPlate = new DevExpress.XtraEditors.LabelControl();
-            this.lblPipe = new DevExpress.XtraEditors.LabelControl();
             this.gridControlPlate = new DevExpress.XtraGrid.GridControl();
             this.gridViewPlate = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.GrdColPlateManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lblPlate = new DevExpress.XtraEditors.LabelControl();
             this.gridControlPipe = new DevExpress.XtraGrid.GridControl();
             this.gridViewPipe = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.GrdColPlateManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GrdColPipeManufacturer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GrdColPipeSizeGrade = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SizeGradeItemCheckedBox = new DevExpress.XtraEditors.Repository.RepositoryItemCheckedComboBoxEdit();
+            this.lblPipe = new DevExpress.XtraEditors.LabelControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnOK = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.txtDesign.Properties)).BeginInit();
@@ -59,7 +59,7 @@
             // lblDesign
             // 
             this.lblDesign.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblDesign.Location = new System.Drawing.Point(29, 76);
+            this.lblDesign.Location = new System.Drawing.Point(32, 76);
             this.lblDesign.Name = "lblDesign";
             this.lblDesign.Size = new System.Drawing.Size(48, 19);
             this.lblDesign.TabIndex = 7;
@@ -68,7 +68,7 @@
             // lblClient
             // 
             this.lblClient.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblClient.Location = new System.Drawing.Point(29, 27);
+            this.lblClient.Location = new System.Drawing.Point(32, 23);
             this.lblClient.Name = "lblClient";
             this.lblClient.Size = new System.Drawing.Size(40, 19);
             this.lblClient.TabIndex = 6;
@@ -76,7 +76,7 @@
             // 
             // txtDesign
             // 
-            this.txtDesign.Location = new System.Drawing.Point(143, 69);
+            this.txtDesign.Location = new System.Drawing.Point(138, 20);
             this.txtDesign.Name = "txtDesign";
             this.txtDesign.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtDesign.Properties.Appearance.Options.UseFont = true;
@@ -85,7 +85,7 @@
             // 
             // txtClient
             // 
-            this.txtClient.Location = new System.Drawing.Point(143, 20);
+            this.txtClient.Location = new System.Drawing.Point(138, 69);
             this.txtClient.Name = "txtClient";
             this.txtClient.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtClient.Properties.Appearance.Options.UseFont = true;
@@ -111,24 +111,6 @@
             this.splitContainer.TabIndex = 8;
             this.splitContainer.Text = "splitContainerControl1";
             // 
-            // lblPlate
-            // 
-            this.lblPlate.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblPlate.Location = new System.Drawing.Point(3, 20);
-            this.lblPlate.Name = "lblPlate";
-            this.lblPlate.Size = new System.Drawing.Size(139, 19);
-            this.lblPlate.TabIndex = 9;
-            this.lblPlate.Text = "Plate manufacturers";
-            // 
-            // lblPipe
-            // 
-            this.lblPipe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblPipe.Location = new System.Drawing.Point(14, 20);
-            this.lblPipe.Name = "lblPipe";
-            this.lblPipe.Size = new System.Drawing.Size(135, 19);
-            this.lblPipe.TabIndex = 10;
-            this.lblPipe.Text = "Pipe manufacturers";
-            // 
             // gridControlPlate
             // 
             this.gridControlPlate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -148,6 +130,22 @@
             this.GrdColPlateManufacturer});
             this.gridViewPlate.GridControl = this.gridControlPlate;
             this.gridViewPlate.Name = "gridViewPlate";
+            // 
+            // GrdColPlateManufacturer
+            // 
+            this.GrdColPlateManufacturer.Caption = "Manufacture";
+            this.GrdColPlateManufacturer.Name = "GrdColPlateManufacturer";
+            this.GrdColPlateManufacturer.Visible = true;
+            this.GrdColPlateManufacturer.VisibleIndex = 0;
+            // 
+            // lblPlate
+            // 
+            this.lblPlate.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblPlate.Location = new System.Drawing.Point(3, 20);
+            this.lblPlate.Name = "lblPlate";
+            this.lblPlate.Size = new System.Drawing.Size(139, 19);
+            this.lblPlate.TabIndex = 9;
+            this.lblPlate.Text = "Plate manufacturers";
             // 
             // gridControlPipe
             // 
@@ -172,13 +170,6 @@
             this.gridViewPipe.GridControl = this.gridControlPipe;
             this.gridViewPipe.Name = "gridViewPipe";
             // 
-            // GrdColPlateManufacturer
-            // 
-            this.GrdColPlateManufacturer.Caption = "Manufacture";
-            this.GrdColPlateManufacturer.Name = "GrdColPlateManufacturer";
-            this.GrdColPlateManufacturer.Visible = true;
-            this.GrdColPlateManufacturer.VisibleIndex = 0;
-            // 
             // GrdColPipeManufacturer
             // 
             this.GrdColPipeManufacturer.Caption = "Manufacturer";
@@ -200,6 +191,15 @@
             this.SizeGradeItemCheckedBox.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.SizeGradeItemCheckedBox.Name = "SizeGradeItemCheckedBox";
+            // 
+            // lblPipe
+            // 
+            this.lblPipe.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblPipe.Location = new System.Drawing.Point(14, 20);
+            this.lblPipe.Name = "lblPipe";
+            this.lblPipe.Size = new System.Drawing.Size(135, 19);
+            this.lblPipe.TabIndex = 10;
+            this.lblPipe.Text = "Pipe manufacturers";
             // 
             // btnCancel
             // 
