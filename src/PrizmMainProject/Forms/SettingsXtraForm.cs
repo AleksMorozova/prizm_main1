@@ -16,6 +16,9 @@ namespace PrizmMain.Forms
         public SettingsXtraForm()
         {
             InitializeComponent();
+
+            //TODO: Add gridControlInspection.DataSource, and synchronize field name in Grid Control
+            
         }
     }
 }
