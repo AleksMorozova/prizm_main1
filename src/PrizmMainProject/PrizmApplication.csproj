@@ -144,6 +144,9 @@
     <EmbeddedResource Include="Forms\ComponentNewEditXtraForm.resx">
       <DependentUpon>ComponentNewEditXtraForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CopyPipeSettingsXtraForm.resx">
+      <DependentUpon>CopyPipeSettingsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\JointNewEditXtraForm.resx">
       <DependentUpon>JointNewEditXtraForm.cs</DependentUpon>
     </EmbeddedResource>
