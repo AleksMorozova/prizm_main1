@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Documents\IDocument.cs" />
+    <Compile Include="DummyData\ComponentryDummy.cs" />
     <Compile Include="DummyData\RolesDummy.cs" />
     <Compile Include="DummyData\UsersDummy.cs" />
     <Compile Include="Forms\AddEditInspectionXtraForm.cs">

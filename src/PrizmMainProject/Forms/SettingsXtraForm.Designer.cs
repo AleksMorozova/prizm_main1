@@ -82,8 +82,6 @@
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cancelButton = new DevExpress.XtraEditors.SimpleButton();
-            this.oKButton = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainer = new DevExpress.XtraEditors.SplitContainerControl();
             this.plateManufacturersList = new DevExpress.XtraGrid.GridControl();
             this.plateManufacturersListView = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -661,8 +659,6 @@
             // projectPage
             // 
             this.projectPage.Controls.Add(this.panelControl1);
-            this.projectPage.Controls.Add(this.cancelButton);
-            this.projectPage.Controls.Add(this.oKButton);
             this.projectPage.Controls.Add(this.splitContainer);
             this.projectPage.Controls.Add(this.designLabel);
             this.projectPage.Controls.Add(this.clientLabel);
@@ -699,24 +695,6 @@
             this.labelControl1.Size = new System.Drawing.Size(172, 13);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "External document size limit, Kbytes";
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(627, 362);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 18;
-            this.cancelButton.Text = "Cancel";
-            // 
-            // oKButton
-            // 
-            this.oKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.oKButton.Location = new System.Drawing.Point(546, 362);
-            this.oKButton.Name = "oKButton";
-            this.oKButton.Size = new System.Drawing.Size(75, 23);
-            this.oKButton.TabIndex = 17;
-            this.oKButton.Text = "OK";
             // 
             // splitContainer
             // 
@@ -1215,8 +1193,6 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandGridInspectionOther;
         public DevExpress.XtraTab.XtraTabControl settings;
         private DevExpress.XtraTab.XtraTabPage projectPage;
-        private DevExpress.XtraEditors.SimpleButton cancelButton;
-        private DevExpress.XtraEditors.SimpleButton oKButton;
         private DevExpress.XtraEditors.SplitContainerControl splitContainer;
         private DevExpress.XtraGrid.GridControl plateManufacturersList;
         private DevExpress.XtraGrid.Views.Grid.GridView plateManufacturersListView;

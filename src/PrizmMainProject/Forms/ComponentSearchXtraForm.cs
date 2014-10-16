@@ -17,8 +17,12 @@ namespace PrizmMain.Forms
         {
             InitializeComponent();
 
+            //please remove this data in real project
+            #region demoData
+            componentNumber.Text = "11-22-33";
+            componentType.Text = "Valve";
+            certificate.Text = "certificate";
+            #endregion
         }
-
-
-    }
+     }
 }
