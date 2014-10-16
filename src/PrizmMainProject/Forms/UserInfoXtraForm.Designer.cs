@@ -55,7 +55,7 @@
             // 
             // loginLabel
             // 
-            this.loginLabel.Location = new System.Drawing.Point(15, 104);
+            this.loginLabel.Location = new System.Drawing.Point(15, 113);
             this.loginLabel.Name = "loginLabel";
             this.loginLabel.Size = new System.Drawing.Size(25, 13);
             this.loginLabel.TabIndex = 0;
@@ -63,7 +63,7 @@
             // 
             // passwordLabel
             // 
-            this.passwordLabel.Location = new System.Drawing.Point(15, 130);
+            this.passwordLabel.Location = new System.Drawing.Point(12, 158);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(46, 13);
             this.passwordLabel.TabIndex = 0;
@@ -71,7 +71,7 @@
             // 
             // confirmPasswordLabel
             // 
-            this.confirmPasswordLabel.Location = new System.Drawing.Point(15, 156);
+            this.confirmPasswordLabel.Location = new System.Drawing.Point(174, 158);
             this.confirmPasswordLabel.Name = "confirmPasswordLabel";
             this.confirmPasswordLabel.Size = new System.Drawing.Size(86, 13);
             this.confirmPasswordLabel.TabIndex = 0;
@@ -79,23 +79,23 @@
             // 
             // login
             // 
-            this.login.Location = new System.Drawing.Point(107, 101);
+            this.login.Location = new System.Drawing.Point(14, 132);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(224, 20);
+            this.login.Size = new System.Drawing.Size(316, 20);
             this.login.TabIndex = 4;
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(107, 127);
+            this.password.Location = new System.Drawing.Point(12, 177);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(224, 20);
+            this.password.Size = new System.Drawing.Size(156, 20);
             this.password.TabIndex = 5;
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(107, 153);
+            this.confirmPassword.Location = new System.Drawing.Point(174, 177);
             this.confirmPassword.Name = "confirmPassword";
-            this.confirmPassword.Size = new System.Drawing.Size(224, 20);
+            this.confirmPassword.Size = new System.Drawing.Size(156, 20);
             this.confirmPassword.TabIndex = 6;
             // 
             // saveButton
@@ -116,7 +116,7 @@
             // 
             // userRoleLabel
             // 
-            this.userRoleLabel.Location = new System.Drawing.Point(14, 192);
+            this.userRoleLabel.Location = new System.Drawing.Point(14, 199);
             this.userRoleLabel.Name = "userRoleLabel";
             this.userRoleLabel.Size = new System.Drawing.Size(46, 13);
             this.userRoleLabel.TabIndex = 8;
@@ -124,7 +124,7 @@
             // 
             // lastNameLabel
             // 
-            this.lastNameLabel.Location = new System.Drawing.Point(14, 26);
+            this.lastNameLabel.Location = new System.Drawing.Point(12, 12);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(50, 13);
             this.lastNameLabel.TabIndex = 0;
@@ -132,7 +132,7 @@
             // 
             // firstNameLabel
             // 
-            this.firstNameLabel.Location = new System.Drawing.Point(14, 52);
+            this.firstNameLabel.Location = new System.Drawing.Point(14, 56);
             this.firstNameLabel.Name = "firstNameLabel";
             this.firstNameLabel.Size = new System.Drawing.Size(51, 13);
             this.firstNameLabel.TabIndex = 0;
@@ -140,7 +140,7 @@
             // 
             // middleNameLabel
             // 
-            this.middleNameLabel.Location = new System.Drawing.Point(15, 78);
+            this.middleNameLabel.Location = new System.Drawing.Point(176, 57);
             this.middleNameLabel.Name = "middleNameLabel";
             this.middleNameLabel.Size = new System.Drawing.Size(60, 13);
             this.middleNameLabel.TabIndex = 0;
@@ -148,29 +148,29 @@
             // 
             // lastName
             // 
-            this.lastName.Location = new System.Drawing.Point(106, 23);
+            this.lastName.Location = new System.Drawing.Point(12, 31);
             this.lastName.Name = "lastName";
-            this.lastName.Size = new System.Drawing.Size(224, 20);
+            this.lastName.Size = new System.Drawing.Size(318, 20);
             this.lastName.TabIndex = 1;
             // 
             // middleName
             // 
-            this.middleName.Location = new System.Drawing.Point(107, 75);
+            this.middleName.Location = new System.Drawing.Point(176, 75);
             this.middleName.Name = "middleName";
-            this.middleName.Size = new System.Drawing.Size(224, 20);
+            this.middleName.Size = new System.Drawing.Size(153, 20);
             this.middleName.TabIndex = 3;
             // 
             // firstName
             // 
-            this.firstName.Location = new System.Drawing.Point(106, 49);
+            this.firstName.Location = new System.Drawing.Point(14, 75);
             this.firstName.Name = "firstName";
-            this.firstName.Size = new System.Drawing.Size(224, 20);
+            this.firstName.Size = new System.Drawing.Size(156, 20);
             this.firstName.TabIndex = 2;
             // 
             // userRoleComboBox
             // 
             this.userRoleComboBox.Enabled = false;
-            this.userRoleComboBox.Location = new System.Drawing.Point(12, 211);
+            this.userRoleComboBox.Location = new System.Drawing.Point(13, 218);
             this.userRoleComboBox.Name = "userRoleComboBox";
             this.userRoleComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});

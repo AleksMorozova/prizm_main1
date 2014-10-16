@@ -56,10 +56,10 @@
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Can edit mill setting"),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Can edit joint", System.Windows.Forms.CheckState.Checked),
             new DevExpress.XtraEditors.Controls.CheckedListBoxItem(null, "Can view joints", System.Windows.Forms.CheckState.Checked)});
-            this.privilegesCheckedList.Location = new System.Drawing.Point(12, 95);
+            this.privilegesCheckedList.Location = new System.Drawing.Point(12, 76);
             this.privilegesCheckedList.Name = "privilegesCheckedList";
             this.privilegesCheckedList.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.privilegesCheckedList.Size = new System.Drawing.Size(318, 193);
+            this.privilegesCheckedList.Size = new System.Drawing.Size(318, 212);
             this.privilegesCheckedList.TabIndex = 10;
             // 
             // textEdit1
@@ -72,7 +72,7 @@
             // 
             // privilegesLabel
             // 
-            this.privilegesLabel.Location = new System.Drawing.Point(12, 76);
+            this.privilegesLabel.Location = new System.Drawing.Point(12, 57);
             this.privilegesLabel.Name = "privilegesLabel";
             this.privilegesLabel.Size = new System.Drawing.Size(45, 13);
             this.privilegesLabel.TabIndex = 13;

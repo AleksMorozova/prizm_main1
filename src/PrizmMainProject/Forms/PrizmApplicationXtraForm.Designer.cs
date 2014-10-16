@@ -80,8 +80,12 @@
             this.barSubItemJoints = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemRailcar = new DevExpress.XtraBars.BarButtonItem();
             this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.mainMDIdocumentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainMDIdocumentManager)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bar2
@@ -538,6 +542,14 @@
             this.galleryDropDown1.Manager = this.barManager1;
             this.galleryDropDown1.Name = "galleryDropDown1";
             // 
+            // mainMDIdocumentManager
+            // 
+            this.mainMDIdocumentManager.MdiParent = this;
+            this.mainMDIdocumentManager.MenuManager = this.barManager1;
+            this.mainMDIdocumentManager.View = this.tabbedView1;
+            this.mainMDIdocumentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
+            // 
             // PrizmApplicationXtraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,6 +564,8 @@
             this.Text = "PRIZMA";
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mainMDIdocumentManager)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,6 +622,8 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemAbout;
         private DevExpress.XtraBars.BarButtonItem barButtonItemExportImport;
         private DevExpress.XtraBars.BarButtonItem barButtonItemRoles;
+        private DevExpress.XtraBars.Docking2010.DocumentManager mainMDIdocumentManager;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
 
 
 
