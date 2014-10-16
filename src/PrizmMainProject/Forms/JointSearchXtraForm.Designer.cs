@@ -73,7 +73,7 @@
             // 
             // coordinateGPSLabel
             // 
-            this.coordinateGPSLabel.Location = new System.Drawing.Point(240, 57);
+            this.coordinateGPSLabel.Location = new System.Drawing.Point(215, 81);
             this.coordinateGPSLabel.Name = "coordinateGPSLabel";
             this.coordinateGPSLabel.Size = new System.Drawing.Size(19, 13);
             this.coordinateGPSLabel.TabIndex = 48;
