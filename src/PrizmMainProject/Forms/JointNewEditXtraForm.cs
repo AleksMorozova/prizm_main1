@@ -33,16 +33,11 @@ namespace PrizmMain.Forms
             BindingList<string> componentList = new BindingList<string>() { "567", "865", "677" };
             componentry.DataSource = componentList;
             componentryView.PopulateColumns();
-            BindingList<string> controlTypeList = new BindingList<string>() { "Joint fillet", "Joint welding", "Joint repair",
-                                                                          "Welding control", "Radiography", "Ultrasound",
-                                                                          "Joint isolation"};
-            controls.DataSource = controlTypeList;
-            controlsView.PopulateColumns();
+            controls.DataSource = PrizmMain.DummyData.JointsDummy.GetAllControlTypes();
             inspectorName.Text = "Ivanov Ivan";
             controlDate.Text = "10/10/2014";
             result.Text = "Accepted";
             controlType.Text = "Joint isolation";
-
         }
 
 

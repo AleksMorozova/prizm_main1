@@ -496,6 +496,7 @@
             // controlTypeGridColumn
             // 
             this.controlTypeGridColumn.Caption = "Control type";
+            this.controlTypeGridColumn.FieldName = "Type";
             this.controlTypeGridColumn.Name = "controlTypeGridColumn";
             this.controlTypeGridColumn.Visible = true;
             this.controlTypeGridColumn.VisibleIndex = 0;
