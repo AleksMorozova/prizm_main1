@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.coordinateGPSLabel = new DevExpress.XtraEditors.LabelControl();
-            this.coordinateGPSMinutes = new DevExpress.XtraEditors.TextEdit();
-            this.coordinateGPSdegrees = new DevExpress.XtraEditors.TextEdit();
-            this.coordinateGPSSseconds = new DevExpress.XtraEditors.TextEdit();
             this.searchButton = new DevExpress.XtraEditors.SimpleButton();
             this.controlDate = new DevExpress.XtraEditors.DateEdit();
             this.controlDateLabel = new DevExpress.XtraEditors.LabelControl();
@@ -55,9 +52,12 @@
             this.extraJointButton = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.pegNumber = new DevExpress.XtraEditors.TextEdit();
             this.pegNumberLabel = new DevExpress.XtraEditors.LabelControl();
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSMinutes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSdegrees.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSSseconds.Properties)).BeginInit();
+            this.GPSLat = new DevExpress.XtraEditors.TextEdit();
+            this.GPSLong = new DevExpress.XtraEditors.TextEdit();
+            this.seaLevel = new DevExpress.XtraEditors.TextEdit();
+            this.GPSLatLabel = new DevExpress.XtraEditors.LabelControl();
+            this.GPSLongLabel = new DevExpress.XtraEditors.LabelControl();
+            this.seaLevelLabel = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.controlDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weldingDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -69,36 +69,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extraJointButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pegNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GPSLat.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GPSLong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seaLevel.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // coordinateGPSLabel
             // 
-            this.coordinateGPSLabel.Location = new System.Drawing.Point(240, 57);
+            this.coordinateGPSLabel.Location = new System.Drawing.Point(159, 81);
             this.coordinateGPSLabel.Name = "coordinateGPSLabel";
             this.coordinateGPSLabel.Size = new System.Drawing.Size(19, 13);
             this.coordinateGPSLabel.TabIndex = 48;
             this.coordinateGPSLabel.Text = "GPS";
-            // 
-            // coordinateGPSMinutes
-            // 
-            this.coordinateGPSMinutes.Location = new System.Drawing.Point(293, 78);
-            this.coordinateGPSMinutes.Name = "coordinateGPSMinutes";
-            this.coordinateGPSMinutes.Size = new System.Drawing.Size(47, 20);
-            this.coordinateGPSMinutes.TabIndex = 47;
-            // 
-            // coordinateGPSdegrees
-            // 
-            this.coordinateGPSdegrees.Location = new System.Drawing.Point(240, 78);
-            this.coordinateGPSdegrees.Name = "coordinateGPSdegrees";
-            this.coordinateGPSdegrees.Size = new System.Drawing.Size(47, 20);
-            this.coordinateGPSdegrees.TabIndex = 46;
-            // 
-            // coordinateGPSSseconds
-            // 
-            this.coordinateGPSSseconds.Location = new System.Drawing.Point(346, 78);
-            this.coordinateGPSSseconds.Name = "coordinateGPSSseconds";
-            this.coordinateGPSSseconds.Size = new System.Drawing.Size(47, 20);
-            this.coordinateGPSSseconds.TabIndex = 45;
             // 
             // searchButton
             // 
@@ -300,18 +282,66 @@
             this.pegNumberLabel.TabIndex = 51;
             this.pegNumberLabel.Text = "Peg number";
             // 
+            // GPSLat
+            // 
+            this.GPSLat.Location = new System.Drawing.Point(183, 78);
+            this.GPSLat.Name = "GPSLat";
+            this.GPSLat.Size = new System.Drawing.Size(71, 20);
+            this.GPSLat.TabIndex = 53;
+            // 
+            // GPSLong
+            // 
+            this.GPSLong.Location = new System.Drawing.Point(268, 78);
+            this.GPSLong.Name = "GPSLong";
+            this.GPSLong.Size = new System.Drawing.Size(71, 20);
+            this.GPSLong.TabIndex = 54;
+            // 
+            // seaLevel
+            // 
+            this.seaLevel.Location = new System.Drawing.Point(353, 78);
+            this.seaLevel.Name = "seaLevel";
+            this.seaLevel.Size = new System.Drawing.Size(71, 20);
+            this.seaLevel.TabIndex = 55;
+            // 
+            // GPSLatLabel
+            // 
+            this.GPSLatLabel.Location = new System.Drawing.Point(183, 59);
+            this.GPSLatLabel.Name = "GPSLatLabel";
+            this.GPSLatLabel.Size = new System.Drawing.Size(15, 13);
+            this.GPSLatLabel.TabIndex = 56;
+            this.GPSLatLabel.Text = "Lat";
+            // 
+            // GPSLongLabel
+            // 
+            this.GPSLongLabel.Location = new System.Drawing.Point(268, 59);
+            this.GPSLongLabel.Name = "GPSLongLabel";
+            this.GPSLongLabel.Size = new System.Drawing.Size(23, 13);
+            this.GPSLongLabel.TabIndex = 57;
+            this.GPSLongLabel.Text = "Long";
+            // 
+            // seaLevelLabel
+            // 
+            this.seaLevelLabel.Location = new System.Drawing.Point(353, 59);
+            this.seaLevelLabel.Name = "seaLevelLabel";
+            this.seaLevelLabel.Size = new System.Drawing.Size(43, 13);
+            this.seaLevelLabel.TabIndex = 58;
+            this.seaLevelLabel.Text = "Sea level";
+            // 
             // JointSearchXtraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 425);
             this.ControlBox = false;
+            this.Controls.Add(this.seaLevelLabel);
+            this.Controls.Add(this.GPSLongLabel);
+            this.Controls.Add(this.GPSLatLabel);
+            this.Controls.Add(this.seaLevel);
+            this.Controls.Add(this.GPSLong);
+            this.Controls.Add(this.GPSLat);
             this.Controls.Add(this.pegNumber);
             this.Controls.Add(this.pegNumberLabel);
             this.Controls.Add(this.coordinateGPSLabel);
-            this.Controls.Add(this.coordinateGPSMinutes);
-            this.Controls.Add(this.coordinateGPSdegrees);
-            this.Controls.Add(this.coordinateGPSSseconds);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.controlDate);
             this.Controls.Add(this.controlDateLabel);
@@ -326,10 +356,7 @@
             this.Controls.Add(this.gridControlSerchResult);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "JointSearchXtraForm";
-            this.Text = "Find joint";
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSMinutes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSdegrees.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coordinateGPSSseconds.Properties)).EndInit();
+            this.Text = "JointSearchXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.controlDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.controlDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weldingDate.Properties.CalendarTimeProperties)).EndInit();
@@ -341,6 +368,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extraJointButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pegNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GPSLat.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GPSLong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.seaLevel.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,9 +379,6 @@
         #endregion
 
         private DevExpress.XtraEditors.LabelControl coordinateGPSLabel;
-        private DevExpress.XtraEditors.TextEdit coordinateGPSMinutes;
-        private DevExpress.XtraEditors.TextEdit coordinateGPSdegrees;
-        private DevExpress.XtraEditors.TextEdit coordinateGPSSseconds;
         private DevExpress.XtraEditors.SimpleButton searchButton;
         private DevExpress.XtraEditors.DateEdit controlDate;
         private DevExpress.XtraEditors.LabelControl controlDateLabel;
@@ -375,6 +402,12 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit extraJointButton;
         private DevExpress.XtraEditors.TextEdit pegNumber;
         private DevExpress.XtraEditors.LabelControl pegNumberLabel;
+        private DevExpress.XtraEditors.TextEdit GPSLat;
+        private DevExpress.XtraEditors.TextEdit GPSLong;
+        private DevExpress.XtraEditors.TextEdit seaLevel;
+        private DevExpress.XtraEditors.LabelControl GPSLatLabel;
+        private DevExpress.XtraEditors.LabelControl GPSLongLabel;
+        private DevExpress.XtraEditors.LabelControl seaLevelLabel;
 
     }
 }
