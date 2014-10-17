@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // AddEditInspectionXtraForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "AddEditInspectionXtraForm";
+            this.ClientSize = new System.Drawing.Size(292, 273);
+            this.Name = "AddEditInspectionXtraForm";
+            this.Text = "Add or Edit Inspection";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
