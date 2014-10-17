@@ -59,14 +59,24 @@
             this.weldingDate = new DevExpress.XtraEditors.DateEdit();
             this.heatParametrsPage = new DevExpress.XtraTab.XtraTabPage();
             this.splitContainerChemicalComposition = new DevExpress.XtraEditors.SplitContainerControl();
+            this.ladelChemicalCompositionLabel = new DevExpress.XtraEditors.LabelControl();
             this.ladleChemicalComposition = new DevExpress.XtraGrid.GridControl();
             this.ladleChemicalCompositionView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.elementNameLadleCompositionGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.elementQuantityLadleGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ladelChemicalCompositionLabel = new DevExpress.XtraEditors.LabelControl();
-            this.heatNumber = new DevExpress.XtraEditors.TextEdit();
-            this.heatNumberLabel = new DevExpress.XtraEditors.LabelControl();
+            this.ladelMechanicalProperties = new DevExpress.XtraGrid.GridControl();
+            this.ladelMechanicalPropertiesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ladelMechanicalPropertiesLabel = new DevExpress.XtraEditors.LabelControl();
             this.plateParametersPage = new DevExpress.XtraTab.XtraTabPage();
+            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.plateChemicalComposition = new DevExpress.XtraGrid.GridControl();
+            this.plateChemicalCompositionView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.elementNamePlateCompositionGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.elementQuantityPlateCompositionGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.plateChemicalCompositionLabel = new DevExpress.XtraEditors.LabelControl();
+            this.tensileTests = new DevExpress.XtraGrid.GridControl();
+            this.tensileTestsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.tensileTestsLable = new DevExpress.XtraEditors.LabelControl();
             this.plateWeldingDateLabel = new DevExpress.XtraEditors.LabelControl();
             this.plateWeldingDate = new DevExpress.XtraEditors.DateEdit();
             this.plateHeatNumberLabel = new DevExpress.XtraEditors.LabelControl();
@@ -93,6 +103,8 @@
             this.shippingDateLabel = new DevExpress.XtraEditors.LabelControl();
             this.railcarNumberLabel = new DevExpress.XtraEditors.LabelControl();
             this.deliveryDateLabel = new DevExpress.XtraEditors.LabelControl();
+            this.heatNumber = new DevExpress.XtraEditors.TextEdit();
+            this.heatNumberLabel = new DevExpress.XtraEditors.LabelControl();
             this.pipeSizeLabel = new DevExpress.XtraEditors.LabelControl();
             this.pipeSize = new DevExpress.XtraEditors.ComboBoxEdit();
             this.constructionStatusLabel = new DevExpress.XtraEditors.LabelControl();
@@ -103,18 +115,6 @@
             this.millStatus = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pipeManufacturer = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pipeNumber = new DevExpress.XtraEditors.TextEdit();
-            this.plateChemicalCompositionLabel = new DevExpress.XtraEditors.LabelControl();
-            this.plateChemicalComposition = new DevExpress.XtraGrid.GridControl();
-            this.plateChemicalCompositionView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.elementNamePlateCompositionGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.elementQuantityPlateCompositionGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.tensileTestsLable = new DevExpress.XtraEditors.LabelControl();
-            this.tensileTests = new DevExpress.XtraGrid.GridControl();
-            this.tensileTestsGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ladelMechanicalPropertiesLabel = new DevExpress.XtraEditors.LabelControl();
-            this.ladelMechanicalProperties = new DevExpress.XtraGrid.GridControl();
-            this.ladelMechanicalPropertiesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.pipeCreationDateLabel = new DevExpress.XtraEditors.LabelControl();
             this.pipeCreationDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.pipe)).BeginInit();
@@ -144,8 +144,15 @@
             this.splitContainerChemicalComposition.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ladleChemicalComposition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ladleChemicalCompositionView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalPropertiesGridView)).BeginInit();
             this.plateParametersPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalComposition)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalCompositionView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tensileTests)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tensileTestsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateWeldingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateWeldingDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateHeatNumber.Properties)).BeginInit();
@@ -160,19 +167,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.railcarNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.constructionStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeManufacturer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalComposition)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalCompositionView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tensileTests)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tensileTestsGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalPropertiesGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties)).BeginInit();
             this.SuspendLayout();
@@ -470,6 +470,14 @@
             this.splitContainerChemicalComposition.TabIndex = 22;
             this.splitContainerChemicalComposition.Text = "splitContainerControl1";
             // 
+            // ladelChemicalCompositionLabel
+            // 
+            this.ladelChemicalCompositionLabel.Location = new System.Drawing.Point(10, 0);
+            this.ladelChemicalCompositionLabel.Name = "ladelChemicalCompositionLabel";
+            this.ladelChemicalCompositionLabel.Size = new System.Drawing.Size(127, 13);
+            this.ladelChemicalCompositionLabel.TabIndex = 0;
+            this.ladelChemicalCompositionLabel.Text = "Ladle chemical composition";
+            // 
             // ladleChemicalComposition
             // 
             this.ladleChemicalComposition.Cursor = System.Windows.Forms.Cursors.Default;
@@ -503,28 +511,29 @@
             this.elementQuantityLadleGridColumn.Visible = true;
             this.elementQuantityLadleGridColumn.VisibleIndex = 1;
             // 
-            // ladelChemicalCompositionLabel
+            // ladelMechanicalProperties
             // 
-            this.ladelChemicalCompositionLabel.Location = new System.Drawing.Point(10, 0);
-            this.ladelChemicalCompositionLabel.Name = "ladelChemicalCompositionLabel";
-            this.ladelChemicalCompositionLabel.Size = new System.Drawing.Size(127, 13);
-            this.ladelChemicalCompositionLabel.TabIndex = 0;
-            this.ladelChemicalCompositionLabel.Text = "Ladle chemical composition";
+            this.ladelMechanicalProperties.Cursor = System.Windows.Forms.Cursors.Default;
+            this.ladelMechanicalProperties.Location = new System.Drawing.Point(14, 19);
+            this.ladelMechanicalProperties.MainView = this.ladelMechanicalPropertiesGridView;
+            this.ladelMechanicalProperties.Name = "ladelMechanicalProperties";
+            this.ladelMechanicalProperties.Size = new System.Drawing.Size(326, 235);
+            this.ladelMechanicalProperties.TabIndex = 1;
+            this.ladelMechanicalProperties.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.ladelMechanicalPropertiesGridView});
             // 
-            // heatNumber
+            // ladelMechanicalPropertiesGridView
             // 
-            this.heatNumber.Location = new System.Drawing.Point(563, 27);
-            this.heatNumber.Name = "heatNumber";
-            this.heatNumber.Size = new System.Drawing.Size(100, 20);
-            this.heatNumber.TabIndex = 21;
+            this.ladelMechanicalPropertiesGridView.GridControl = this.ladelMechanicalProperties;
+            this.ladelMechanicalPropertiesGridView.Name = "ladelMechanicalPropertiesGridView";
             // 
-            // heatNumberLabel
+            // ladelMechanicalPropertiesLabel
             // 
-            this.heatNumberLabel.Location = new System.Drawing.Point(563, 8);
-            this.heatNumberLabel.Name = "heatNumberLabel";
-            this.heatNumberLabel.Size = new System.Drawing.Size(62, 13);
-            this.heatNumberLabel.TabIndex = 17;
-            this.heatNumberLabel.Text = "Heat number";
+            this.ladelMechanicalPropertiesLabel.Location = new System.Drawing.Point(14, 0);
+            this.ladelMechanicalPropertiesLabel.Name = "ladelMechanicalPropertiesLabel";
+            this.ladelMechanicalPropertiesLabel.Size = new System.Drawing.Size(132, 13);
+            this.ladelMechanicalPropertiesLabel.TabIndex = 0;
+            this.ladelMechanicalPropertiesLabel.Text = "Ladel mechanical properties";
             // 
             // plateParametersPage
             // 
@@ -542,6 +551,87 @@
             this.plateParametersPage.Name = "plateParametersPage";
             this.plateParametersPage.Size = new System.Drawing.Size(714, 287);
             this.plateParametersPage.Text = "P&late parameters";
+            // 
+            // splitContainerControl1
+            // 
+            this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
+            this.splitContainerControl1.Location = new System.Drawing.Point(19, 116);
+            this.splitContainerControl1.Name = "splitContainerControl1";
+            this.splitContainerControl1.Panel1.Controls.Add(this.plateChemicalComposition);
+            this.splitContainerControl1.Panel1.Controls.Add(this.plateChemicalCompositionLabel);
+            this.splitContainerControl1.Panel1.Text = "Panel1";
+            this.splitContainerControl1.Panel2.Controls.Add(this.tensileTests);
+            this.splitContainerControl1.Panel2.Controls.Add(this.tensileTestsLable);
+            this.splitContainerControl1.Panel2.Text = "Panel2";
+            this.splitContainerControl1.Size = new System.Drawing.Size(673, 158);
+            this.splitContainerControl1.SplitterPosition = 337;
+            this.splitContainerControl1.TabIndex = 21;
+            this.splitContainerControl1.Text = "splitContainerControl1";
+            // 
+            // plateChemicalComposition
+            // 
+            this.plateChemicalComposition.Cursor = System.Windows.Forms.Cursors.Default;
+            this.plateChemicalComposition.Location = new System.Drawing.Point(3, 19);
+            this.plateChemicalComposition.MainView = this.plateChemicalCompositionView;
+            this.plateChemicalComposition.Name = "plateChemicalComposition";
+            this.plateChemicalComposition.Size = new System.Drawing.Size(327, 118);
+            this.plateChemicalComposition.TabIndex = 20;
+            this.plateChemicalComposition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.plateChemicalCompositionView});
+            // 
+            // plateChemicalCompositionView
+            // 
+            this.plateChemicalCompositionView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.elementNamePlateCompositionGridColumn,
+            this.elementQuantityPlateCompositionGridColumn});
+            this.plateChemicalCompositionView.GridControl = this.plateChemicalComposition;
+            this.plateChemicalCompositionView.Name = "plateChemicalCompositionView";
+            // 
+            // elementNamePlateCompositionGridColumn
+            // 
+            this.elementNamePlateCompositionGridColumn.Caption = "Name";
+            this.elementNamePlateCompositionGridColumn.Name = "elementNamePlateCompositionGridColumn";
+            this.elementNamePlateCompositionGridColumn.Visible = true;
+            this.elementNamePlateCompositionGridColumn.VisibleIndex = 0;
+            // 
+            // elementQuantityPlateCompositionGridColumn
+            // 
+            this.elementQuantityPlateCompositionGridColumn.Caption = "Quantity";
+            this.elementQuantityPlateCompositionGridColumn.Name = "elementQuantityPlateCompositionGridColumn";
+            this.elementQuantityPlateCompositionGridColumn.Visible = true;
+            this.elementQuantityPlateCompositionGridColumn.VisibleIndex = 1;
+            // 
+            // plateChemicalCompositionLabel
+            // 
+            this.plateChemicalCompositionLabel.Location = new System.Drawing.Point(3, 0);
+            this.plateChemicalCompositionLabel.Name = "plateChemicalCompositionLabel";
+            this.plateChemicalCompositionLabel.Size = new System.Drawing.Size(128, 13);
+            this.plateChemicalCompositionLabel.TabIndex = 19;
+            this.plateChemicalCompositionLabel.Text = "Plate Chemical composition";
+            // 
+            // tensileTests
+            // 
+            this.tensileTests.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tensileTests.Location = new System.Drawing.Point(3, 19);
+            this.tensileTests.MainView = this.tensileTestsGridView;
+            this.tensileTests.Name = "tensileTests";
+            this.tensileTests.Size = new System.Drawing.Size(327, 115);
+            this.tensileTests.TabIndex = 1;
+            this.tensileTests.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.tensileTestsGridView});
+            // 
+            // tensileTestsGridView
+            // 
+            this.tensileTestsGridView.GridControl = this.tensileTests;
+            this.tensileTestsGridView.Name = "tensileTestsGridView";
+            // 
+            // tensileTestsLable
+            // 
+            this.tensileTestsLable.Location = new System.Drawing.Point(11, 3);
+            this.tensileTestsLable.Name = "tensileTestsLable";
+            this.tensileTestsLable.Size = new System.Drawing.Size(60, 13);
+            this.tensileTestsLable.TabIndex = 0;
+            this.tensileTestsLable.Text = "Tensile tests";
             // 
             // plateWeldingDateLabel
             // 
@@ -769,6 +859,21 @@
             this.deliveryDateLabel.TabIndex = 0;
             this.deliveryDateLabel.Text = "Delivery date";
             // 
+            // heatNumber
+            // 
+            this.heatNumber.Location = new System.Drawing.Point(563, 27);
+            this.heatNumber.Name = "heatNumber";
+            this.heatNumber.Size = new System.Drawing.Size(100, 20);
+            this.heatNumber.TabIndex = 21;
+            // 
+            // heatNumberLabel
+            // 
+            this.heatNumberLabel.Location = new System.Drawing.Point(563, 8);
+            this.heatNumberLabel.Name = "heatNumberLabel";
+            this.heatNumberLabel.Size = new System.Drawing.Size(62, 13);
+            this.heatNumberLabel.TabIndex = 17;
+            this.heatNumberLabel.Text = "Heat number";
+            // 
             // pipeSizeLabel
             // 
             this.pipeSizeLabel.Location = new System.Drawing.Point(413, 8);
@@ -852,111 +957,6 @@
             this.pipeNumber.Size = new System.Drawing.Size(154, 20);
             this.pipeNumber.TabIndex = 0;
             // 
-            // plateChemicalCompositionLabel
-            // 
-            this.plateChemicalCompositionLabel.Location = new System.Drawing.Point(3, 0);
-            this.plateChemicalCompositionLabel.Name = "plateChemicalCompositionLabel";
-            this.plateChemicalCompositionLabel.Size = new System.Drawing.Size(128, 13);
-            this.plateChemicalCompositionLabel.TabIndex = 19;
-            this.plateChemicalCompositionLabel.Text = "Plate Chemical composition";
-            // 
-            // plateChemicalComposition
-            // 
-            this.plateChemicalComposition.Cursor = System.Windows.Forms.Cursors.Default;
-            this.plateChemicalComposition.Location = new System.Drawing.Point(3, 19);
-            this.plateChemicalComposition.MainView = this.plateChemicalCompositionView;
-            this.plateChemicalComposition.Name = "plateChemicalComposition";
-            this.plateChemicalComposition.Size = new System.Drawing.Size(327, 118);
-            this.plateChemicalComposition.TabIndex = 20;
-            this.plateChemicalComposition.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.plateChemicalCompositionView});
-            // 
-            // plateChemicalCompositionView
-            // 
-            this.plateChemicalCompositionView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.elementNamePlateCompositionGridColumn,
-            this.elementQuantityPlateCompositionGridColumn});
-            this.plateChemicalCompositionView.GridControl = this.plateChemicalComposition;
-            this.plateChemicalCompositionView.Name = "plateChemicalCompositionView";
-            // 
-            // elementNamePlateCompositionGridColumn
-            // 
-            this.elementNamePlateCompositionGridColumn.Caption = "Name";
-            this.elementNamePlateCompositionGridColumn.Name = "elementNamePlateCompositionGridColumn";
-            this.elementNamePlateCompositionGridColumn.Visible = true;
-            this.elementNamePlateCompositionGridColumn.VisibleIndex = 0;
-            // 
-            // elementQuantityPlateCompositionGridColumn
-            // 
-            this.elementQuantityPlateCompositionGridColumn.Caption = "Quantity";
-            this.elementQuantityPlateCompositionGridColumn.Name = "elementQuantityPlateCompositionGridColumn";
-            this.elementQuantityPlateCompositionGridColumn.Visible = true;
-            this.elementQuantityPlateCompositionGridColumn.VisibleIndex = 1;
-            // 
-            // splitContainerControl1
-            // 
-            this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.None;
-            this.splitContainerControl1.Location = new System.Drawing.Point(19, 116);
-            this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.plateChemicalComposition);
-            this.splitContainerControl1.Panel1.Controls.Add(this.plateChemicalCompositionLabel);
-            this.splitContainerControl1.Panel1.Text = "Panel1";
-            this.splitContainerControl1.Panel2.Controls.Add(this.tensileTests);
-            this.splitContainerControl1.Panel2.Controls.Add(this.tensileTestsLable);
-            this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(673, 158);
-            this.splitContainerControl1.SplitterPosition = 337;
-            this.splitContainerControl1.TabIndex = 21;
-            this.splitContainerControl1.Text = "splitContainerControl1";
-            // 
-            // tensileTestsLable
-            // 
-            this.tensileTestsLable.Location = new System.Drawing.Point(11, 3);
-            this.tensileTestsLable.Name = "tensileTestsLable";
-            this.tensileTestsLable.Size = new System.Drawing.Size(60, 13);
-            this.tensileTestsLable.TabIndex = 0;
-            this.tensileTestsLable.Text = "Tensile tests";
-            // 
-            // tensileTests
-            // 
-            this.tensileTests.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tensileTests.Location = new System.Drawing.Point(3, 19);
-            this.tensileTests.MainView = this.tensileTestsGridView;
-            this.tensileTests.Name = "tensileTests";
-            this.tensileTests.Size = new System.Drawing.Size(327, 115);
-            this.tensileTests.TabIndex = 1;
-            this.tensileTests.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.tensileTestsGridView});
-            // 
-            // tensileTestsGridView
-            // 
-            this.tensileTestsGridView.GridControl = this.tensileTests;
-            this.tensileTestsGridView.Name = "tensileTestsGridView";
-            // 
-            // ladelMechanicalPropertiesLabel
-            // 
-            this.ladelMechanicalPropertiesLabel.Location = new System.Drawing.Point(14, 0);
-            this.ladelMechanicalPropertiesLabel.Name = "ladelMechanicalPropertiesLabel";
-            this.ladelMechanicalPropertiesLabel.Size = new System.Drawing.Size(132, 13);
-            this.ladelMechanicalPropertiesLabel.TabIndex = 0;
-            this.ladelMechanicalPropertiesLabel.Text = "Ladel mechanical properties";
-            // 
-            // ladelMechanicalProperties
-            // 
-            this.ladelMechanicalProperties.Cursor = System.Windows.Forms.Cursors.Default;
-            this.ladelMechanicalProperties.Location = new System.Drawing.Point(14, 19);
-            this.ladelMechanicalProperties.MainView = this.ladelMechanicalPropertiesGridView;
-            this.ladelMechanicalProperties.Name = "ladelMechanicalProperties";
-            this.ladelMechanicalProperties.Size = new System.Drawing.Size(326, 235);
-            this.ladelMechanicalProperties.TabIndex = 1;
-            this.ladelMechanicalProperties.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.ladelMechanicalPropertiesGridView});
-            // 
-            // ladelMechanicalPropertiesGridView
-            // 
-            this.ladelMechanicalPropertiesGridView.GridControl = this.ladelMechanicalProperties;
-            this.ladelMechanicalPropertiesGridView.Name = "ladelMechanicalPropertiesGridView";
-            // 
             // pipeCreationDateLabel
             // 
             this.pipeCreationDateLabel.Location = new System.Drawing.Point(413, 53);
@@ -977,7 +977,7 @@
             this.pipeCreationDate.Size = new System.Drawing.Size(112, 20);
             this.pipeCreationDate.TabIndex = 23;
             // 
-            // PipeNewEditXtraForm
+            // MillPipeNewEditXtraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1000,8 +1000,8 @@
             this.Controls.Add(this.pipeSize);
             this.Controls.Add(this.pipeSizeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "PipeNewEditXtraForm";
-            this.Text = "PipeNewEditXtraForm";
+            this.Name = "MillPipeNewEditXtraForm";
+            this.Text = "Mill - New or Edit pipe";
             ((System.ComponentModel.ISupportInitialize)(this.pipe)).EndInit();
             this.pipe.ResumeLayout(false);
             this.generalParametersPage.ResumeLayout(false);
@@ -1031,9 +1031,16 @@
             this.splitContainerChemicalComposition.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ladleChemicalComposition)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ladleChemicalCompositionView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalPropertiesGridView)).EndInit();
             this.plateParametersPage.ResumeLayout(false);
             this.plateParametersPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalComposition)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalCompositionView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tensileTests)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tensileTestsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateWeldingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateWeldingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateHeatNumber.Properties)).EndInit();
@@ -1049,19 +1056,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.dischargeDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.railcarNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.constructionStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeManufacturer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalComposition)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.plateChemicalCompositionView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tensileTests)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tensileTestsGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ladelMechanicalPropertiesGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties)).EndInit();
             this.ResumeLayout(false);

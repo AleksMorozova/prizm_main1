@@ -3,11 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrizmApplication", "PrizmMainProject\PrizmApplication.csproj", "{B950DA6A-6F29-42FD-A021-433CECBE5046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrizmSetupApplication", "PrizmSetupApplication\PrizmSetupApplication.csproj", "{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{7EDA58AA-43C2-4788-89D4-416F9DDD2379}"
 	ProjectSection(ProjectDependencies) = postProject
-		{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A} = {EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}
 		{B950DA6A-6F29-42FD-A021-433CECBE5046} = {B950DA6A-6F29-42FD-A021-433CECBE5046}
 	EndProjectSection
 EndProject
@@ -21,10 +18,6 @@ Global
 		{B950DA6A-6F29-42FD-A021-433CECBE5046}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B950DA6A-6F29-42FD-A021-433CECBE5046}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B950DA6A-6F29-42FD-A021-433CECBE5046}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF01A643-0E2E-4DA2-9CD8-C67EDDEC5E6A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7EDA58AA-43C2-4788-89D4-416F9DDD2379}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7EDA58AA-43C2-4788-89D4-416F9DDD2379}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EDA58AA-43C2-4788-89D4-416F9DDD2379}.Release|Any CPU.ActiveCfg = Release|Any CPU

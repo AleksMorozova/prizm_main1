@@ -223,7 +223,7 @@
             this.Controls.Add(this.componentNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ComponentNewEditXtraForm";
-            this.Text = "ComponentryNewEditXtraForm";
+            this.Text = "New or Edit Component";
             ((System.ComponentModel.ISupportInitialize)(this.componentNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.certificateNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.componentParameters)).EndInit();

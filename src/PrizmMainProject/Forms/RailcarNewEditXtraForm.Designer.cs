@@ -259,7 +259,7 @@
             this.Controls.Add(this.designerLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RailcarNewEditXtraForm";
-            this.Text = "RailcarNewEditXtraForm";
+            this.Text = "New or Edit railcar";
             ((System.ComponentModel.ISupportInitialize)(this.designer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.client.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.purchaseOrder.Properties)).EndInit();
