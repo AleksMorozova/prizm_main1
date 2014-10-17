@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PrizmMain.DummyData; //remove
 
 namespace PrizmMain.Forms
 {
@@ -30,9 +31,7 @@ namespace PrizmMain.Forms
             #endregion
 
             #region Dictionary Grid
-            BindingList<string> dictionaryList = new BindingList<string>() { "Coating", "Test" };
-            this.dictionaries.DataSource = dictionaryList;
-            dictionaryView.PopulateColumns();
+            this.dictionaries.DataSource = DictionaryDummy.GetDictionaries();
             #endregion
 
         }
@@ -78,4 +77,6 @@ namespace PrizmMain.Forms
         #endregion
 
     }
+
+
 }

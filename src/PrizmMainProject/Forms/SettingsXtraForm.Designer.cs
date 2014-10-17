@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.settings = new DevExpress.XtraTab.XtraTabControl();
             this.pipePage = new DevExpress.XtraTab.XtraTabPage();
             this.sizeGradeLabel = new DevExpress.XtraEditors.LabelControl();
@@ -103,7 +102,7 @@
             this.pipelinePage = new DevExpress.XtraTab.XtraTabPage();
             this.usersPage = new DevExpress.XtraTab.XtraTabPage();
             this.users = new DevExpress.XtraGrid.GridControl();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingSource = new System.Windows.Forms.BindingSource();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLastName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -117,7 +116,7 @@
             this.usersLabel = new DevExpress.XtraEditors.LabelControl();
             this.rolesPage = new DevExpress.XtraTab.XtraTabPage();
             this.roles = new DevExpress.XtraGrid.GridControl();
-            this.roleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roleBindingSource = new System.Windows.Forms.BindingSource();
             this.rolesGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -209,7 +208,7 @@
             this.pipePage.Controls.Add(this.pipeSetup);
             this.pipePage.Controls.Add(this.pipeSetupLabel);
             this.pipePage.Name = "pipePage";
-            this.pipePage.Size = new System.Drawing.Size(719, 397);
+            this.pipePage.Size = new System.Drawing.Size(934, 422);
             this.pipePage.Text = "Pip&e";
             // 
             // sizeGradeLabel
@@ -678,7 +677,7 @@
             this.projectPage.Controls.Add(this.design);
             this.projectPage.Controls.Add(this.client);
             this.projectPage.Name = "projectPage";
-            this.projectPage.Size = new System.Drawing.Size(719, 397);
+            this.projectPage.Size = new System.Drawing.Size(934, 422);
             this.projectPage.Text = "Project";
             // 
             // panelControl1
@@ -869,7 +868,7 @@
             // pipelinePage
             // 
             this.pipelinePage.Name = "pipelinePage";
-            this.pipelinePage.Size = new System.Drawing.Size(719, 397);
+            this.pipelinePage.Size = new System.Drawing.Size(934, 422);
             this.pipelinePage.Text = "Pipe&line";
             // 
             // usersPage
@@ -879,7 +878,7 @@
             this.usersPage.Controls.Add(this.userEditButton);
             this.usersPage.Controls.Add(this.usersLabel);
             this.usersPage.Name = "usersPage";
-            this.usersPage.Size = new System.Drawing.Size(719, 397);
+            this.usersPage.Size = new System.Drawing.Size(934, 422);
             this.usersPage.Text = "&Users";
             // 
             // users
@@ -997,7 +996,7 @@
             this.rolesPage.Controls.Add(this.editRoleButton);
             this.rolesPage.Controls.Add(this.rolesLabel);
             this.rolesPage.Name = "rolesPage";
-            this.rolesPage.Size = new System.Drawing.Size(719, 397);
+            this.rolesPage.Size = new System.Drawing.Size(934, 422);
             this.rolesPage.Text = "Roles";
             // 
             // roles
@@ -1108,6 +1107,7 @@
             // dictionaryNameGridColumn
             // 
             this.dictionaryNameGridColumn.Caption = "Dictionary";
+            this.dictionaryNameGridColumn.FieldName = "DictionaryName";
             this.dictionaryNameGridColumn.Name = "dictionaryNameGridColumn";
             this.dictionaryNameGridColumn.Visible = true;
             this.dictionaryNameGridColumn.VisibleIndex = 0;
