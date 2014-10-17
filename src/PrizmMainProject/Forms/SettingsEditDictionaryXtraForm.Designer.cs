@@ -67,6 +67,7 @@
             // English
             // 
             this.English.Caption = "English";
+            this.English.FieldName = "English";
             this.English.Name = "English";
             this.English.Visible = true;
             this.English.VisibleIndex = 0;
@@ -74,6 +75,7 @@
             // Russian
             // 
             this.Russian.Caption = "Russian";
+            this.Russian.FieldName = "Russian";
             this.Russian.Name = "Russian";
             this.Russian.Visible = true;
             this.Russian.VisibleIndex = 1;

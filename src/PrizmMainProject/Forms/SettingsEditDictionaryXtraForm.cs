@@ -16,6 +16,7 @@ namespace PrizmMain.Forms
         public SettingsEditDictionaryXtraForm()
         {
             InitializeComponent();
+            items.DataSource = PrizmMain.DummyData.DictionaryDummy.GetItems();
         }
     }
 }

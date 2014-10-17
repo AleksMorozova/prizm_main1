@@ -13,8 +13,15 @@ namespace PrizmMain.DummyData
         {
             return  new BindingList<Dictionary>()
             {
-                new Dictionary {DictionaryName = "Coating"} ,
                 new Dictionary {DictionaryName = "Test"} 
+            };
+        }
+        public static BindingList<Item> GetItems()
+        {
+            return new BindingList<Item>()
+            {
+                new Item {English = "Ultrasound", Russian = "Ультразвук"} ,
+                new Item {English = "Radiography ", Russian = "Радиография"} 
             };
         }
     }
@@ -22,4 +29,10 @@ namespace PrizmMain.DummyData
     {
         public string DictionaryName { get; set; }
     }
+
+        public class Item
+        {
+            public string English { get; set; }
+            public string Russian { get; set; }
+        }
 }
