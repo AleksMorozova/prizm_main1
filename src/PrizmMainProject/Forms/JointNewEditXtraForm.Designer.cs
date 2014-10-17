@@ -522,6 +522,10 @@
             this.result.Name = "result";
             this.result.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.result.Properties.Items.AddRange(new object[] {
+            "Accepted",
+            "Repair",
+            "Cutting"});
             this.result.Size = new System.Drawing.Size(167, 20);
             this.result.TabIndex = 6;
             // 
@@ -576,6 +580,15 @@
             this.controlType.Name = "controlType";
             this.controlType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.controlType.Properties.Items.AddRange(new object[] {
+            "Joint cutting",
+            "Joint welding",
+            "Joint repair",
+            "Welding control",
+            "Radiography ",
+            "Ultrasound ",
+            "Joint isolation",
+            "Control of adhesion "});
             this.controlType.Size = new System.Drawing.Size(168, 20);
             this.controlType.TabIndex = 0;
             // 
