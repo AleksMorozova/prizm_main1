@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.items = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.English = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Russian = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManager1 = new DevExpress.XtraBars.BarManager();
             this.Tools = new DevExpress.XtraBars.Bar();
             this.addItem = new DevExpress.XtraBars.BarButtonItem();
             this.removeItem = new DevExpress.XtraBars.BarButtonItem();
@@ -67,14 +66,14 @@
             // 
             // English
             // 
-            this.English.Caption = "language1GridColumn";
+            this.English.Caption = "English";
             this.English.Name = "English";
             this.English.Visible = true;
             this.English.VisibleIndex = 0;
             // 
             // Russian
             // 
-            this.Russian.Caption = "language2GridColumn";
+            this.Russian.Caption = "Russian";
             this.Russian.Name = "Russian";
             this.Russian.Visible = true;
             this.Russian.VisibleIndex = 1;

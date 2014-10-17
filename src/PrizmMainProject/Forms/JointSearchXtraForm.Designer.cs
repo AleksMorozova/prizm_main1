@@ -212,6 +212,7 @@
             // jointNumberGridColumn
             // 
             this.jointNumberGridColumn.Caption = "№";
+            this.jointNumberGridColumn.FieldName = "Id";
             this.jointNumberGridColumn.Name = "jointNumberGridColumn";
             this.jointNumberGridColumn.Visible = true;
             this.jointNumberGridColumn.VisibleIndex = 0;
@@ -219,6 +220,7 @@
             // joinStatusGridColumn
             // 
             this.joinStatusGridColumn.Caption = "Status";
+            this.joinStatusGridColumn.FieldName = "Status";
             this.joinStatusGridColumn.Name = "joinStatusGridColumn";
             this.joinStatusGridColumn.Visible = true;
             this.joinStatusGridColumn.VisibleIndex = 1;
@@ -226,6 +228,7 @@
             // weldingDateGridColumn
             // 
             this.weldingDateGridColumn.Caption = "Welding Date";
+            this.weldingDateGridColumn.FieldName = "WeldingDate";
             this.weldingDateGridColumn.Name = "weldingDateGridColumn";
             this.weldingDateGridColumn.Visible = true;
             this.weldingDateGridColumn.VisibleIndex = 3;
@@ -233,6 +236,7 @@
             // repairGridColumn
             // 
             this.repairGridColumn.Caption = "Repair";
+            this.repairGridColumn.FieldName = "Repair";
             this.repairGridColumn.Name = "repairGridColumn";
             this.repairGridColumn.Visible = true;
             this.repairGridColumn.VisibleIndex = 4;
@@ -240,6 +244,7 @@
             // controlStateGridColumn
             // 
             this.controlStateGridColumn.Caption = "Control State";
+            this.controlStateGridColumn.FieldName = "State";
             this.controlStateGridColumn.Name = "controlStateGridColumn";
             this.controlStateGridColumn.Visible = true;
             this.controlStateGridColumn.VisibleIndex = 2;
@@ -247,6 +252,7 @@
             // controlDateGridColumn
             // 
             this.controlDateGridColumn.Caption = "Control Date";
+            this.controlDateGridColumn.FieldName = "ControlDate";
             this.controlDateGridColumn.Name = "controlDateGridColumn";
             this.controlDateGridColumn.Visible = true;
             this.controlDateGridColumn.VisibleIndex = 5;

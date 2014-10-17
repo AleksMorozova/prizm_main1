@@ -13,9 +13,9 @@ namespace PrizmMain.DummyData
         {
             return new BindingList<Joint>
             {
-                new Joint{Id=234,Status="Control",ControlState="Accepted",WeldingDate = DateTime.Today,ControlDate= DateTime.Today },
-                new Joint{Id=231,Status="Repair",ControlState="Accepted", WeldingDate = DateTime.Today,ControlDate= DateTime.Today },
-                new Joint{Id=245,Status="Repair",ControlState="Accepted", WeldingDate = DateTime.Today,ControlDate= DateTime.Today }   
+                new Joint{Id=234,Status="Control",ControlState="Accepted",WeldingDate = DateTime.Today,ControlDate= DateTime.Today,Repair = "Test" },
+                new Joint{Id=231,Status="Repair",ControlState="Accepted", WeldingDate = DateTime.Today,ControlDate= DateTime.Today,Repair = "Test" },
+                new Joint{Id=245,Status="Repair",ControlState="Accepted", WeldingDate = DateTime.Today,ControlDate= DateTime.Today,Repair = "Test" }   
             };
         }
     }

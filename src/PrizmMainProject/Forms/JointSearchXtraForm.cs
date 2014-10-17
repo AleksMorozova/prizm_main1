@@ -18,7 +18,6 @@ namespace PrizmMain.Forms
         {
             InitializeComponent();
             gridControlSerchResult.DataSource= JointsDummy.GetAllJoints();
-            resultView.PopulateColumns();
         }
     }
 }
