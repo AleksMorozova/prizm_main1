@@ -120,7 +120,7 @@
             this.Controls.Add(this.previewReportDocument);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InspectionReportsXtraForm";
-            this.Text = "Inspection reports";
+            this.Text = "InspectionsReportXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.toDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromDate.Properties.CalendarTimeProperties)).EndInit();

@@ -19,14 +19,8 @@ namespace PrizmMain.Forms
 
             #region Role Setting
             // User & Role dummy data init
-            var ds = new PrizmMain.DummyData.UsersDummy();
-            var data = ds.GetDummyUsers();
-
-            users.DataSource = data;
-
-
+            
             #endregion
-
 
         }
 

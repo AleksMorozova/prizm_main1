@@ -282,7 +282,7 @@
             this.Controls.Add(this.railcarNumberLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RailcarSearchXtraForm";
-            this.Text = "Find railcars";
+            this.Text = "RailcarSearchXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.railcarList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.railcarListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();

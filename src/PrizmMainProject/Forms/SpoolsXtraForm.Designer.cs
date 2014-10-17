@@ -142,7 +142,7 @@
             this.Controls.Add(this.pipeNumberLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SpoolsXtraForm";
-            this.Text = "Spools";
+            this.Text = "ConstructionSpoolsXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spoolLength.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeLength.Properties)).EndInit();

@@ -202,7 +202,7 @@
             this.Controls.Add(this.heatNumberLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MillReportsXtraForm";
-            this.Text = "Mill reports";
+            this.Text = "MillReportsXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.date.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).EndInit();

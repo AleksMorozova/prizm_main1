@@ -15,7 +15,7 @@ namespace PrizmMain.Forms
     {
         private HashSet<Form> childForms = new HashSet<Form>();
 
-        private static uint FramesCanOpen = 20;
+        private static uint FramesCanOpen = 1;
  
         public PrizmApplicationXtraForm()
         {
@@ -33,11 +33,6 @@ namespace PrizmMain.Forms
                 frmChild.WindowState = FormWindowState.Normal;
                 frmChild.WindowState = FormWindowState.Maximized;
                 FramesCanOpen--;
-            }
-            else
-            {
-                // TODO
-                MessageBox.Show("No more could be opened. Close some documents.");
             }
         }
 

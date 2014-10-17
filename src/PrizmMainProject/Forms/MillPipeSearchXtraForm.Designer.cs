@@ -324,7 +324,7 @@
             this.pegNumber.Size = new System.Drawing.Size(115, 20);
             this.pegNumber.TabIndex = 50;
             // 
-            // MillPipeSearchXtraForm
+            // PipeSearchXtraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,8 +349,8 @@
             this.Controls.Add(this.pipeNumberLabel);
             this.Controls.Add(this.pipesSearchReselt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MillPipeSearchXtraForm";
-            this.Text = "Mill - Find pipes";
+            this.Name = "PipeSearchXtraForm";
+            this.Text = "PipeSearchXtraForm";
             ((System.ComponentModel.ISupportInitialize)(this.internalCoatingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.internalCoatingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sizeGrade.Properties)).EndInit();
