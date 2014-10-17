@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using PrizmMain.DummyData; //remove
 
 namespace PrizmMain.Forms
 {
@@ -16,6 +17,8 @@ namespace PrizmMain.Forms
         public JointSearchXtraForm()
         {
             InitializeComponent();
+            gridControlSerchResult.DataSource= JointsDummy.GetAllJoints();
+            resultView.PopulateColumns();
         }
     }
 }

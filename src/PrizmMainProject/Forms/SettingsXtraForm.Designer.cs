@@ -190,7 +190,7 @@
             this.settings.Location = new System.Drawing.Point(0, 0);
             this.settings.Name = "settings";
             this.settings.SelectedTabPage = this.pipePage;
-            this.settings.Size = new System.Drawing.Size(725, 425);
+            this.settings.Size = new System.Drawing.Size(940, 450);
             this.settings.TabIndex = 0;
             this.settings.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.projectPage,
@@ -1081,18 +1081,18 @@
             // 
             this.dictionariesPage.Controls.Add(this.dictionaries);
             this.dictionariesPage.Name = "dictionariesPage";
-            this.dictionariesPage.Size = new System.Drawing.Size(719, 397);
+            this.dictionariesPage.Size = new System.Drawing.Size(934, 422);
             this.dictionariesPage.Text = "&Dictionaries";
             // 
             // dictionaries
             // 
             this.dictionaries.Cursor = System.Windows.Forms.Cursors.Default;
-            this.dictionaries.Location = new System.Drawing.Point(11, 18);
+            this.dictionaries.Location = new System.Drawing.Point(20, 20);
             this.dictionaries.MainView = this.dictionaryView;
             this.dictionaries.Name = "dictionaries";
             this.dictionaries.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.editItem});
-            this.dictionaries.Size = new System.Drawing.Size(347, 346);
+            this.dictionaries.Size = new System.Drawing.Size(594, 383);
             this.dictionaries.TabIndex = 0;
             this.dictionaries.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dictionaryView});
@@ -1111,15 +1111,16 @@
             this.dictionaryNameGridColumn.Name = "dictionaryNameGridColumn";
             this.dictionaryNameGridColumn.Visible = true;
             this.dictionaryNameGridColumn.VisibleIndex = 0;
+            this.dictionaryNameGridColumn.Width = 243;
             // 
             // editDictionary
             // 
-            this.editDictionary.Caption = "Edit";
+            this.editDictionary.Caption = "Extra";
             this.editDictionary.ColumnEdit = this.editItem;
             this.editDictionary.Name = "editDictionary";
             this.editDictionary.Visible = true;
             this.editDictionary.VisibleIndex = 1;
-            this.editDictionary.Width = 117;
+            this.editDictionary.Width = 86;
             // 
             // editItem
             // 
@@ -1127,6 +1128,7 @@
             this.editItem.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
             this.editItem.Name = "editItem";
+            this.editItem.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.editItem.Click += new System.EventHandler(this.editItem_Click);
             // 
             // bandedGridColumn1
@@ -1137,7 +1139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 425);
+            this.ClientSize = new System.Drawing.Size(940, 450);
             this.ControlBox = false;
             this.Controls.Add(this.settings);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

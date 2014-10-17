@@ -29,6 +29,12 @@ namespace PrizmMain.Forms
 
             #endregion
 
+            #region Dictionary Grid
+            BindingList<string> dictionaryList = new BindingList<string>() { "Coating", "Test" };
+            this.dictionaries.DataSource = dictionaryList;
+            dictionaryView.PopulateColumns();
+            #endregion
+
         }
 
         #region Role Setting
@@ -62,12 +68,14 @@ namespace PrizmMain.Forms
         }
         #endregion
 
+        #region Dicionary Setting
         private void editItem_Click(object sender, EventArgs e)
         {
             //TODO: change for normal logic
             var editDictionary = new SettingsEditDictionaryXtraForm();
             editDictionary.ShowDialog();
         }
-        
+        #endregion
+
     }
 }
