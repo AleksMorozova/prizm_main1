@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PrizmMain.DummyData
-{
-    class UsersDummy
-    {
-    }
-}
-=======
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,6 +41,12 @@ namespace PrizmMain.DummyData
         };
             return users;
         }
+
+        public User GetUser(int id) 
+        {
+            var users = GetDummyUsers();
+            return users[id];
+        }
     }
 
     public class User
@@ -68,4 +60,3 @@ namespace PrizmMain.DummyData
         public Role Role { get; set; }
     }
 }
->>>>>>> master

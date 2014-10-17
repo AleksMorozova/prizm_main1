@@ -88,6 +88,7 @@
             // 
             this.password.Location = new System.Drawing.Point(12, 177);
             this.password.Name = "password";
+            this.password.Properties.UseSystemPasswordChar = true;
             this.password.Size = new System.Drawing.Size(156, 20);
             this.password.TabIndex = 5;
             // 
@@ -95,6 +96,7 @@
             // 
             this.confirmPassword.Location = new System.Drawing.Point(174, 177);
             this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.Properties.UseSystemPasswordChar = true;
             this.confirmPassword.Size = new System.Drawing.Size(156, 20);
             this.confirmPassword.TabIndex = 6;
             // 
@@ -113,6 +115,7 @@
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 9;
             this.closeButton.Text = "&Close";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // userRoleLabel
             // 
@@ -169,11 +172,11 @@
             // 
             // userRoleComboBox
             // 
-            this.userRoleComboBox.Enabled = false;
             this.userRoleComboBox.Location = new System.Drawing.Point(13, 218);
             this.userRoleComboBox.Name = "userRoleComboBox";
             this.userRoleComboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.userRoleComboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.userRoleComboBox.Size = new System.Drawing.Size(318, 20);
             this.userRoleComboBox.TabIndex = 10;
             // 
