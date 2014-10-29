@@ -20,9 +20,9 @@ namespace PrizmMain.DummyData
         {
             return new BindingList<Item>()
             {
-                new Item {English = "Rejected", Russian = "Забракован"} ,
-                new Item {English = "Accepted", Russian = "Принят"}  ,
-                new Item {English = "Hold", Russian = "Задержан"} 
+                new Item {enEn = "Rejected", ruRu = "Забракован"} ,
+                new Item {enEn = "Accepted", ruRu = "Принят"}  ,
+                new Item {enEn = "Hold", ruRu = "Задержан"} 
             };
         }
     }
@@ -33,7 +33,7 @@ namespace PrizmMain.DummyData
 
         public class Item
         {
-            public string English { get; set; }
-            public string Russian { get; set; }
+            public string enEn { get; set; }
+            public string ruRu { get; set; }
         }
 }

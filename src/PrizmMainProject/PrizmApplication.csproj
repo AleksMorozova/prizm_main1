@@ -288,6 +288,9 @@
     <EmbeddedResource Include="Forms\CustomReportsXtraForm.resx">
       <DependentUpon>CustomReportsXtraForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExternalFilesXtraForm.resx">
+      <DependentUpon>ExternalFilesXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\InspectionPipeSearchEditXtraForm.resx">
       <DependentUpon>InspectionPipeSearchEditXtraForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JointSearchXtraForm.resx">
       <DependentUpon>JointSearchXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginXtraForm.resx">
+      <DependentUpon>LoginXtraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MillReportsXtraForm.resx">
       <DependentUpon>MillReportsXtraForm.cs</DependentUpon>

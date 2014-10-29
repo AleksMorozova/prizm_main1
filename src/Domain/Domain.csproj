@@ -42,6 +42,7 @@
     <Compile Include="DAL\IRepository.cs" />
     <Compile Include="DAL\IRoleRepository.cs" />
     <Compile Include="DAL\IUserRepository.cs" />
+    <Compile Include="Entity\File.cs" />
     <Compile Include="Entity\Inspection.cs" />
     <Compile Include="Entity\Pipe.cs" />
     <Compile Include="Entity\Joint\ConstructionWelding.cs" />
