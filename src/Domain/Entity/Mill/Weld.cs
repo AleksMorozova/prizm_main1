@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Domain.Entity.Mill
 {
-    public class Weld
+    public class Weld : Entity
     {
-        public virtual Guid Id { get; set; }
         public virtual DateTime Date { get; set; }
-        ICollection<Welder> Welders { get; set; }
+        public virtual ICollection<Welder> Welders { get; set; }
 
-        public Weld()
+        protected Weld()
         {
             this.Welders = new List<Welder>();
         }

@@ -5,14 +5,14 @@ namespace Domain.Entity.Setup
 {
     public class Role
     {
-        public Role()
+        protected Role()
         {
             this.Users = new List<User>();
         }
 
-        public int RoleID { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public virtual int RoleID { get; set; }
+        public virtual string Name { get; set; }
+        public virtual string Description { get; set; }
 
         public virtual ICollection<User> Users { get; set; }
     }

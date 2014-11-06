@@ -8,7 +8,6 @@ namespace Domain.Entity
 {
     public class Connector
     {
-        public int ConnectorID { get; set; }
         public int Diameter { get; set; }
         public int WallThickness { get; set; }
     }

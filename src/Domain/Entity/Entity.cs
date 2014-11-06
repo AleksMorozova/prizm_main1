@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Domain.Entity
 {
-    public class Welding
+    public class Entity
     {
-        public Guid WeldingID { get; set; }
-        public DateTime Date { get; set; }
-        public Welder Welder { get; set; }
+        public Guid Id { get; protected set; }
+
+        public bool IsActive { get; set; }
     }
 }

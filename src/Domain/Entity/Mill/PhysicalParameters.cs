@@ -8,7 +8,6 @@ namespace Domain.Entity.Mill
 {
     public class PhysicalParameters
     {
-        public virtual int Id { get; set; }
         public virtual string Number { get; set; }
     }
 }

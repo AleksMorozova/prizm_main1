@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Entity.Joint
 {
-    public class ConstructionWelding : Welding
+    public class ConstructionWelding// : Welding
     {
 
     }

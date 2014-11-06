@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Domain.Entity.Joint
 {
-    public class JointInspection : Inspection
+    public class JointInspection //: Inspection
     {
 
     }

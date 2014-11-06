@@ -8,17 +8,15 @@ namespace Domain.Entity.Setup
 {
     public class User
     {
-        public User()
+        protected User()
         {
             this.Roles = new List<Role>();
         }
       
-        public int UserID { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public string LastName { get; set; }
-        public string FirstName { get; set; }
-        public string MiddleName { get; set; }
+        public virtual int UserID { get; set; }
+        public virtual string Login { get; set; }
+        public virtual string Password { get; set; }
+        public virtual PersonName Name { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
     }

@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Domain.Entity.Mill
 {
-    public class PlateManufacturer
+    public class PlateManufacturer : Entity
     {
-        public virtual int Id { get; set; }
         public virtual string Name { get; set; }
+        public virtual ICollection<Heat> Heats { get; set; }
+
+        protected PlateManufacturer() 
+        {
+            this.Heats = new List<Heat>();
+        }
+     
     }
 }
