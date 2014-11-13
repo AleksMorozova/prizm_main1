@@ -6,14 +6,7 @@ namespace Domain.Entity
 {
     public class Inspector : Item
     {
-        public Inspector(PersonName name, string certificate, DateTime certificateExp) : this()
-        {
-            this.Name = name;
-            this.Certificate = certificate;
-            this.CertificateExpiration = certificateExp;
-        }
-
-        protected Inspector()
+        public Inspector()
         {
             this.Results = new List<PipeTestResult>();
         }

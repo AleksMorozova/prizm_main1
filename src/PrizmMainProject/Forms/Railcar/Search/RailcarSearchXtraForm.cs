@@ -36,7 +36,6 @@ namespace PrizmMain.Forms.Railcar.Search
             certificateNumber.DataBindings.Add("EditValue", bindingSource, "Certificate");
             destination.DataBindings.Add("EditValue", bindingSource, "Receiver");
             shippedDate.DataBindings.Add("EditValue", bindingSource, "ShippingDate");
-            //railcarList.DataSource = viewModel.Railcars;
             railcarList.DataBindings.Add("DataSource", bindingSource, "Railcars");
         }
 

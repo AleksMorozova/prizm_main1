@@ -5,13 +5,7 @@ namespace Domain.Entity.Mill
 {
     public class Weld : Item
     {
-        public Weld(DateTime date, ICollection<Welder> welders)
-        {
-            this.Date = date;
-            this.Welders = welders;
-        }
-
-        protected Weld()
+        public Weld()
         {
             this.Welders = new List<Welder>();
         }

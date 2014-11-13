@@ -4,7 +4,7 @@ namespace Domain.Entity.Setup
 {
     public class Role
     {
-        protected Role()
+        public Role()
         {
             this.Users = new List<User>();
         }

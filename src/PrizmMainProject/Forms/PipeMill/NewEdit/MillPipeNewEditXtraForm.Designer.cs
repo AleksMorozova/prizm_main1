@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode weldersGridLevelNode = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             this.weldersListGridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.firstNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lastNameGridColumn = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -314,10 +314,10 @@
             // weldingHistory
             // 
             this.weldingHistory.Cursor = System.Windows.Forms.Cursors.Default;
-            weldersGridLevelNode.LevelTemplate = this.weldersListGridView;
-            weldersGridLevelNode.RelationName = "welders";
+            gridLevelNode1.LevelTemplate = this.weldersListGridView;
+            gridLevelNode1.RelationName = "welders";
             this.weldingHistory.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            weldersGridLevelNode});
+            gridLevelNode1});
             this.weldingHistory.Location = new System.Drawing.Point(193, 95);
             this.weldingHistory.MainView = this.weldingHistoryGridView;
             this.weldingHistory.Name = "weldingHistory";
@@ -1002,6 +1002,7 @@
             this.editHeatButton.StyleController = this.tabPagesLayout;
             this.editHeatButton.TabIndex = 29;
             this.editHeatButton.Text = "Редактировать";
+            this.editHeatButton.Click += new System.EventHandler(this.editHeatButton_Click);
             // 
             // plateChemicalComposition
             // 

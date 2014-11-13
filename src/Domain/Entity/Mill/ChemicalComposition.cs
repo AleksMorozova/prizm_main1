@@ -2,7 +2,7 @@
 {
     public class ChemicalComposition : Item
     {
-        protected ChemicalComposition()
+        public ChemicalComposition()
         {
         }
     }

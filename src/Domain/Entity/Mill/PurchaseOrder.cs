@@ -5,13 +5,7 @@ namespace Domain.Entity.Mill
 {
     public class PurchaseOrder : Item
     {
-        public PurchaseOrder(string number, DateTime date) : this()
-        {
-            this.Number = number;
-            this.Date = date;
-        }
-
-        protected PurchaseOrder()
+        public PurchaseOrder()
         {
             this.Pipes = new List<Pipe>();
         }

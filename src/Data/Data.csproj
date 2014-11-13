@@ -33,7 +33,11 @@
     <Reference Include="FluentNHibernate">
       <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate">
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NHibernate.3.3.4.4000\lib\Net35\NHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
@@ -49,16 +53,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\Hibernate\AbstractHibernateRepository.cs" />
+    <Compile Include="DAL\Hibernate\HeatRepository.cs" />
     <Compile Include="DAL\Hibernate\HibernateUtil.cs" />
     <Compile Include="DAL\Hibernate\PipeRepository.cs" />
+    <Compile Include="DAL\Hibernate\PlateManufacturerRepository.cs" />
     <Compile Include="DAL\Hibernate\RailcarRepository.cs" />
     <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Mapping\ChemicalCompositionMap.cs" />
+    <Compile Include="DAL\Mapping\HeatMap.cs" />
     <Compile Include="DAL\Mapping\ItemMap.cs" />
+    <Compile Include="DAL\Mapping\PhysicalParametersMap.cs" />
     <Compile Include="DAL\Mapping\PipelinePieceMap.cs" />
     <Compile Include="DAL\Mapping\PipeMap.cs" />
+    <Compile Include="DAL\Mapping\PlateManufacturerMap.cs" />
     <Compile Include="DAL\Mapping\PurchaseOrderMap.cs" />
     <Compile Include="DAL\Mapping\RailcarMap.cs" />
+    <Compile Include="DAL\Mill\IHeatRepository.cs" />
     <Compile Include="DAL\Mill\IPipeRepository.cs" />
+    <Compile Include="DAL\Mill\IPlateManufacturerRepository.cs" />
     <Compile Include="DAL\Mill\IRailcarRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,7 +80,9 @@
       <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

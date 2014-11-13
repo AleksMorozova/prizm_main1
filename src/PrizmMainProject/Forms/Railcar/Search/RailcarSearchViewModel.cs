@@ -25,7 +25,7 @@ namespace PrizmMain.Forms.Railcar.Search
             railcars = new List<Domain.Entity.Mill.Railcar>();
             this.repo = repo;
             searchCommand = ViewModelSource.Create(() => new SearchRailcarCommand(this, repo));
-            GetAllRailcars();
+            searchCommand.Execute();
         }
 
         public List<Domain.Entity.Mill.Railcar> Railcars {
@@ -97,11 +97,6 @@ namespace PrizmMain.Forms.Railcar.Search
             }
         }
         #endregion
-        private void GetAllRailcars()
-        {
-            railcars = repo.GetAll().ToList();
-        }
-
         public ICommand SearchCommand
         {
             get { return searchCommand; }
@@ -109,7 +104,7 @@ namespace PrizmMain.Forms.Railcar.Search
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            repo.Dispose();
         }
     }
 }

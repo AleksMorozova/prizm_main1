@@ -2,7 +2,7 @@
 {
     public class PhysicalParameters : Item
     {
-        protected PhysicalParameters()
+        public PhysicalParameters()
         {
         }
     }

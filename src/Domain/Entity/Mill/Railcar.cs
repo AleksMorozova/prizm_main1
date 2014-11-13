@@ -9,5 +9,7 @@ namespace Domain.Entity.Mill
         public virtual string Destination { get; set; }
         public virtual DateTime ShippingDate { get; set; }
         public virtual DateTime DeliveryDate { get; set; }
+
+        //TODO: back reference to pipes
     }
 }

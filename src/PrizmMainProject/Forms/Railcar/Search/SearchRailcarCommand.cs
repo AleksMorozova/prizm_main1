@@ -45,10 +45,11 @@ namespace PrizmMain.Forms.Railcar.Search
             {
                 criteria.Add(Restrictions.Like("Destination", viewModel.Receiver, MatchMode.Anywhere));
             }  
+            //TODO: Add date criteria
 
-            var res = repo.GetByCriteria(criteria).ToList();
+            //var res = 
 
-            viewModel.Railcars = res;
+            viewModel.Railcars = repo.GetByCriteria(criteria).ToList();
         }
 
         public bool CanExecute()

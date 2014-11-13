@@ -6,16 +6,7 @@ namespace Domain.Entity
 {
     public class Welder : Item
     {
-        public Welder(PersonName name, string certificate, DateTime certifExp, string stamp, int grade) : this()
-        {
-            this.Name = name;
-            this.Certificate = certificate;
-            this.CertificateExpitation = certifExp;
-            this.Stamp = stamp;
-            this.Grade = grade;
-        }
-
-        protected Welder()
+        public Welder()
         {
             this.Welds = new List<Weld>();
         }
