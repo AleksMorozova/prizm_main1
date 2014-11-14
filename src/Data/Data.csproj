@@ -53,9 +53,11 @@
     <Compile Include="DAL\Hibernate\PipeRepository.cs" />
     <Compile Include="DAL\Hibernate\RailcarRepository.cs" />
     <Compile Include="DAL\IRepository.cs" />
+    <Compile Include="DAL\Mapping\HeatMap.cs" />
     <Compile Include="DAL\Mapping\ItemMap.cs" />
     <Compile Include="DAL\Mapping\PipelinePieceMap.cs" />
     <Compile Include="DAL\Mapping\PipeMap.cs" />
+    <Compile Include="DAL\Mapping\PlateMap.cs" />
     <Compile Include="DAL\Mapping\PurchaseOrderMap.cs" />
     <Compile Include="DAL\Mapping\RailcarMap.cs" />
     <Compile Include="DAL\Mill\IPipeRepository.cs" />

@@ -59,7 +59,7 @@ SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[ChemicalComposition](
 	[id] [uniqueidentifier] NOT NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_chemicalComposition] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -72,12 +72,12 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Heat](
 	[id] [uniqueidentifier] NOT NULL,
-	[number] [varchar](20) NOT NULL,
-	[steelGrade] [varchar](20) NULL,
-	[manufacturerId] [uniqueidentifier] NOT NULL,
-	[chemicalCompositionId] [uniqueidentifier] NOT NULL,
+	[number] [nvarchar](20) NULL,
+	[steelGrade] [nvarchar](20) NULL,
+	[manufacturerId] [uniqueidentifier] NULL,
+	[chemicalCompositionId] [uniqueidentifier] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_heat] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -91,13 +91,13 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Inspector](
 	[id] [uniqueidentifier] NOT NULL,
-	[firstName] [varchar](20) NOT NULL,
-	[lastName] [varchar](20) NOT NULL,
-	[middleName] [varchar](20) NULL,
-	[certificate] [varchar](20) NOT NULL,
+	[firstName] [nvarchar](20) NULL,
+	[lastName] [nvarchar](20) NULL,
+	[middleName] [nvarchar](20) NULL,
+	[certificate] [nvarchar](20) NULL,
 	[certificateExpiration] [date] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_Inspector] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -111,23 +111,23 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Pipe](
 	[id] [uniqueidentifier] NOT NULL,
-	[wallThickness] [int] NOT NULL,
-	[diameter] [int] NOT NULL,
-	[weight] [int] NOT NULL,
-	[mill] [varchar](250) NOT NULL,
-	[pipeMillStatus] [varchar](20) NULL,
-	[typeId] [uniqueidentifier] NOT NULL,
-	[plateId] [uniqueidentifier] NOT NULL,
-	[purchaseOrderId] [uniqueidentifier] NOT NULL,
+	[wallThickness] [int] NULL,
+	[diameter] [int] NULL,
+	[weight] [int] NULL,
+	[mill] [nvarchar](250) NULL,
+	[pipeMillStatus] [nvarchar](20) NULL,
+	[typeId] [uniqueidentifier] NULL,
+	[plateId] [uniqueidentifier] NULL,
+	[purchaseOrderId] [uniqueidentifier] NULL,
 	[railcarId] [uniqueidentifier] NULL,
 
 	[chemicalCompositionId] [uniqueidentifier] NULL,
 
-	[length] [int] NOT NULL,
-	[number] [varchar](20) NOT NULL,
-	[isActive] [bit] NOT NULL,
-	[inspectionStatus] [varchar](15) NULL,
-	[constructionStatus] [varchar](15) NULL,
+	[length] [int] NULL,
+	[number] [nvarchar](20) NULL,
+	[isActive] [bit] NULL,
+	[inspectionStatus] [nvarchar](15) NULL,
+	[constructionStatus] [nvarchar](15) NULL,
  CONSTRAINT [PK_Pipe] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -142,9 +142,9 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[PipeMillSizeType](
 	[id] [uniqueidentifier] NOT NULL,
-	[type] [varchar](50) NOT NULL,
+	[type] [nvarchar](50) NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_PipeMillSizeType] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -158,18 +158,18 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[PipeTest](
 	[id] [uniqueidentifier] NOT NULL,
-	[code] [varchar](20) NOT NULL,
-	[name] [varchar](20) NOT NULL,
-	[testSubject] [varchar](50) NULL,
+	[code] [nvarchar](20) NULL,
+	[name] [nvarchar](20) NULL,
+	[testSubject] [nvarchar](50) NULL,
 	[controlType] [nchar](15) NULL,
-	[resultType] [varchar](10) NULL,
+	[resultType] [nvarchar](10) NULL,
 	[minExpected] [decimal](5, 2) NULL,
 	[maxExpected] [decimal](5, 2) NULL,
 	[boolExpected] [bit] NULL,
 	[isRequired] [bit] NULL,
-	[pipeMillSizeTypeId] [uniqueidentifier] NOT NULL,
+	[pipeMillSizeTypeId] [uniqueidentifier] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_PipeTest] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -182,11 +182,11 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[PipeTestResult](
 	[id] [uniqueidentifier] NOT NULL,
-	[testResultId] [uniqueidentifier] NOT NULL,
-	[pipeId] [uniqueidentifier] NOT NULL,
-	[pipeTestId] [uniqueidentifier] NOT NULL,
+	[testResultId] [uniqueidentifier] NULL,
+	[pipeId] [uniqueidentifier] NULL,
+	[pipeTestId] [uniqueidentifier] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_PipeTestResult] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -199,12 +199,12 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Plate](
 	[id] [uniqueidentifier] NOT NULL,
-	[number] [varchar](20) NOT NULL,
-	[thickness] [int] NOT NULL,
+	[number] [nvarchar](20) NULL,
+	[thickness] [int] NULL,
 	[chemicalCompositionId] [uniqueidentifier] NULL,
-	[heatId] [uniqueidentifier] NOT NULL,
+	[heatId] [uniqueidentifier] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_Plate] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -217,11 +217,11 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[PurchaseOrder](
-	[id] [uniqueidentifier]NOT NULL,
-	[number] [varchar](20) NOT NULL,
+	[id] [uniqueidentifier] NOT NULL,
+	[number] [nvarchar](20) NULL,
 	[date] [date] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_PurchaseOrder] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -234,12 +234,12 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Railcar](
 	[id] [uniqueidentifier] NOT NULL,
-	[number] [varchar](20) NOT NULL,
-	[certificate] [varchar](20) NOT NULL,
-	[destination] [varchar](50) NULL,
+	[number] [nvarchar](20) NULL,
+	[certificate] [nvarchar](20) NULL,
+	[destination] [nvarchar](50) NULL,
 	[shippingDate] [date] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_Railcar] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -253,11 +253,11 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[TestResult](
 	[id] [uniqueidentifier] NOT NULL,
-	[date] [date] NOT NULL,
-	[value] [varchar](25) NOT NULL,
-	[status] [varchar](25) NULL,
+	[date] [date] NULL,
+	[value] [nvarchar](25) NULL,
+	[status] [nvarchar](25) NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_TestResult] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -270,8 +270,8 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[TestResult_Inspector](
 	[id] [uniqueidentifier] NOT NULL,
-	[inspectorId] [uniqueidentifier] NOT NULL,
-	[resultId] [uniqueidentifier] NOT NULL,
+	[inspectorId] [uniqueidentifier] NULL,
+	[resultId] [uniqueidentifier] NULL,
  CONSTRAINT [PK_TestResult_Inspector] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -283,9 +283,9 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[Weld](
 	[id] [uniqueidentifier] NOT NULL,
-	[date] [date] NOT NULL,
+	[date] [date] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
 CONSTRAINT [PK_weld] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -297,9 +297,9 @@ SET ANSI_NULLS ON
 SET QUOTED_IDENTIFIER ON
 CREATE TABLE [dbo].[Weld_Welder](
 	[id] [uniqueidentifier] NOT NULL,
-	[weldId] [uniqueidentifier] NOT NULL,
-	[welderId] [uniqueidentifier] NOT NULL,
-	[pipeId] [uniqueidentifier] NOT NULL,
+	[weldId] [uniqueidentifier] NULL,
+	[welderId] [uniqueidentifier] NULL,
+	[pipeId] [uniqueidentifier] NULL,
  CONSTRAINT [PK_Weld_Welder] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC
@@ -312,15 +312,15 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Welder](
 	[id] [uniqueidentifier] NOT NULL,
-	[firstName] [varchar](20) NOT NULL,
-	[lastName] [varchar](20) NOT NULL,
-	[middleName] [varchar](20) NULL,
-	[certificate] [varchar](20) NOT NULL,
+	[firstName] [nvarchar](20) NULL,
+	[lastName] [nvarchar](20) NULL,
+	[middleName] [nvarchar](20) NULL,
+	[certificate] [nvarchar](20) NULL,
 	[certificateExpiration] [date] NULL,
-	[stamp] [varchar](10) NULL,
+	[stamp] [nvarchar](10) NULL,
 	[grade] [int] NULL,
 
-	[isActive] [bit] NOT NULL,
+	[isActive] [bit] NULL,
  CONSTRAINT [PK_welder] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

@@ -67,6 +67,7 @@ namespace PrizmMain.Forms.PipeMill.Search
             }
         }
 
+
         public int PipeSize
         {
             get
@@ -82,6 +83,9 @@ namespace PrizmMain.Forms.PipeMill.Search
                 }
             }
         }
+
+
+
 
         public ICommand SearchCommand
         {

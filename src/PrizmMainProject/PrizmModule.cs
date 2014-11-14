@@ -29,6 +29,7 @@ namespace PrizmMain
             Bind<IRailcarRepository>().To<RailcarRepository>();
 
             Bind<MillPipeSearchViewModel>().ToSelf();
+            Bind<MillPipeNewEditViewModel>().ToSelf();
             Bind<IPipeRepository>().To<PipeRepository>();
 
             Bind<ISession>().ToMethod(_ => HibernateUtil.OpenSession());

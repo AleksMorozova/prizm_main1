@@ -15,7 +15,6 @@ namespace Data.DAL.Hibernate
         public static void Initialize(string connectionString)
         {
             
-
             sessionFactory = Fluently.Configure()
                 .Database(MsSqlConfiguration.MsSql2012.ConnectionString(connectionString)
                 

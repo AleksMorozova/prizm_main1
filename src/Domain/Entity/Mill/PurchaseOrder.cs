@@ -19,6 +19,6 @@ namespace Domain.Entity.Mill
         public virtual string Number { get; set; }
         public virtual DateTime Date { get; set; }
 
-        public virtual ICollection<Pipe> Pipes { get; set; }
+        public virtual IList<Pipe> Pipes { get; set; }
     }
 }

@@ -9,5 +9,6 @@ namespace Data.DAL.Mill
 {
     public interface IPipeRepository : IRepository<Guid, Pipe>
     {
+        Pipe GetByNumber(string number);
     }
 }

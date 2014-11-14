@@ -18,5 +18,10 @@ namespace Data.DAL.Hibernate
         {
 
         }
+
+        public Pipe GetByNumber(string number)
+        {
+            return session.QueryOver<Pipe>().Where(n => n.Number == number).SingleOrDefault();
+        }
     }
 }

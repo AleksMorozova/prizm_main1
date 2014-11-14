@@ -2,8 +2,11 @@
 {
     public class ChemicalComposition : Item
     {
-        protected ChemicalComposition()
+        public ChemicalComposition()
         {
         }
+
+        public virtual string Value { get; set; }
+        public virtual string Quantity { get; set; }
     }
 }

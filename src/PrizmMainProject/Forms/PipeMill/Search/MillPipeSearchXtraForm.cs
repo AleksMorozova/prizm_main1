@@ -1,6 +1,12 @@
 ﻿using System.ComponentModel;
 using DevExpress.XtraEditors;
 using PrizmMain.DummyData;
+using System;
+
+using Ninject.Parameters;
+using Ninject;
+using PrizmMain.Forms.PipeMill.NewEdit;
+using PrizmMain.Forms.MainChildForm;
 
 namespace PrizmMain.Forms.PipeMill.Search
 {
@@ -20,7 +26,6 @@ namespace PrizmMain.Forms.PipeMill.Search
 
             pipeNumber.DataBindings.Add("EditValue", MillPipeSearchBindingSource, "PipeNumber");
 
-            pipeSize.DataBindings.Add("EditValue", MillPipeSearchBindingSource, "PipeSize");
 
         }
 
@@ -37,6 +42,23 @@ namespace PrizmMain.Forms.PipeMill.Search
             BindToViewModel();
         }
 
+        private void pipeRepositoryButtonEdit_Click(object sender, System.EventArgs e)
+        {
+
+            int selectedPipe = pipesSearchResultView
+                .GetFocusedDataSourceRowIndex();
+
+            var edit = (XtraForm)Program
+                .Kernel
+                .Get<MillPipeNewEditXtraForm>(
+                new ConstructorArgument(
+                    "pipeNumber", 
+                    viewModel.Pipes[selectedPipe].Number));
+
+            var parent = this.MdiParent as PrizmApplicationXtraForm;
+            parent.CreateFormChild(edit);
+
+        }
 
 
 
