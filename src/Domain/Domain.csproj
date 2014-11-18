@@ -70,7 +70,7 @@
     <Compile Include="Entity\Mill\Railcar.cs" />
     <Compile Include="Entity\Setup\Role.cs" />
     <Compile Include="Entity\Setup\User.cs" />
-    <Compile Include="Entity\Welder.cs" />
+    <Compile Include="Entity\Setup\Welder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

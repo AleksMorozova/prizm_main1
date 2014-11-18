@@ -172,6 +172,7 @@
     <Compile Include="DummyData\RolesDummy.cs" />
     <Compile Include="DummyData\UsersDummy.cs" />
     <Compile Include="DummyData\WeldersDummy.cs" />
+    <Compile Include="Forms\BindingListExtensions.cs" />
     <Compile Include="Forms\IViewModel.cs" />
     <Compile Include="Forms\MainChildForm\ChildForm.cs">
       <SubType>Form</SubType>
@@ -228,8 +229,11 @@
     </Compile>
     <Compile Include="Forms\Railcar\NewEdit\RailcarViewModel.cs" />
     <Compile Include="Forms\Railcar\NewEdit\SaveRailcarCommand.cs" />
+    <Compile Include="Forms\Settings\ISettingsRepositories.cs" />
     <Compile Include="Forms\Settings\SaveSettingsCommand.cs" />
+    <Compile Include="Forms\Settings\SettingsRepositories.cs" />
     <Compile Include="Forms\Settings\SettingsViewModel.cs" />
+    <Compile Include="Forms\Settings\ViewTypes\WelderViewType.cs" />
     <Compile Include="Forms\Spool\SpoolsXtraForm.cs">
       <SubType>Form</SubType>
     </Compile>
