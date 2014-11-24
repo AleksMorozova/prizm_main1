@@ -2,6 +2,7 @@
 using Moq;
 using NHibernate.Criterion;
 using NUnit.Framework;
+using PrizmMain.Forms;
 using PrizmMain.Forms.Railcar.Search;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace UnitTests.Forms.Railcar.Search
     {
         List<Domain.Entity.Mill.Railcar> railcars;
         Mock<IRailcarRepository> repo;
+        Mock<IUserNotify> notify;
         SearchRailcarCommand command;
         RailcarSearchViewModel viewModel;
 
@@ -31,9 +33,9 @@ namespace UnitTests.Forms.Railcar.Search
             repo = new Mock<IRailcarRepository>();
             repo.Setup(_ => _.GetByCriteria(It.IsAny<NHibernate.Criterion.DetachedCriteria>()))
                 .Returns(railcars);
-
-            viewModel = new RailcarSearchViewModel(repo.Object);
-            command = new SearchRailcarCommand(viewModel, repo.Object);
+            notify = new Mock<IUserNotify>();
+            viewModel = new RailcarSearchViewModel(repo.Object,notify.Object);
+            command = new SearchRailcarCommand(viewModel, repo.Object, notify.Object);
         }
 
         [Test]

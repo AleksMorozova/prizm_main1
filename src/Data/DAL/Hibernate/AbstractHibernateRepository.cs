@@ -88,5 +88,11 @@ namespace Data.DAL.Hibernate
         {
             session.Dispose();
         }
+
+
+        public void Clear()
+        {
+            session.Clear();
+        }
     }
 }

@@ -61,6 +61,60 @@ namespace PrizmMain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Произошла ошибка!.
+        /// </summary>
+        internal static string AlertFailureHeader {
+            get {
+                return ResourceManager.GetString("AlertFailureHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Внимание.
+        /// </summary>
+        internal static string AlertInfoHeader {
+            get {
+                return ResourceManager.GetString("AlertInfoHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Сохранение успешно.
+        /// </summary>
+        internal static string AlertSaveHeader {
+            get {
+                return ResourceManager.GetString("AlertSaveHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Данные вагона сохранены.
+        /// </summary>
+        internal static string AlertSaveRailcar {
+            get {
+                return ResourceManager.GetString("AlertSaveRailcar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Вагон успешно отгружен.
+        /// </summary>
+        internal static string AlertShipRailcar {
+            get {
+                return ResourceManager.GetString("AlertShipRailcar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отгрузка вагона отменена. Дата отгрузки аннулированна. Трубы перемещены на склад..
+        /// </summary>
+        internal static string AlertUnsipRailcar {
+            get {
+                return ResourceManager.GetString("AlertUnsipRailcar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Булевское значение.
         /// </summary>
         internal static string Boolean {

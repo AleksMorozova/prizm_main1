@@ -24,6 +24,7 @@ using PrizmMain.Forms.Settings;
 using PrizmMain.Forms.Spool;
 
 using PrizmMain.Properties;
+using DevExpress.XtraBars.Alerter;
 
 namespace PrizmMain.Forms.MainChildForm
 {
@@ -94,11 +95,7 @@ namespace PrizmMain.Forms.MainChildForm
                 }
                 else if (FramesCanOpen < 1)
                 {
-                    XtraMessageBox.Show(
-                        Resources.IDS_NO_MORE_DOCUMENTS,
-                        Resources.IDS_NO_MORE_DOCUMENTS,
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning);
+                    this.ShowError(Resources.IDS_NO_MORE_DOCUMENTS, Resources.DLG_ERROR_HEADER);
                 }
                 else
                 {
@@ -296,7 +293,8 @@ namespace PrizmMain.Forms.MainChildForm
             CreateChildForm(typeof(InspectionPipeSearchEditXtraForm));
         }
 
-        
+
+        #region IUserNotify
         public void ShowError(string text, string header)
         {
             XtraMessageBox.Show(text, header, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -311,6 +309,48 @@ namespace PrizmMain.Forms.MainChildForm
         {
             XtraMessageBox.Show(text, header, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        public bool ShowYesNo(string text, string header)
+        {
+            return (DialogResult.Yes == XtraMessageBox.Show(text, header, MessageBoxButtons.YesNo, MessageBoxIcon.Question));
+        }
+
+        public int ShowYesNoCancel(string text, string header)
+        {
+            DialogResult dlg = XtraMessageBox.Show(text, header, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            sbyte result;
+            switch (dlg)
+            {
+                case DialogResult.Cancel:
+                    result = -1;
+                    break;
+                case DialogResult.No:
+                    result = 0;
+                    break;
+                case DialogResult.Yes:
+                    result = 1;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(string.Format("Unknown dialog answer - {0}",dlg));
+            }
+            return result;
+        }
+
+        public void ShowSuccess(string text, string header)
+        {
+            AlertInfo ai = new AlertInfo(header,text);
+            //TODO: add image and custom buttons if necessity
+            alertControl.Show(this, ai);
+        }
+
+        public void ShowFailure(string text, string header)
+        {
+            AlertInfo ai = new AlertInfo(header, text);
+            //TODO: add image and custom buttons if necessity
+            alertControl.Show(this, ai);
+        }
+        #endregion
+
 
     }
 }

@@ -39,11 +39,19 @@ namespace PrizmMain.Forms.Railcar.NewEdit
                 {
                     viewModel.Railcar.ShippingDate = null;
                 }
-                repos.BeginTransaction();
-                repos.RailcarRepo.SaveOrUpdate(viewModel.Railcar);
-                repos.Commit();
-                repos.RailcarRepo.Evict(viewModel.Railcar);
-                viewModel.NewRailcar();
+                try
+                {
+                    repos.BeginTransaction();
+                    repos.RailcarRepo.SaveOrUpdate(viewModel.Railcar);
+                    repos.Commit();
+                    repos.RailcarRepo.Evict(viewModel.Railcar);
+                    notify.ShowSuccess(Resources.AlertSaveRailcar, Resources.AlertSaveHeader);
+                }
+                catch (Exception ex)
+                {
+                    notify.ShowFailure(ex.Message, Resources.AlertFailureHeader);
+                    throw ex;
+                }
         }
 
         public bool CanExecute()

@@ -35,20 +35,24 @@ namespace PrizmMain.Forms.Railcar.NewEdit
             }
             else
             {
-                var railcar = viewModel.Railcar;
-                foreach (var pipe in railcar.Pipes)
+                try
                 {
-                    pipe.Status = "Склад";
+                    var railcar = viewModel.Railcar;
+                    foreach (var pipe in railcar.Pipes)
+                    {
+                        pipe.Status = "Склад";
+                    }
+                    railcar.ShippingDate = DateTime.MinValue;
+                    notify.ShowSuccess(Resources.AlertUnsipRailcar, Resources.AlertInfoHeader);
+                    viewModel.SaveCommand.Execute();
                 }
-                railcar.ShippingDate = DateTime.MinValue;
-
-                viewModel.SaveCommand.Execute();
+                catch (Exception ex)
+                {
+                    notify.ShowFailure(ex.Message, Resources.AlertFailureHeader);
+                    throw ex;
+                }
             }
-
-
         }
-
-
         public bool CanExecute()
         {
             return (viewModel.Railcar.ShippingDate != DateTime.MinValue);

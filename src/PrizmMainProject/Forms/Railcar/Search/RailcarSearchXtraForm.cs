@@ -94,5 +94,10 @@ namespace PrizmMain.Forms.Railcar.Search
         {
             MessageBox.Show("Unship");
         }
+
+        private void RailcarSearchXtraForm_Activated(object sender, EventArgs e)
+        {
+            viewModel.SearchCommand.Execute();
+        }
     }
 }

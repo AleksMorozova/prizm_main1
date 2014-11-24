@@ -86,6 +86,7 @@
          this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
          this.mainMDIdocumentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
          this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
          ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.languageRepositoryComboBox)).BeginInit();
          ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
@@ -602,6 +603,12 @@
          this.tabbedView1.DocumentProperties.AllowPin = true;
          this.tabbedView1.DocumentProperties.UseFormIconAsDocumentImage = true;
          // 
+            // alertControl
+            // 
+            this.alertControl.AutoFormDelay = 5000;
+            this.alertControl.FormShowingEffect = DevExpress.XtraBars.Alerter.AlertFormShowingEffect.SlideVertical;
+            this.alertControl.ShowPinButton = false;
+            // 
          // PrizmApplicationXtraForm
          // 
          this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -680,6 +687,7 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox languageRepositoryComboBox;
         private DevExpress.XtraBars.BarSubItem barSubItemLanguage;
         private DevExpress.XtraBars.BarListItem languageBarListItem;
+        private DevExpress.XtraBars.Alerter.AlertControl alertControl;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSettingsWelders;
         private DevExpress.XtraBars.BarButtonItem barButtonItemSettingsInspectors;
 

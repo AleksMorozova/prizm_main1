@@ -168,7 +168,25 @@
   <data name="DLG_UNSHIP_UNSHIPPED_RAILCAR" xml:space="preserve">
     <value>Вагон не отгружен</value>
   </data>
-  <data name="IDS_QUESTION_DELETE_SELECTED" xml:space="preserve">
+  <data name="AlertSaveHeader" xml:space="preserve">
+    <value>Сохранение успешно</value>
+  </data>
+ <data name="AlertSaveRailcar" xml:space="preserve">
+    <value>Данные вагона сохранены</value>
+  </data>
+<data name="AlertShipRailcar" xml:space="preserve">
+    <value>Вагон успешно отгружен</value>
+  </data>
+  <data name="AlertUnsipRailcar" xml:space="preserve">
+    <value>Отгрузка вагона отменена. Дата отгрузки аннулированна. Трубы перемещены на склад.</value>
+  </data>
+  <data name="AlertInfoHeader" xml:space="preserve">
+    <value>Внимание</value>
+  </data>
+  <data name="AlertFailureHeader" xml:space="preserve">
+    <value>Произошла ошибка!</value>
+  </data>
+   <data name="IDS_QUESTION_DELETE_SELECTED" xml:space="preserve">
     <value>Удалить запись?</value>
   </data>
   <data name="VALUE_REQUIRED" xml:space="preserve">

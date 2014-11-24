@@ -11,5 +11,10 @@ namespace PrizmMain.Forms
         void ShowError(string text, string header);
         void ShowWarning(string text, string header);
         void ShowInfo(string text, string header);
+        bool ShowYesNo(string text, string header);
+        int ShowYesNoCancel(string text, string header);
+        void ShowSuccess(string text, string header);
+        void ShowFailure(string text, string header);
     }
+
 }
