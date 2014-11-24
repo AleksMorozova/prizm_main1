@@ -132,7 +132,7 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             {
                 if (value != Pipe.IsActive)
                 {
-                    Pipe.IsActive = !value;
+                    Pipe.IsActive = value;
                     RaisePropertyChanged("PipeIsActive");
                 }
             }
