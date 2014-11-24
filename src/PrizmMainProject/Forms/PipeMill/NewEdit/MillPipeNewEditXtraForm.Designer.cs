@@ -1382,6 +1382,8 @@
             // 
             this.pipeSize.Location = new System.Drawing.Point(233, 27);
             this.pipeSize.Name = "pipeSize";
+            this.pipeSize.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
+            this.pipeSize.Properties.Appearance.Options.UseBackColor = true;
             this.pipeSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.pipeSize.Size = new System.Drawing.Size(169, 20);
@@ -1470,6 +1472,8 @@
             // 
             this.purchaseOrder.Location = new System.Drawing.Point(646, 27);
             this.purchaseOrder.Name = "purchaseOrder";
+            this.purchaseOrder.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
+            this.purchaseOrder.Properties.Appearance.Options.UseBackColor = true;
             this.purchaseOrder.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.purchaseOrder.Size = new System.Drawing.Size(180, 20);
@@ -1481,6 +1485,8 @@
             // 
             this.heatNumber.Location = new System.Drawing.Point(436, 27);
             this.heatNumber.Name = "heatNumber";
+            this.heatNumber.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
+            this.heatNumber.Properties.Appearance.Options.UseBackColor = true;
             this.heatNumber.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.heatNumber.Size = new System.Drawing.Size(176, 20);
@@ -1515,6 +1521,8 @@
             // 
             this.pipeNumber.Location = new System.Drawing.Point(14, 27);
             this.pipeNumber.Name = "pipeNumber";
+            this.pipeNumber.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
+            this.pipeNumber.Properties.Appearance.Options.UseBackColor = true;
             this.pipeNumber.Size = new System.Drawing.Size(185, 20);
             this.pipeNumber.StyleController = this.generalPipeLayout;
             this.pipeNumber.TabIndex = 0;
