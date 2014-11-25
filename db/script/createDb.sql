@@ -415,6 +415,16 @@ ALTER TABLE [dbo].[Weld_Welder] CHECK CONSTRAINT [FK_Weld_Welder_weld]
 ALTER TABLE [dbo].[Weld_Welder]  WITH CHECK ADD  CONSTRAINT [FK_Weld_Welder_welder] FOREIGN KEY([welderId])
 REFERENCES [dbo].[Welder] ([id])
 ALTER TABLE [dbo].[Weld_Welder] CHECK CONSTRAINT [FK_Weld_Welder_welder]
+
+CREATE TABLE [Prizm].[dbo].[Coat](
+	[id] [uniqueidentifier] NOT NULL,
+	[date] [DateTime] NOT NULL,
+	[type] [nvarchar](20) NOT NULL,
+	[pipeId] [uniqueidentifier] NOT NULL,
+ CONSTRAINT [PK_Coat] PRIMARY KEY CLUSTERED ([id] ASC) WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY],
+ CONSTRAINT [Coat_Pipe_FK] FOREIGN KEY (pipeId) REFERENCES [Prizm].[dbo].[Pipe] (id)
+) ON [PRIMARY]
+
 USE [master]
 ALTER DATABASE [{DBNAME}] SET  READ_WRITE '
 SET @SQL_SCRIPT = REPLACE(@SQL_SCRIPT, '{DBNAME}', @PRIZMA_DB_NAME)
