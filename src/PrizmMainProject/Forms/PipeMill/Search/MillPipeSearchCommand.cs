@@ -10,6 +10,7 @@ using DevExpress.Mvvm.DataAnnotations;
 using Data.DAL.Mill;
 using NHibernate.Criterion;
 using NHibernate.SqlCommand;
+using Domain.Entity.Mill;
 
 namespace PrizmMain.Forms.PipeMill.Search
 {
@@ -27,13 +28,29 @@ namespace PrizmMain.Forms.PipeMill.Search
         [Command(UseCommandManager = false)]
         public void Execute()
         {
-            var criteria = NHibernate.Criterion.DetachedCriteria
-                .For<Domain.Entity.Mill.Pipe>("p")
-                .Add(Restrictions.Like("p.Number", viewModel.PipeNumber, MatchMode.Anywhere))
-                .CreateCriteria("p.Type", JoinType.InnerJoin)
-                .Add(Restrictions.Like("Type", viewModel.PipeSize, MatchMode.Anywhere));
-   
-            viewModel.Pipes = repo.GetByCriteria(criteria);
+            try
+            {
+                var criteria = NHibernate.Criterion.DetachedCriteria
+                    .For<Domain.Entity.Mill.Pipe>("p")
+                    .Add(Restrictions.Like("p.Number", viewModel.PipeNumber, MatchMode.Anywhere))
+                    .CreateCriteria("p.Type", JoinType.InnerJoin)
+                    .Add(Restrictions.Like("Type", viewModel.PipeSize, MatchMode.Anywhere));
+
+                viewModel.Pipes = repo.GetByCriteria(criteria);
+            }
+            catch
+            {
+                repo.Clear();
+
+                var criteria = NHibernate.Criterion.DetachedCriteria
+                    .For<Domain.Entity.Mill.Pipe>("p")
+                    .Add(
+                    Restrictions.Like("p.Status", PipeMillStatus.Shipped) ||
+                    Restrictions.Like("p.Status", PipeMillStatus.Stocked) ||
+                    Restrictions.Like("p.Status", PipeMillStatus.Produced));
+
+                viewModel.Pipes = repo.GetByCriteria(criteria);
+            } 
             
         }
 
