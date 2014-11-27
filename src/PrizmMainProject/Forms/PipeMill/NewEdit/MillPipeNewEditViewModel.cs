@@ -23,6 +23,8 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
     {
         private readonly IMillRepository repoMill;
 
+        private bool pipeIsActive;
+
         private IList<Domain.Entity.Mill.Heat> heats;
         private IList<PurchaseOrder> purchaseOrders;
         private IList<PipeMillSizeType> pipeTypes;
@@ -34,6 +36,7 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
         private readonly ExtractHeatsCommand extractHeatsCommand;
         private readonly ExtractPurchaseOrderCommand extractPurchaseOrderCommand;
         private readonly ExtractPipeTypeCommand extractPipeTypeCommand;
+        private readonly IUserNotify notify;
 
         public Pipe Pipe { get; set; }
         public IList<Welder> Welders { get; set; }
@@ -42,15 +45,16 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
         
 
         [Inject]
-        public MillPipeNewEditViewModel(IMillRepository repoMill, Guid pipeId)
+        public MillPipeNewEditViewModel(IMillRepository repoMill, Guid pipeId, IUserNotify notify)
         {
             this.repoMill = repoMill;
+            this.notify = notify;
 
             newSavePipeCommand =
-                ViewModelSource.Create(() => new NewSavePipeCommand(this, repoMill));
+                ViewModelSource.Create(() => new NewSavePipeCommand(this, repoMill, notify));
 
             savePipeCommand =
-                ViewModelSource.Create(() => new SavePipeCommand(this, repoMill));
+                ViewModelSource.Create(() => new SavePipeCommand(this, repoMill, notify));
 
             extractHeatsCommand =
                 ViewModelSource.Create(() => new ExtractHeatsCommand(this, repoMill.RepoHeat));
@@ -146,15 +150,19 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
 
         #region Pipe
 
-        public bool PipeIsActive
+        public bool PipeIsDeactivated
         {
-            get { return Pipe.IsActive; }
+            get 
+            {
+                pipeIsActive = Pipe.IsActive;
+                return !pipeIsActive; 
+            }
             set
             {
-                if (value != Pipe.IsActive)
+                if (value == Pipe.IsActive)
                 {
-                    Pipe.IsActive = value;
-                    RaisePropertyChanged("PipeIsActive");
+                    Pipe.IsActive = !value;
+                    RaisePropertyChanged("PipeIsDeactivated");
                 }
             }
         }
@@ -504,6 +512,7 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             this.Pipe = new Pipe();
 
             this.PlateNumber = string.Empty;
+            this.Pipe.IsActive = true;
             this.Pipe.Status = PipeMillStatus.Produced;
 
             this.Number = string.Empty;

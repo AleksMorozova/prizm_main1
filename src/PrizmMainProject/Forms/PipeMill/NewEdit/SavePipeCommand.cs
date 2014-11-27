@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 // for method RaiseCanExecuteChanged
 using DevExpress.Mvvm.POCO;
+using PrizmMain.Properties;
+using Data.DAL;
 
 namespace PrizmMain.Forms.PipeMill.NewEdit
 {
@@ -15,20 +17,41 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
     {
         private readonly IMillRepository repo;
         private readonly MillPipeNewEditViewModel viewModel;
+        private readonly IUserNotify notify;
 
-        public SavePipeCommand(MillPipeNewEditViewModel viewModel, IMillRepository repo)
+        public SavePipeCommand(
+            MillPipeNewEditViewModel viewModel, 
+            IMillRepository repo, 
+            IUserNotify notify)
         {
             this.viewModel = viewModel;
             this.repo = repo;
+            this.notify = notify;
         }
 
         [Command(UseCommandManager = false)]
         public void Execute()
         {
-            repo.BeginTransaction();
-            repo.RepoPipe.SaveOrUpdate(viewModel.Pipe);
-            repo.Commit();
-            repo.RepoPipe.Evict(viewModel.Pipe);
+            if (viewModel.PipeIsDeactivated)
+            {
+                if (!notify.ShowYesNo(
+                    Resources.DLG_PIPE_DEACTIVATION,
+                    Resources.DLG_PIPE_DEACTIVATION_HEDER))
+                {
+                    return;
+                }
+            }
+            try
+            {
+                repo.BeginTransaction();
+                repo.RepoPipe.SaveOrUpdate(viewModel.Pipe);
+                repo.Commit();
+                repo.RepoPipe.Evict(viewModel.Pipe);
+            }
+            catch (RepositoryException ex)
+            {
+                notify.ShowFailure(ex.InnerException.Message, ex.Message);
+            }
         }
 
 

@@ -95,7 +95,7 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             thickness.DataBindings
                 .Add("EditValue", pipeNewEditBindingSource, "WallThickness");
             deactivate.DataBindings
-                .Add("EditValue", pipeNewEditBindingSource, "PipeIsActive");
+                .Add("EditValue", pipeNewEditBindingSource, "PipeIsDeactivated");
             plateThickness.DataBindings
                 .Add("EditValue", pipeNewEditBindingSource, "PlateThickness");
 

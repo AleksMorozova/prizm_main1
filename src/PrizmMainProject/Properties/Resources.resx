@@ -219,4 +219,16 @@
   <data name="COAT_INTERNAL" xml:space="preserve">
     <value>Внутреннее</value>
   </data>
+  <data name="DLG_PIPE_DEACTIVATION" xml:space="preserve">
+    <value>Сохранение данных приведет к деактивации трубы. Деактивировать трубу?</value>
+  </data>
+  <data name="DLG_PIPE_DEACTIVATION_HEDER" xml:space="preserve">
+    <value>Деактивация трубы</value>
+  </data>
+  <data name="DLG_PIPE_CREATION" xml:space="preserve">
+    <value>Продолжить редактирование трубы?</value>
+  </data>
+  <data name="DLG_PIPE_CREATION_HEDER" xml:space="preserve">
+    <value>Создание трубы</value>
+  </data>
 </root>
