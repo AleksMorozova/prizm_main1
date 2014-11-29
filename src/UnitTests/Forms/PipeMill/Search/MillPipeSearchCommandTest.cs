@@ -11,6 +11,7 @@ using PrizmMain.Forms.Railcar.NewEdit;
 using PrizmMain.Forms.PipeMill.NewEdit;
 using PrizmMain.Forms.PipeMill.Search;
 using NHibernate.Criterion;
+using PrizmMain.Forms.PipeMill;
 
 namespace UnitTests.Forms.PipeMill.Search
 {
@@ -21,6 +22,7 @@ namespace UnitTests.Forms.PipeMill.Search
         public void TestMillPipeSearchCommand()
         {
             var repo = new Mock<IPipeRepository>();
+            var repoGlob = new Mock<IMillRepository>();
 
             var pipes = new List<Domain.Entity.Mill.Pipe>();
             {
@@ -37,7 +39,7 @@ namespace UnitTests.Forms.PipeMill.Search
 
 
 
-            var viewModel = new MillPipeSearchViewModel(repo.Object);
+            var viewModel = new MillPipeSearchViewModel(repoGlob.Object);
 
             var command = new MillPipeSearchCommand(viewModel, repo.Object);
 

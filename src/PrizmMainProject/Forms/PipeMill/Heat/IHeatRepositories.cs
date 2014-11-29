@@ -10,6 +10,7 @@ namespace PrizmMain.Forms.PipeMill.Heat
     public interface IHeatRepositories : IDisposable
     {
         IHeatRepository HeatRepo { get; }
+        IPlateManufacturerRepository PlateManRepo { get; }
         IPhysicalParametersRepository PhysRepo { get; }
         IChemicalCompositionRepository ChemRepo { get; }
 

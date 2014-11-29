@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,112 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="InspectionResultType_Boolean" xml:space="preserve">
-    <value>Логический</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="saveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAt0RVh0VGl0
+        bGUAU2F2ZTv56PkJAAAC9ElEQVQ4T4WTXUiTURjHV6YhYh9WmpSSGQPBNG1tuvk65+a+nHPT6WxOt+HM
+        r/zI75WmBkURdBME3QYFIYUYRVFBdJkfF2GpEV2oTec0K5crb/6d520XEkEHfrwv7zn/33nOeXgFobGd
+        EcbY8Rfh/yAiBM1vYwjCOE3FK05XAZt7AL1Dt9E1cAvt52+iufcGGtqvw91yBY6GS6h090NvaYGsoBxZ
+        ytLXLEtCQQSntcIzeA1WVx8CwU0ENv6wHuL7j034vvyAdyUAtakBrT2XkK0qBctGkmCntKAM3f1XYan2
+        8EFavLhKBPiQWKqBmNNiYtYHpcGNElsdJAozCaJIEEm2jvOXYbJ18TtS2BsKf5hbQxang7rIhgV/AHKt
+        kwlqIZIXkyCaBFHifDPaWFlF5W2s3F9YWA7gk/cb3n70Y5ztyimMMJQ6Mb+8jpyCKphP1yKTM5BgNwmi
+        T8mNaO4chLakid918oMPEzM+jDPGGG+mlzDHwnO+dWQrbDBVuJEu1ZJgLwl2ka2xrQ8qYx3yC2uh0NdA
+        rnEhV+NAjsoOqbKSBU8jK68CErkVxdYaHBerSbCPBHvSpTqcafGAKzDBWO5iOFFU5oTB4mBUo7C0GvqS
+        KuhK7NCZK9mcCykiJQkOkCAmVaJGTVMPL/jfkCnZfVhcEGbkkSCOBPtTRCo46jpYucX8otXvP7H6jQhi
+        9WsQfvbuZ88VhiRPzypyIDmNI0E8CWLJZne3sjMaeIGfBSnAsxbE8toGj48hkqnZUaqQlColwSESHDyW
+        ngur8yy7ID36R2dxYWQGPQ+n0Tk8jbb779F87x0a706h/s4UTso00BRXIjFFQoIEEsQnpcpgsddDlKPF
+        9ddLuPpqEZdfejH0/DP6ni7A83ge3aNz6GBkZKtYV8xIEIpIkEiCmMPCzDEyZkjVMA29RNHFF9B5nkHd
+        /QSKc4/ANY8gu/4BTtUOI02cD+EJDnFHjk+yLN8F+i2pn2Q7soWkLRzdQnLoW6xAIAj/DQXi/m5m2Bwf
+        AAAAAElFTkSuQmCC
+</value>
   </data>
-  <data name="IDS_ERROR" xml:space="preserve">
-    <value>Во время работы программы произошла ошибка. Причина: </value>
-  </data>
-  <data name="IDS_NO_MORE_DOCUMENTS" xml:space="preserve">
-    <value>Нельзя одновременно открыть больше документов.</value>
-  </data>
-  <data name="InspectionResultType_Diapason" xml:space="preserve">
-    <value>Диапазон</value>
-  </data>
-  <data name="DLG_ERROR_HEADER" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
-  <data name="DLG_RAILCAR_NUMBER_EMPTY" xml:space="preserve">
-    <value>Введите номер вагона</value>
-  </data>
-  <data name="DLG_RAILCAR_PIPE_IN_OTHER_CAR_ERROR" xml:space="preserve">
-    <value>Данная труба находится в вагоне #</value>
-  </data>
-  <data name="DLG_RAILCAR_TYPESIZE_ERROR" xml:space="preserve">
-    <value>Все трубы в в вагоне должны быть одного типоразмера</value>
-  </data>
-  <data name="DLG_SHIP_RAILCAR_VS_PIPES" xml:space="preserve">
-    <value>Отправка вагона без труб невозможна</value>
-  </data>
-  <data name="InspectionControlType_Hold" xml:space="preserve">
-    <value>Обязательный</value>
-  </data>
-  <data name="IDS_QUESTION_DO_NOT_CLOSE" xml:space="preserve">
-    <value>У вас остались несохранённые изменения. Отменить закрытие документа?</value>
-  </data>
-  <data name="InspectionControlType_Monitor" xml:space="preserve">
-    <value>Визуальный</value>
-  </data>
-  <data name="InspectionControlType_Review" xml:space="preserve">
-    <value>По документации</value>
-  </data>
-  <data name="InspectionResultType_String" xml:space="preserve">
-    <value>Строка</value>
-  </data>
-  <data name="InspectionControlType_Witness" xml:space="preserve">
-    <value>Присутствие</value>
-  </data>
-  <data name="Produced" xml:space="preserve">
-    <value>Производится</value>
-  </data>
-  <data name="Shipped" xml:space="preserve">
-    <value>Отгружена</value>
-  </data>
-  <data name="Stocked" xml:space="preserve">
-    <value>На складе</value>
-  </data>
-  <data name="DLG_RAILCAR_UNSHIP_FIRST" xml:space="preserve">
-    <value>Сначала расформируйте вагон.</value>
-  </data>
-  <data name="DLG_UNSHIP_UNSHIPPED_RAILCAR" xml:space="preserve">
-    <value>Вагон не отгружен</value>
-  </data>
-  <data name="AlertSaveHeader" xml:space="preserve">
-    <value>Сохранение успешно</value>
-  </data>
-  <data name="AlertSaveRailcar" xml:space="preserve">
-    <value>Данные вагона сохранены</value>
-  </data>
-  <data name="AlertShipRailcar" xml:space="preserve">
-    <value>Вагон успешно отгружен</value>
-  </data>
-  <data name="AlertUnsipRailcar" xml:space="preserve">
-    <value>Отгрузка вагона отменена. Дата отгрузки аннулированна. Трубы перемещены на склад.</value>
-  </data>
-  <data name="AlertInfoHeader" xml:space="preserve">
-    <value>Внимание</value>
-  </data>
-  <data name="AlertFailureHeader" xml:space="preserve">
-    <value>Произошла ошибка!</value>
-  </data>
-  <data name="IDS_QUESTION_DELETE_SELECTED" xml:space="preserve">
-    <value>Удалить запись?</value>
-  </data>
-  <data name="VALUE_REQUIRED" xml:space="preserve">
-    <value>Значение обязательно</value>
-  </data>
-  <data name="PRIZM" xml:space="preserve">
-    <value>PRIZM</value>
-  </data>
-  <data name="Failed" xml:space="preserve">
-    <value>Не пройден</value>
-  </data>
-  <data name="Passed" xml:space="preserve">
-    <value>Пройден</value>
-  </data>
-  <data name="Scheduled" xml:space="preserve">
-    <value>Ожидается</value>
-  </data>
-  <data name="COAT_EXTERNAL" xml:space="preserve">
-    <value>Внешнее</value>
-  </data>
-  <data name="COAT_INTERNAL" xml:space="preserve">
-    <value>Внутреннее</value>
-  </data>
-  <data name="IDS_QUESTION_DO_NOT_CLOSE_HEADER" xml:space="preserve">
-    <value>Несохранённые изменения</value>
-  </data>
-  <data name="NewHeatCombo" xml:space="preserve">
-    <value>&lt; Создать плавку &gt;</value>
+  <data name="cancelButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACN0RVh0VGl0
+        bGUAQ2FuY2VsO1N0b3A7RXhpdDtCYXJzO1JpYmJvbjtMlpayAAADmklEQVQ4TyWTf1CTdRzHvwim2KS6
+        0k5iXWAbIg6GbG2gHmPGhMEs+CMsT70yE1BGx3F5kCReFE7uNAMu7og6MBFk/LCEOZ15WUkXw8aAcgsE
+        +SHC9mzABtuR3rvv8/C9ez33vs/n834/3+9zz5d4TK3Ec7uDeO9cJXQF/pZ7RGQrKqh6cKLQMl5c9ISF
+        1X8XamsMHxwU05kgSoDHpCcLxhZCA/SsMYCy2qrNKx799BP/7Ldfw93eAM/tTngp7vZGzNRXYezkCb/5
+        2NFSOruWsooLoCtAK5fxho7nmcYryuC51Y757ouY66iHq6UGruYauNvqMPdTI+jLMHH2cwwcz/1FEyl8
+        gQ1hA4LMHx7+ZrS8lBovwVKUj7pwEYyZmXA2noOz4RxuZmVxNUvhMS5o7Msy/HH4/cvUu5Z0ZmVKrbk5
+        Txj9d7hXkIMG1TswdZvRnFOCbnUGDOkaTpu6ermeOf8juK7UwZqf97Q+NTWJmDI0tSNfnMTj2grU8aPw
+        wD4Fh2sJ9lEGLdrTHPepnnZ6MWyb4mamq8sxcroEhrR0Pbm5Rz1sP/ouRrT7cUPzFv7UnYd36T84532w
+        PWRgG2MwO+fDwuIy1zNq9mI4Lxu2I9m4oUp7SK4rVMv/ZKdg6O0dsB+iW969Gz26C5hx+zBDd/LYTWF8
+        +L3iKxiUStw/kIbBjAQMZiXBoEhZJlflScuW1DcwoJZhaG8irkm2w3jqLN3yEh45FzHl8FKWcL1Uh2vx
+        2zGQLod1jxT9KglYL2kSy8d6lSuFrthtaPu4DAP/OjA56wWz4AMz78f4jBf99lnoC06hKyYaljfj0KsQ
+        oylWNkVqheLvTTtksCjFuBQuhHPaiUnHIlwLfvRfqOZYCfHA8cjJzfyVFIOfEyWoFsR2kqLQiF0Xo+Ke
+        mnduw12lHLcOHIKfYXBPVwmjLJ4i4TRbY3t3k2XoS4zGD1vEyH/5NTX7IwVXviK8fCVyKyzJsehJlqJV
+        GAmTLI5+Fzl3ZlaztR6FFBZFDPSRUTizScBenvVswKqta9ZtqNy4ua8pQgDzLhE1JaA/RYK+hCjKFnrm
+        eAyqE9C3U4TmzQKc2RhhFa15lk+9gWSi4D02JDD+Gd6msuf4LVUbwtEuiMAd8evoldJAyq9Ud9BaNe19
+        9jz/x+jVwa9ST9C4dh8h7IMTKxeDd3DdS6oSXmhreUjYhC6ED11IGMrXh00W80Lb9ge/qKEzIZTAFd8+
+        8j91kUbX3K/WKgAAAABJRU5ErkJggg==
+</value>
   </data>
 </root>

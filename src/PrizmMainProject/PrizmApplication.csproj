@@ -201,6 +201,12 @@
     <Compile Include="Forms\Component\Search\ComponentSearchXtraForm.Designer.cs">
       <DependentUpon>ComponentSearchXtraForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatNumberXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatNumberXtraForm.Designer.cs">
+      <DependentUpon>HeatNumberXtraForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PipeMill\Heat\HeatRepositories.cs" />
     <Compile Include="Forms\PipeMill\Heat\HeatViewModel.cs" />
     <Compile Include="Forms\PipeMill\Heat\IHeatRepositories.cs" />
@@ -388,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Component\Search\ComponentSearchXtraForm.resx">
       <DependentUpon>ComponentSearchXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\Heat\HeatNumberXtraForm.resx">
+      <DependentUpon>HeatNumberXtraForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PipeMill\Heat\HeatXtraForm.resx">
       <DependentUpon>HeatXtraForm.cs</DependentUpon>

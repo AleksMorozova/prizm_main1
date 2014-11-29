@@ -8,8 +8,8 @@ namespace Domain.Entity.Mill
         public Heat()
         {
             this.Plates = new List<Plate>();
-            this.PhysicalParameters = new List<PhysicalParameters>();
-            this.ChemicalComposition = new List<ChemicalComposition>();
+            //this.PhysicalParameters = new List<PhysicalParameters>();
+            //this.ChemicalComposition = new List<ChemicalComposition>();
         }
 
         public virtual string Number { get; set; }
@@ -18,13 +18,12 @@ namespace Domain.Entity.Mill
         public virtual PlateManufacturer PlateManufacturer { get; set; }
 
         public virtual IList<Plate> Plates { get; set; }
-        public virtual IList<PhysicalParameters> PhysicalParameters { get; set; }
-        public virtual IList<ChemicalComposition> ChemicalComposition { get; set; }
+        //public virtual IList<PhysicalParameters> PhysicalParameters { get; set; }
+        //public virtual IList<ChemicalComposition> ChemicalComposition { get; set; }
 
         public override string ToString()
         {
             return Number;
         }
-        
     }
 }

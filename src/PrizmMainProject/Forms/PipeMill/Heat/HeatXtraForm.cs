@@ -24,7 +24,6 @@ namespace PrizmMain.Forms.PipeMill.Heat
         {
             InitializeComponent();
             viewModel = (HeatViewModel)Program.Kernel.Get<HeatViewModel>(new ConstructorArgument("heatNumber", heatNumber));
-            Dummy();
         }
 
         private void HeatXtraForm_Load(object sender, EventArgs e)
@@ -35,12 +34,14 @@ namespace PrizmMain.Forms.PipeMill.Heat
 
         private void BindToViewModel()
         {
+            bindingSource.DataSource = viewModel;
+            steelGrade.DataBindings.Add("EditValue", bindingSource, "SteelGrade");
+            number.DataBindings.Add("EditValue", bindingSource, "Heat");
+            plateManufacturer.DataBindings.Add("EditValue", bindingSource, "PlateManufacturer");
 
-            //bindingSource.DataSource = viewModel;
-            //number.Properties.DataSource = viewModel.AllHeats;
-            //number.DataBindings.Add("EditValue", bindingSource, "Heat");
-            //steelGrade.DataBindings.Add("EditValue", bindingSource, "Steel");
+            RefreshControls();
 
+            
         }
 
         private void BindCommands()
@@ -54,103 +55,36 @@ namespace PrizmMain.Forms.PipeMill.Heat
             viewModel = null;
         }
 
-        private void number_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        private void RefreshControls()
         {
-            //if (viewModel.AllHeats.Where(x => x.Number.Equals(number.Text)) != null)
-            //{
-            //    viewModel.GetHeatByNumber(number.Text);
-            //}
-            //else
-            //{
-            //    viewModel.NewHeat(number.Text);
-            //}
+            number.Properties.Items.Clear();
+            SetupHeats();
+
+            plateManufacturer.Properties.Items.Clear();
+            SetupManufacturers();
+
         }
 
-        private void number_ProcessNewValue(object sender, DevExpress.XtraEditors.Controls.ProcessNewValueEventArgs e)
+        private void SetupHeats()
         {
-                //viewModel.NewHeat(number.Text);
-        }
-
-
-        #region DummyData
-
-        private void Dummy() 
-        {
-            List<Domain.Entity.Mill.Heat> heats = new List<Domain.Entity.Mill.Heat>()
-        {
-            new Domain.Entity.Mill.Heat(){Number = "1256985"},
-            new Domain.Entity.Mill.Heat(){Number = "2456867"},
-            new Domain.Entity.Mill.Heat(){Number = "7435611"},
-            new Domain.Entity.Mill.Heat(){Number = "1451363"},
-            new Domain.Entity.Mill.Heat(){Number = "6451238"},
-            new Domain.Entity.Mill.Heat(){Number = "7652359"},
-            new Domain.Entity.Mill.Heat(){Number = "125855"}
-        };
-            number.Properties.DataSource = heats;
-            number.EditValue = number.Properties.GetKeyValue(0);
-
-            List<PlateManufacturer> manufacturers = new List<PlateManufacturer>()
+            foreach (var item in viewModel.Heats)
             {
-                new PlateManufacturer(){Name = "Криворожский металургический комбинат"},
-                new PlateManufacturer(){Name = "Нижнеднепровский трубопрокатный завод"},
-                new PlateManufacturer(){Name = "Армавирский завод промышленного оборудования"},
-                new PlateManufacturer(){Name = "Новгородский металургический завод"},
-                new PlateManufacturer(){Name = "Гурьевский металургический завод"},
-                new PlateManufacturer(){Name = "Ижевский металургический завод"},
-                new PlateManufacturer(){Name = "Щелковский металургический завод"}
-            };
-            plateManufacturer.Properties.DataSource = manufacturers;
-            plateManufacturer.EditValue = plateManufacturer.Properties.GetKeyValue(0);
-
-            List<ChemicalComposition> chem = new List<ChemicalComposition>()
-        {
-            new ChemicalComposition(){Parameter = "C",HeatValue = 0.06f, PlateValue = 0.06f,PipeValue = 0.06f},
-            new ChemicalComposition(){Parameter = "Mn",HeatValue = 1.64f, PlateValue = 1.64f},
-            new ChemicalComposition(){Parameter = "Si",HeatValue = 0.29f ,PlateValue = 0.29f,PipeValue = 0.29f},
-            new ChemicalComposition(){Parameter = "P",HeatValue = 0.007f, PlateValue = 0.006f,PipeValue = 0.006f},
-            new ChemicalComposition(){Parameter = "S",HeatValue = 0.001f, PlateValue = 0,},
-            new ChemicalComposition(){Parameter = "Mo",HeatValue = 0.175f, PlateValue = 0.175f}
-        };
-            chemicalGrid.DataSource = chem;
-            steelGrade.Text = "H18N9T";
-
-            List<TensileTest> tests = new List<TensileTest>()
-            {
-                new TensileTest()
-                {
-                    Parameter = "Предел текучести, Rt0.5,",
-                    BaseValue = 645f,
-                },
-                new TensileTest()
-                {
-                    Parameter = "Временное сопротивление, Rm,МПа",
-                    BaseValue = 700f,
-                },
-                new TensileTest()
-                {
-                    Parameter = "Удлиннение на 2 дюймах (50,8мм)",
-                    BaseValue = 32f,
-                },
-                new TensileTest()
-                {
-                    Parameter = "ИПГ при t=0С,ср.,%",
-                    BaseValue = 100f,
-                },
-                new TensileTest()
-                {
-                    Parameter = "Доля вязкой сост. на ударных образцах при t=-10C,ср.,%",
-                    BaseValue = 100f,
-                },
-            };
-
-            phisicalGrid.DataSource = tests;
-
-
-
+                number.Properties.Items.Add(item);
+            }
         }
 
-        
+        private void SetupManufacturers()
+        {
+            foreach (var item in viewModel.Manufacrurers)
+            {
+                plateManufacturer.Properties.Items.Add(item);
+            }
+        }
 
-        #endregion
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            viewModel.CreateHeat();
+            RefreshControls();
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Data.DAL.Mapping
             References(x => x.PlateManufacturer).Column("plateManufacturer");
 
             HasMany(x => x.Plates).KeyColumn("heatId");
-            HasMany(x => x.ChemicalComposition).KeyColumn("heatId");
+            //HasMany(x => x.ChemicalComposition).KeyColumn("heatId");
             //HasMany(x => x.PhysicalParameters).KeyColumn("heatId");
 
 

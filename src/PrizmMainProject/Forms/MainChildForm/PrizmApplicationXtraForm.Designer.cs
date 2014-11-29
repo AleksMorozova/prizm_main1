@@ -235,7 +235,6 @@
             this.barSubItemMill.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemNewPipe),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMillFindEditPipes),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemHeat),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemNewRailcar, true),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemFindEditShipRailcars),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemMillReports, true)});
@@ -534,28 +533,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1276, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1276, 22);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 600);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 598);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 580);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 576);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1276, 20);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 580);
+            this.barDockControlRight.Location = new System.Drawing.Point(1276, 22);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 576);
             // 
             // barButtonItemNewProject
             // 
