@@ -13,6 +13,8 @@ namespace Domain.Entity
         public virtual  T Status { get; set; }
         public virtual IList<Inspector> Inspectors { get; set; }
 
+        public virtual int Order { get; set; }
+
         public TestResult()
         {
             this.Inspectors = new List<Inspector>();

@@ -160,6 +160,15 @@ namespace PrizmMain.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Нельзя добавить неуспешную контрольную операцию для трубы, которая находится в вагоне. Для этого необходимо данную труб из вагона. .
+        /// </summary>
+        internal static string DLG_AddFailedControlOperation {
+            get {
+                return ResourceManager.GetString("DLG_AddFailedControlOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Нельзя изменить типоразмер для трубы, у которой уже есть данные по контрольным операциям. Если типоразмер ошибочен, деактивируйте эту трубу и создайте новую с таким же номером и правильным типоразмером..
         /// </summary>
         internal static string DLG_CHANGE_PIPESIZE_ON_EDITPIPE {

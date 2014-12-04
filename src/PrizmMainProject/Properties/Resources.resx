@@ -298,4 +298,7 @@
   <data name="PipeStatusComboUnactive" xml:space="preserve">
     <value>Деактивированные</value>
   </data>
+  <data name="DLG_AddFailedControlOperation" xml:space="preserve">
+    <value>Нельзя добавить неуспешную контрольную операцию для трубы, которая находится в вагоне. Для этого необходимо данную труб из вагона. </value>
+  </data>
 </root>

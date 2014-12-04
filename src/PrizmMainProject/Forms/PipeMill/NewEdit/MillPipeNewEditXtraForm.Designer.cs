@@ -129,8 +129,8 @@
             this.purchaseOrder = new DevExpress.XtraEditors.ComboBoxEdit();
             this.heatNumber = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pipeCreationDate = new DevExpress.XtraEditors.DateEdit();
-            this.millStatus = new DevExpress.XtraEditors.ComboBoxEdit();
             this.pipeNumber = new DevExpress.XtraEditors.TextEdit();
+            this.millStatus = new DevExpress.XtraEditors.TextEdit();
             this.generalLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.pipeNumberLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.pipeSizeLayout = new DevExpress.XtraLayout.LayoutControlItem();
@@ -233,8 +233,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalLayoutGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumberLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeSizeLayout)).BeginInit();
@@ -1239,9 +1239,9 @@
             this.generalPipeLayout.Controls.Add(this.pipe);
             this.generalPipeLayout.Controls.Add(this.heatNumber);
             this.generalPipeLayout.Controls.Add(this.pipeCreationDate);
-            this.generalPipeLayout.Controls.Add(this.millStatus);
             this.generalPipeLayout.Controls.Add(this.pipeNumber);
             this.generalPipeLayout.Controls.Add(this.pipeSize);
+            this.generalPipeLayout.Controls.Add(this.millStatus);
             this.generalPipeLayout.Location = new System.Drawing.Point(0, 0);
             this.generalPipeLayout.Name = "generalPipeLayout";
             this.generalPipeLayout.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(5, 272, 250, 350);
@@ -1365,20 +1365,6 @@
             this.pipeCreationDate.TabIndex = 3;
             this.pipeCreationDate.EditValueChanged += new System.EventHandler(this.pipeCreationDate_EditValueChanged);
             // 
-            // millStatus
-            // 
-            this.millStatus.Location = new System.Drawing.Point(1156, 27);
-            this.millStatus.Name = "millStatus";
-            this.millStatus.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
-            this.millStatus.Properties.Appearance.Options.UseBackColor = true;
-            this.millStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.millStatus.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.millStatus.Size = new System.Drawing.Size(99, 20);
-            this.millStatus.StyleController = this.generalPipeLayout;
-            this.millStatus.TabIndex = 4;
-            this.millStatus.SelectedIndexChanged += new System.EventHandler(this.millStatus_SelectedIndexChanged);
-            // 
             // pipeNumber
             // 
             this.pipeNumber.Location = new System.Drawing.Point(14, 27);
@@ -1389,6 +1375,17 @@
             this.pipeNumber.StyleController = this.generalPipeLayout;
             this.pipeNumber.TabIndex = 0;
             this.pipeNumber.EditValueChanged += new System.EventHandler(this.pipeNumber_EditValueChanged);
+            // 
+            // millStatus
+            // 
+            this.millStatus.Location = new System.Drawing.Point(1156, 27);
+            this.millStatus.Name = "millStatus";
+            this.millStatus.Properties.Appearance.BackColor = System.Drawing.Color.LightYellow;
+            this.millStatus.Properties.Appearance.Options.UseBackColor = true;
+            this.millStatus.Properties.ReadOnly = true;
+            this.millStatus.Size = new System.Drawing.Size(99, 20);
+            this.millStatus.StyleController = this.generalPipeLayout;
+            this.millStatus.TabIndex = 4;
             // 
             // generalLayoutGroup
             // 
@@ -1726,8 +1723,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.heatNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeCreationDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.millStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.generalLayoutGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumberLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeSizeLayout)).EndInit();
@@ -1758,7 +1755,6 @@
         private DevExpress.XtraTab.XtraTabControl pipe;
         private DevExpress.XtraTab.XtraTabPage generalParametersPage;
         private DevExpress.XtraEditors.ComboBoxEdit pipeSize;
-        private DevExpress.XtraEditors.ComboBoxEdit millStatus;
         private DevExpress.XtraEditors.TextEdit pipeNumber;
         private DevExpress.XtraEditors.DateEdit pipeCreationDate;
         private DevExpress.XtraLayout.LayoutControl generalPipeLayout;
@@ -1877,6 +1873,7 @@
         private DevExpress.XtraEditors.TextEdit purchaseOrderDate;
         private DevExpress.XtraLayout.LayoutControlItem purchaseOrderDateLayoutControl;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit inspectionCodeLookUpEdit;
+        private DevExpress.XtraEditors.TextEdit millStatus;
 
     }
 }

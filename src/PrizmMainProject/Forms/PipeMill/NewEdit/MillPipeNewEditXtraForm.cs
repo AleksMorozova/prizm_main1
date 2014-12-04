@@ -52,7 +52,6 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             pipeSize.SetRequiredCombo();
             heatNumber.SetRequiredCombo();
             purchaseOrder.SetRequiredCombo();
-            millStatus.SetRequiredCombo();
             pipeCreationDate.SetRequiredText();
         }
 
@@ -116,10 +115,6 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             foreach (var t in viewModel.PipeTypes)
             {
                 pipeSize.Properties.Items.Add(t);
-            }
-            foreach (var s in viewModel.StatusTypes)
-            {
-                millStatus.Properties.Items.Add(s);
             }
             #endregion
 
@@ -337,13 +332,6 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
         private void pipeNumber_EditValueChanged(object sender, EventArgs e)
         {
             viewModel.Number = pipeNumber.Text;
-            viewModel.SavePipeCommand.IsExecutable ^= true;
-            viewModel.NewSavePipeCommand.IsExecutable ^= true;
-        }
-
-        private void millStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            viewModel.PipeStatus = millStatus.SelectedItem as EnumWrapper<PipeMillStatus>;
             viewModel.SavePipeCommand.IsExecutable ^= true;
             viewModel.NewSavePipeCommand.IsExecutable ^= true;
         }
@@ -584,10 +572,12 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
              GridView view = sender as GridView;
              if (view.IsValidRowHandle(e.RowHandle))
              { 
-              currentTestResult  =  view.GetRow(e.RowHandle) as PipeTestResult;
-              currentTestResult.IsActive = true;
-              currentTestResult.Pipe = viewModel.Pipe;
-              viewModel.Pipe.PipeTestResult = viewModel.PipeTestResults;
+                 currentTestResult  =  view.GetRow(e.RowHandle) as PipeTestResult;
+                 currentTestResult.IsActive = true;
+                 currentTestResult.Pipe = viewModel.Pipe;
+                 currentTestResult.Order = viewModel.PipeTestResults.Max(test=>test.Order)+1;
+                 //currentTestResult.Operation.Order = viewModel.Pipe.PipeTestResult.Max(test => test.Operation.Order) + 1; ;
+                 viewModel.Pipe.PipeTestResult = viewModel.PipeTestResults;
              }
         }
 

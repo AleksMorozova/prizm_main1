@@ -706,6 +706,7 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
                     Inspectors = new BindingList<Domain.Entity.Inspector>()
                 };
                 requiredTestResults.Add(requiredResult);
+                requiredResult.Order++;
             }
             return requiredTestResults;
         }
@@ -747,6 +748,100 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             {
                modifiableView = value;
             }
+         }
+
+         public bool CheckStatus()
+         {
+             List<string> testsResults = orderTestResult();
+
+             if (Pipe.Status == PipeMillStatus.Stocked)
+             {
+                 if (Pipe.Railcar != null)
+                 {
+                     if (testsResults.Contains(PipeTestResultStatus.Failed.ToString()) || testsResults.Contains(PipeTestResultStatus.Scheduled.ToString()))
+                     {
+                         return false;
+                     }
+                     else
+                     {
+                         Pipe.Status = PipeMillStatus.Stocked;
+                         return true;
+                     }
+                 }
+                 else 
+                 {
+                     ChangePipeStatus(testsResults);
+                     return true;
+                 }
+             }
+
+             else
+             {
+                 ChangePipeStatus(testsResults);
+                 return true;
+             }
+         }
+
+         /// <summary>
+         /// Change Pipe status according to pipe test results
+         /// </summary>
+         public void ChangePipeStatus(List<string> testsResults)
+         {
+             if (testsResults.Contains(PipeTestResultStatus.Failed.ToString()) || testsResults.Contains(PipeTestResultStatus.Scheduled.ToString()))
+             {
+                 Pipe.Status = PipeMillStatus.Produced;
+             }
+             else
+             {
+                 Pipe.Status = PipeMillStatus.Stocked;
+             }
+         }
+
+         /// <summary>
+         /// Returns list of ordered Pipe test results
+         /// </summary>
+         public List<string> orderTestResult()
+         {
+             List<string> testsResults = new List<string>();
+
+             // order by operation name
+             var query = Pipe.PipeTestResult.GroupBy(test => test.Operation.Name, (name, results) => new
+             {
+                 Key = name, // operation name
+                 Date = results.Max(t => t.Date) // max date in group
+             });
+
+             foreach (var result in query)
+             {
+                 var lastOperation =
+                     from p in Pipe.PipeTestResult
+                     where p.Date == result.Date && p.Operation.Name == result.Key
+                     select p;
+
+                 if (lastOperation.Count() >= 2)
+                 {
+                     int maxOrder = lastOperation.Max(o => o.Order);
+
+                     var lastOperation2 =
+                         from p in lastOperation
+                         where p.Order == maxOrder
+                         select p;
+
+                     foreach (var t in lastOperation2)
+                     {
+                         testsResults.Add(t.Status.ToString());
+                     }
+                 }
+                 else
+                 {
+                     foreach (var t in lastOperation)
+                     {
+                         testsResults.Add(t.Status.ToString());
+                     }
+                 }
+             }
+
+             return testsResults;
          }
     }
 }

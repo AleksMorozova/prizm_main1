@@ -47,20 +47,28 @@ namespace PrizmMain.Forms.PipeMill.NewEdit
             }
             else
             {
-                try
+                if (viewModel.CheckStatus())
                 {
-                    repo.BeginTransaction();
-                    repo.RepoPipe.SaveOrUpdate(viewModel.Pipe);
-                    repo.Commit();
-                    repo.RepoPipe.Evict(viewModel.Pipe);
-                    viewModel.ModifiableView.IsModified = false;
-                    notify.ShowNotify(
-                        string.Concat(Resources.DLG_PIPE_SAVED, viewModel.Number), 
-                        Resources.DLG_PIPE_SAVED_HEADER);
+                    try
+                    {
+
+                        repo.BeginTransaction();
+                        repo.RepoPipe.SaveOrUpdate(viewModel.Pipe);
+                        repo.Commit();
+                        repo.RepoPipe.Evict(viewModel.Pipe);
+                        viewModel.ModifiableView.IsModified = false;
+                        notify.ShowNotify(
+                            string.Concat(Resources.DLG_PIPE_SAVED, viewModel.Number),
+                            Resources.DLG_PIPE_SAVED_HEADER);
+                    }
+                    catch (RepositoryException ex)
+                    {
+                        notify.ShowFailure(ex.InnerException.Message, ex.Message);
+                    }
                 }
-                catch (RepositoryException ex)
+                else 
                 {
-                    notify.ShowFailure(ex.InnerException.Message, ex.Message);
+                    notify.ShowInfo(Resources.DLG_AddFailedControlOperation, Resources.DLG_PIPE_SAVED_HEADER);
                 }
             }
         }
