@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barManager1 = new DevExpress.XtraBars.BarManager();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barMenu = new DevExpress.XtraBars.Bar();
             this.barSubItemApplication = new DevExpress.XtraBars.BarSubItem();
             this.barButtonItemSave = new DevExpress.XtraBars.BarButtonItem();
@@ -81,10 +82,10 @@
             this.languageComboBoxEdit = new DevExpress.XtraBars.BarEditItem();
             this.languageRepositoryComboBox = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.barButtonItemHeat = new DevExpress.XtraBars.BarButtonItem();
-            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown();
-            this.mainMDIdocumentManager = new DevExpress.XtraBars.Docking2010.DocumentManager();
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView();
-            this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl();
+            this.galleryDropDown1 = new DevExpress.XtraBars.Ribbon.GalleryDropDown(this.components);
+            this.mainMDIdocumentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.alertControl = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.languageRepositoryComboBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.galleryDropDown1)).BeginInit();
@@ -222,6 +223,7 @@
             this.barButtonItemExit.Id = 31;
             this.barButtonItemExit.ItemShortcut = new DevExpress.XtraBars.BarShortcut((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4));
             this.barButtonItemExit.Name = "barButtonItemExit";
+            this.barButtonItemExit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemExit_ItemClick);
             // 
             // barSubItemMill
             // 
@@ -497,28 +499,28 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Size = new System.Drawing.Size(1276, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(1276, 22);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 600);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 23);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 598);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1276, 25);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 580);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 22);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 576);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1276, 20);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 580);
+            this.barDockControlRight.Location = new System.Drawing.Point(1276, 22);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 576);
             // 
             // barButtonItemSettingsDictionaries
             // 
