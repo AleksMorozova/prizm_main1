@@ -18,7 +18,7 @@ namespace Prizm.Data.DAL.ADO
         public MillReportsRepository() { }
         private SqlConnection connection = null;
 
-        public DataSet GetPipesByStatus(DateTime startDate, DateTime finalDate, List<Guid> categories, ReportType reportType, List <string> statuses)
+        public DataSet GetPipesByStatus(DateTime startDate, DateTime finalDate, List<Guid> categories, ReportType reportType, List <string> statuses, bool previewFlag = false)
         {
             CreateConnection();
             DataSet pipeDataSet = new DataSet();
@@ -37,7 +37,10 @@ namespace Prizm.Data.DAL.ADO
                         //input search criteria value
                         command.Parameters.AddWithValue("@startDate", startDate);
                         command.Parameters.AddWithValue("@finalDate", finalDate);
-
+                        
+                        //temporary SQLobject
+                        ISQLFlexible tempSQLObject;
+                        
                         switch (reportType)
                         {
                             case ReportType.ByCategories:
@@ -56,16 +59,36 @@ namespace Prizm.Data.DAL.ADO
                                         command.Parameters.AddWithValue(statusParameters[j], statuses[j]);
                                     }
 
-                                    command.CommandText = (categories.Count != 0) ? string.Format(SQLQueryString.GetAllActivePipesByDate + "AND PipeTest.categoryId IN ({0})", string.Join(", ", categoryParameters))
-                                                                                 : SQLQueryString.GetAllActivePipesByDate;
+
+                                    tempSQLObject = SQLProvider.GetQuery("GetAllActivePipesByDate").WhereAnd().WhereActive(true).WhereAnd().WhereRequired(true);
+                                    if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+
+                                    command.CommandText = (categories.Count != 0) ? string.Format(tempSQLObject.ToString() + "AND PipeTest.categoryId IN ({0})", string.Join(", ", categoryParameters))
+                                                                                 : tempSQLObject.ToString();
                                     if(statuses.Count!=0)
                                         command.CommandText += string.Format("AND PipeTestResult.status IN ({0})", string.Join(", ", statusParameters));
 
                                 }; break;
                             case ReportType.ByProducing:
-                                command.CommandText =SQLQueryString.GetAllProduced; break;
+
+                                tempSQLObject = SQLProvider.GetQuery("GetAllProduced").WhereAnd().WherePipeMillStatus("Produced").WhereAnd().WhereActive(true);
+                                    if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+                                command.CommandText =tempSQLObject.ToString(); 
+                                break;
                             case ReportType.ByShipped:
-                                command.CommandText = SQLQueryString.GetAllShipped; break;
+                                tempSQLObject = SQLProvider.GetQuery("GetAllShipped").WhereAnd().WherePipeMillStatus("Shipped").WhereAnd().WhereActive(true);
+                                    if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+                                command.CommandText =tempSQLObject.ToString();
+                                break;
                             default:
                                 { throw new Exception("Cannot form query"); }
                         }
