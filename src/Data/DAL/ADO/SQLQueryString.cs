@@ -97,15 +97,7 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
 		  where Joint.numberKP >=@startPK and Joint.numberKP <= @endPK";
     }
 
-    interface ISQLFlexible
-    {
-        ISQLFlexible Top(int count);
-        ISQLFlexible WhereAnd();
-        ISQLFlexible WhereActive(bool isActive);
-        ISQLFlexible WhereRequired(bool isRequired);
-        ISQLFlexible WherePipeMillStatus(string pipeMillStatus);
-        string ToString();
-    }
+   
 
     /// <summary>
     /// Factory for creating objects to setup SQL-queries
