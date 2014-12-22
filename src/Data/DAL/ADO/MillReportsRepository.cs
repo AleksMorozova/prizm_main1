@@ -60,22 +60,32 @@ namespace Prizm.Data.DAL.ADO
                                     }
 
 
-                                    tempSQLObject = SQLProvider.GetQuery("GetAllActivePipesByDate").WhereAnd().WhereActive(true).WhereAnd().WhereRequired(true);
+                                    tempSQLObject = SQLProvider.GetQuery("GetAllActivePipesByDate").WhereAnd().WhereActive(true).WhereAnd().WhereRequired("PipeTest",true);
+                                                                                                              .Where("Pipe.isActive","=","1")
                                     if (previewFlag)
                                     {
                                         tempSQLObject.Top(1);
                                     }
 
-                                    command.CommandText = (categories.Count != 0) ? string.Format(tempSQLObject.ToString() + "AND PipeTest.categoryId IN ({0})", string.Join(", ", categoryParameters))
-                                                                                 : tempSQLObject.ToString();
+                                    
+                                    
+                                    
+                                    tempSQLObject = (categories.Count != 0) ? tempSQLObject.WhereAnd().Where("PipeTest.categoryId","IN", string.Join(", ", categoryParameters))
+                                                                                 : tempSQLObject;
+                                    command.CommandText = tempSQLObject.ToString();
+                                    
                                     if(statuses.Count!=0)
-                                        command.CommandText += string.Format("AND PipeTestResult.status IN ({0})", string.Join(", ", statusParameters));
+                                        //command.CommandText += string.Format("AND PipeTestResult.status IN ({0})", string.Join(", ", statusParameters));
+                                        tempSQLObject = tempSQLObject.WhereAnd().Where("PipeTestResult.status", "IN", string.Join(", ", statusParameters));
 
                                 }; break;
                             case ReportType.ByProducing:
 
                                 tempSQLObject = SQLProvider.GetQuery("GetAllProduced").WhereAnd().WherePipeMillStatus("Produced").WhereAnd().WhereActive(true);
-                                    if (previewFlag)
+                                                                                      .WhereAnd().WhereOption("PipeMillStatus","=","Produced")
+                                                                                                 .WhereUpdate("PipeMillStatus"
+                                                                                                 .WhereDelete("PipeMillStatus");
+                                if (previewFlag)
                                     {
                                         tempSQLObject.Top(1);
                                     }
