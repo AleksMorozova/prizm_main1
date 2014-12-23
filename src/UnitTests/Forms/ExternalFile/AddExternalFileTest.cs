@@ -22,16 +22,19 @@ namespace Prizm.UnitTests.Forms.ExternalFile
     [TestFixture]
     public class AddExternalFileTest
     {
+        string FilesToAttachFolder = Path.Combine(Directory.GetCurrentDirectory(), "Attachments\\FilesToAttach\\");
+        string TargetPath = Path.Combine(Directory.GetCurrentDirectory(), "Attachments\\");
+
         [Test]
         public void AddFileToRailcar()
         {
-            if (!Directory.Exists(Directories.FilesToAttachFolder))
+            if (!Directory.Exists(FilesToAttachFolder))
             {
-                Directory.CreateDirectory(Directories.FilesToAttachFolder);
-                DirectoryInfo directoryInfo = new DirectoryInfo(Directories.FilesToAttachFolder);
+                Directory.CreateDirectory(FilesToAttachFolder);
+                DirectoryInfo directoryInfo = new DirectoryInfo(FilesToAttachFolder);
                 directoryInfo.Attributes |= FileAttributes.Hidden;
             }
-            using (FileStream fs = System.IO.File.Create(Directories.FilesToAttachFolder + "test.txt"))
+            using (FileStream fs = System.IO.File.Create(FilesToAttachFolder + "test.txt"))
             {
                 Byte[] info = new UTF8Encoding(true).GetBytes("This is some text in the file.");
                 fs.Write(info, 0, info.Length);
@@ -47,7 +50,12 @@ namespace Prizm.UnitTests.Forms.ExternalFile
             repos.SetupGet(_ => _.RailcarRepo).Returns(railcarRepo.Object);
 
             var fileRepo = new Mock<IFileRepository>();
-            var fileViewModel = new ExternalFilesViewModel(fileRepo.Object,Guid.Empty, notify.Object);
+            var projectRepo = new Mock<IProjectRepository>();
+            projectRepo.Setup(_ => _.GetSingle()).Returns(new Project() { ExternalFilesPath = Directory.GetCurrentDirectory() });
+            var workWithFilesRepos = new Mock<IWorkWithFilesRepository>();
+            workWithFilesRepos.SetupGet(_ => _.RepoFile).Returns(fileRepo.Object);
+            workWithFilesRepos.SetupGet(_ => _.RepoProject).Returns(projectRepo.Object);
+            var fileViewModel = new ExternalFilesViewModel(workWithFilesRepos.Object, Guid.Empty, notify.Object);
 
             
             fileViewModel.FilesToAttach.Add("test.txt", "test.txt");
@@ -67,9 +75,9 @@ namespace Prizm.UnitTests.Forms.ExternalFile
             fileRepo.Verify(_ => _.Commit(), Times.Once());
             fileRepo.Verify(_ => _.Evict(It.IsAny<Domain.Entity.File>()), Times.Once());
 
-            if (Directory.Exists(Directories.TargetPath))
+            if (Directory.Exists(TargetPath))
             {
-                Directory.Delete(Directories.TargetPath, true);
+                Directory.Delete(TargetPath, true);
             }
         }
     }
