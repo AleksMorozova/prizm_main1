@@ -31,13 +31,13 @@ namespace Prizm.Main.Forms.ExternalFile
         {
             if (CanExecute())
             {
-                string sourceFile = Path.Combine(Directories.TargetPath, viewModel.SelectedFile.NewName);
-                string tempFile = Path.Combine(Directories.TargetPathForView, Guid.NewGuid() + viewModel.SelectedFile.FileName.Substring(viewModel.SelectedFile.FileName.LastIndexOf('.')));
+                string sourceFile = Path.Combine(viewModel.TargetPath, viewModel.SelectedFile.NewName);
+                string tempFile = Path.Combine(viewModel.TargetPathForView, Guid.NewGuid() + viewModel.SelectedFile.FileName.Substring(viewModel.SelectedFile.FileName.LastIndexOf('.')));
 
-                if (!Directory.Exists(Directories.TargetPathForView))
+                if (!Directory.Exists(viewModel.TargetPathForView))
                 {
-                    Directory.CreateDirectory(Directories.TargetPathForView);
-                    DirectoryInfo directoryInfo = new DirectoryInfo(Directories.TargetPathForView);
+                    Directory.CreateDirectory(viewModel.TargetPathForView);
+                    DirectoryInfo directoryInfo = new DirectoryInfo(viewModel.TargetPathForView);
                     directoryInfo.Attributes |= FileAttributes.Hidden;
                 }
 

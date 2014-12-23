@@ -52,7 +52,7 @@ namespace Prizm.UnitTests.Forms.ExternalFile
             
             fileViewModel.FilesToAttach.Add("test.txt", "test.txt");
 
-            var viewModel = new RailcarViewModel(repos.Object, "", notify.Object);
+            var viewModel = new RailcarViewModel(repos.Object, Guid.Empty, notify.Object);
             viewModel.ModifiableView = new Mock<IModifiable>().Object;
             viewModel.Railcar.Number = "Test Railcar";
             viewModel.ModifiableView = view.Object;

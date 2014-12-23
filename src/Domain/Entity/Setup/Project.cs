@@ -11,5 +11,6 @@ namespace Prizm.Domain.Entity
         public virtual WorkstationType WorkstationType { get; set; }
         public virtual string MillPipeNumberMask { get; set; }
         public virtual string MillPipeNumberMaskRegexp { get; set; }
+        public virtual string ExternalFilesPath { get; set; }
     }
 }

@@ -19,6 +19,7 @@ namespace Prizm.Data.DAL.Mapping
             Map(_ => _.WorkstationType).Column("workstationType");
             Map(_ => _.MillPipeNumberMask).Column("millPipeNumberMask");
             Map(_ => _.MillPipeNumberMaskRegexp).Column("millPipeNumberMaskRegexp");
+            Map(_ => _.ExternalFilesPath).Column("externalFilesPath");
         }
     }
 }

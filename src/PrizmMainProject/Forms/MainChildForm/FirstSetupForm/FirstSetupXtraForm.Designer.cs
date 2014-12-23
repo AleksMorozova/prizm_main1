@@ -28,16 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule6 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule compareAgainstControlValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.CompareAgainstControlValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstSetupXtraForm));
             this.pass = new DevExpress.XtraEditors.TextEdit();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
+            this.selectPathButton = new DevExpress.XtraEditors.SimpleButton();
+            this.dataPath = new DevExpress.XtraEditors.TextEdit();
             this.type = new DevExpress.XtraEditors.TextEdit();
             this.pipeNumberMaskRulesLabel = new DevExpress.XtraEditors.LabelControl();
             this.fileSize = new DevExpress.XtraEditors.SpinEdit();
@@ -59,10 +61,12 @@
             this.projectLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.titleLayoutControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.millLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.fileLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.maskLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.pipeNumberMaskLayoutItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.typeLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dataPathLayout = new DevExpress.XtraLayout.LayoutControlItem();
+            this.selectPathButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
+            this.fileLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.adminLayoutControlGroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.loginLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.passLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
@@ -70,11 +74,12 @@
             this.firstNameLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.middleNameLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
             this.lastNameLayoutControlItem = new DevExpress.XtraLayout.LayoutControlItem();
-            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.validationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.bindingSource = new System.Windows.Forms.BindingSource();
+            this.validationProvider = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.pass.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPath.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.type.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSize.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reEnterPass.Properties)).BeginInit();
@@ -93,10 +98,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectLayoutGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleLayoutControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.millLayoutControlItem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumberMaskLayoutItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeLayoutControlItem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPathLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPathButtonLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminLayoutControlGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginLayoutControlItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLayoutControlItem)).BeginInit();
@@ -117,12 +124,14 @@
             this.pass.Size = new System.Drawing.Size(369, 20);
             this.pass.StyleController = this.layoutControl;
             this.pass.TabIndex = 7;
-            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule5.ErrorText = "Поле обязательно";
-            this.validationProvider.SetValidationRule(this.pass, conditionValidationRule5);
+            conditionValidationRule6.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule6.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.pass, conditionValidationRule6);
             // 
             // layoutControl
             // 
+            this.layoutControl.Controls.Add(this.selectPathButton);
+            this.layoutControl.Controls.Add(this.dataPath);
             this.layoutControl.Controls.Add(this.type);
             this.layoutControl.Controls.Add(this.pipeNumberMaskRulesLabel);
             this.layoutControl.Controls.Add(this.fileSize);
@@ -147,12 +156,34 @@
             this.layoutControl.TabIndex = 0;
             this.layoutControl.Text = "layoutControl1";
             // 
+            // selectPathButton
+            // 
+            this.selectPathButton.Location = new System.Drawing.Point(747, 62);
+            this.selectPathButton.Name = "selectPathButton";
+            this.selectPathButton.Size = new System.Drawing.Size(88, 22);
+            this.selectPathButton.StyleController = this.layoutControl;
+            this.selectPathButton.TabIndex = 20;
+            this.selectPathButton.Text = "Выбрать папку";
+            this.selectPathButton.Click += new System.EventHandler(this.selectPathButton_Click);
+            // 
+            // dataPath
+            // 
+            this.dataPath.Location = new System.Drawing.Point(562, 64);
+            this.dataPath.Name = "dataPath";
+            this.dataPath.Properties.ReadOnly = true;
+            this.dataPath.Size = new System.Drawing.Size(171, 20);
+            this.dataPath.StyleController = this.layoutControl;
+            this.dataPath.TabIndex = 19;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.dataPath, conditionValidationRule1);
+            // 
             // type
             // 
-            this.type.Location = new System.Drawing.Point(617, 64);
+            this.type.Location = new System.Drawing.Point(437, 64);
             this.type.Name = "type";
             this.type.Properties.ReadOnly = true;
-            this.type.Size = new System.Drawing.Size(208, 20);
+            this.type.Size = new System.Drawing.Size(91, 20);
             this.type.StyleController = this.layoutControl;
             this.type.TabIndex = 18;
             this.type.TabStop = false;
@@ -162,9 +193,9 @@
             this.pipeNumberMaskRulesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pipeNumberMaskRulesLabel.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.pipeNumberMaskRulesLabel.Location = new System.Drawing.Point(617, 98);
+            this.pipeNumberMaskRulesLabel.Location = new System.Drawing.Point(601, 98);
             this.pipeNumberMaskRulesLabel.Name = "pipeNumberMaskRulesLabel";
-            this.pipeNumberMaskRulesLabel.Size = new System.Drawing.Size(218, 13);
+            this.pipeNumberMaskRulesLabel.Size = new System.Drawing.Size(234, 13);
             this.pipeNumberMaskRulesLabel.StyleController = this.layoutControl;
             this.pipeNumberMaskRulesLabel.TabIndex = 17;
             // 
@@ -175,7 +206,7 @@
             0,
             0,
             0});
-            this.fileSize.Location = new System.Drawing.Point(432, 64);
+            this.fileSize.Location = new System.Drawing.Point(233, 64);
             this.fileSize.Name = "fileSize";
             this.fileSize.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -191,7 +222,7 @@
             0,
             0,
             0});
-            this.fileSize.Size = new System.Drawing.Size(171, 20);
+            this.fileSize.Size = new System.Drawing.Size(170, 20);
             this.fileSize.StyleController = this.layoutControl;
             this.fileSize.TabIndex = 3;
             // 
@@ -226,9 +257,9 @@
             this.firstName.Size = new System.Drawing.Size(403, 20);
             this.firstName.StyleController = this.layoutControl;
             this.firstName.TabIndex = 10;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "Поле обязательно";
-            this.validationProvider.SetValidationRule(this.firstName, conditionValidationRule1);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.firstName, conditionValidationRule2);
             // 
             // lastName
             // 
@@ -238,9 +269,9 @@
             this.lastName.Size = new System.Drawing.Size(403, 20);
             this.lastName.StyleController = this.layoutControl;
             this.lastName.TabIndex = 9;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "Поле обязательно";
-            this.validationProvider.SetValidationRule(this.lastName, conditionValidationRule2);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.lastName, conditionValidationRule3);
             // 
             // login
             // 
@@ -250,15 +281,15 @@
             this.login.Size = new System.Drawing.Size(369, 20);
             this.login.StyleController = this.layoutControl;
             this.login.TabIndex = 6;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "Поле обязательно";
-            this.validationProvider.SetValidationRule(this.login, conditionValidationRule3);
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.login, conditionValidationRule4);
             // 
             // pipeMask
             // 
-            this.pipeMask.Location = new System.Drawing.Point(432, 114);
+            this.pipeMask.Location = new System.Drawing.Point(375, 114);
             this.pipeMask.Name = "pipeMask";
-            this.pipeMask.Size = new System.Drawing.Size(171, 20);
+            this.pipeMask.Size = new System.Drawing.Size(202, 20);
             this.pipeMask.StyleController = this.layoutControl;
             this.pipeMask.TabIndex = 5;
             // 
@@ -266,7 +297,7 @@
             // 
             this.mill.Location = new System.Drawing.Point(29, 114);
             this.mill.Name = "mill";
-            this.mill.Size = new System.Drawing.Size(369, 20);
+            this.mill.Size = new System.Drawing.Size(312, 20);
             this.mill.StyleController = this.layoutControl;
             this.mill.TabIndex = 4;
             // 
@@ -274,12 +305,12 @@
             // 
             this.projectName.Location = new System.Drawing.Point(29, 64);
             this.projectName.Name = "projectName";
-            this.projectName.Size = new System.Drawing.Size(369, 20);
+            this.projectName.Size = new System.Drawing.Size(170, 20);
             this.projectName.StyleController = this.layoutControl;
             this.projectName.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "Поле обязательно";
-            this.validationProvider.SetValidationRule(this.projectName, conditionValidationRule4);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "Поле обязательно";
+            this.validationProvider.SetValidationRule(this.projectName, conditionValidationRule5);
             // 
             // saveButton
             // 
@@ -380,10 +411,12 @@
             this.projectLayoutGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.titleLayoutControl,
             this.millLayoutControlItem,
-            this.fileLayoutControlItem,
             this.maskLayoutControlItem,
             this.pipeNumberMaskLayoutItem,
-            this.typeLayoutControlItem});
+            this.typeLayoutControlItem,
+            this.dataPathLayout,
+            this.selectPathButtonLayout,
+            this.fileLayoutControlItem});
             this.projectLayoutGroup.Location = new System.Drawing.Point(0, 0);
             this.projectLayoutGroup.Name = "projectLayoutGroup";
             this.projectLayoutGroup.Size = new System.Drawing.Size(844, 143);
@@ -394,8 +427,10 @@
             this.titleLayoutControl.Control = this.projectName;
             this.titleLayoutControl.CustomizationFormText = "Наименование";
             this.titleLayoutControl.Location = new System.Drawing.Point(0, 0);
+            this.titleLayoutControl.MinSize = new System.Drawing.Size(150, 50);
             this.titleLayoutControl.Name = "titleLayoutControl";
-            this.titleLayoutControl.Size = new System.Drawing.Size(393, 50);
+            this.titleLayoutControl.Size = new System.Drawing.Size(194, 50);
+            this.titleLayoutControl.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.titleLayoutControl.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 15, 5, 5);
             this.titleLayoutControl.Text = "Наименование проекта";
             this.titleLayoutControl.TextLocation = DevExpress.Utils.Locations.Top;
@@ -408,35 +443,23 @@
             this.millLayoutControlItem.Location = new System.Drawing.Point(0, 50);
             this.millLayoutControlItem.MinSize = new System.Drawing.Size(195, 50);
             this.millLayoutControlItem.Name = "millLayoutControlItem";
-            this.millLayoutControlItem.Size = new System.Drawing.Size(393, 50);
+            this.millLayoutControlItem.Size = new System.Drawing.Size(336, 50);
             this.millLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.millLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 15, 5, 5);
             this.millLayoutControlItem.Text = "Название завода";
             this.millLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.millLayoutControlItem.TextSize = new System.Drawing.Size(171, 13);
             // 
-            // fileLayoutControlItem
-            // 
-            this.fileLayoutControlItem.Control = this.fileSize;
-            this.fileLayoutControlItem.CustomizationFormText = "Максимальный размер файла (KB)";
-            this.fileLayoutControlItem.Location = new System.Drawing.Point(393, 0);
-            this.fileLayoutControlItem.Name = "fileLayoutControlItem";
-            this.fileLayoutControlItem.Size = new System.Drawing.Size(195, 50);
-            this.fileLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 5, 5, 5);
-            this.fileLayoutControlItem.Text = "Максимальный размер файла (KB)";
-            this.fileLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
-            this.fileLayoutControlItem.TextSize = new System.Drawing.Size(171, 13);
-            // 
             // maskLayoutControlItem
             // 
             this.maskLayoutControlItem.Control = this.pipeMask;
             this.maskLayoutControlItem.CustomizationFormText = "Формат номера трубы";
-            this.maskLayoutControlItem.Location = new System.Drawing.Point(393, 50);
+            this.maskLayoutControlItem.Location = new System.Drawing.Point(336, 50);
             this.maskLayoutControlItem.MinSize = new System.Drawing.Size(195, 50);
             this.maskLayoutControlItem.Name = "maskLayoutControlItem";
-            this.maskLayoutControlItem.Size = new System.Drawing.Size(195, 50);
+            this.maskLayoutControlItem.Size = new System.Drawing.Size(236, 50);
             this.maskLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.maskLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 5, 5, 5);
+            this.maskLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 5, 5);
             this.maskLayoutControlItem.Text = "Формат номера трубы";
             this.maskLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.maskLayoutControlItem.TextSize = new System.Drawing.Size(171, 13);
@@ -445,9 +468,9 @@
             // 
             this.pipeNumberMaskLayoutItem.Control = this.pipeNumberMaskRulesLabel;
             this.pipeNumberMaskLayoutItem.CustomizationFormText = "pipeNumberMaskLayoutItem";
-            this.pipeNumberMaskLayoutItem.Location = new System.Drawing.Point(588, 50);
+            this.pipeNumberMaskLayoutItem.Location = new System.Drawing.Point(572, 50);
             this.pipeNumberMaskLayoutItem.Name = "pipeNumberMaskLayoutItem";
-            this.pipeNumberMaskLayoutItem.Size = new System.Drawing.Size(232, 50);
+            this.pipeNumberMaskLayoutItem.Size = new System.Drawing.Size(248, 50);
             this.pipeNumberMaskLayoutItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
             this.pipeNumberMaskLayoutItem.Text = "pipeNumberMaskLayoutItem";
             this.pipeNumberMaskLayoutItem.TextSize = new System.Drawing.Size(0, 0);
@@ -458,15 +481,54 @@
             // 
             this.typeLayoutControlItem.Control = this.type;
             this.typeLayoutControlItem.CustomizationFormText = "Тип станции";
-            this.typeLayoutControlItem.Location = new System.Drawing.Point(588, 0);
+            this.typeLayoutControlItem.Location = new System.Drawing.Point(398, 0);
             this.typeLayoutControlItem.MinSize = new System.Drawing.Size(125, 50);
             this.typeLayoutControlItem.Name = "typeLayoutControlItem";
-            this.typeLayoutControlItem.Size = new System.Drawing.Size(232, 50);
+            this.typeLayoutControlItem.Size = new System.Drawing.Size(125, 50);
             this.typeLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.typeLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 15, 5, 5);
+            this.typeLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 5, 5);
             this.typeLayoutControlItem.Text = "Тип станции";
             this.typeLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
             this.typeLayoutControlItem.TextSize = new System.Drawing.Size(171, 13);
+            // 
+            // dataPathLayout
+            // 
+            this.dataPathLayout.Control = this.dataPath;
+            this.dataPathLayout.CustomizationFormText = "Место хранения внешних файлов";
+            this.dataPathLayout.Location = new System.Drawing.Point(523, 0);
+            this.dataPathLayout.Name = "dataPathLayout";
+            this.dataPathLayout.Size = new System.Drawing.Size(195, 50);
+            this.dataPathLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 5, 5, 5);
+            this.dataPathLayout.Text = "Место хранения внешних файлов";
+            this.dataPathLayout.TextLocation = DevExpress.Utils.Locations.Top;
+            this.dataPathLayout.TextSize = new System.Drawing.Size(171, 13);
+            // 
+            // selectPathButtonLayout
+            // 
+            this.selectPathButtonLayout.Control = this.selectPathButton;
+            this.selectPathButtonLayout.CustomizationFormText = "selectPathButtonLayout";
+            this.selectPathButtonLayout.Location = new System.Drawing.Point(718, 0);
+            this.selectPathButtonLayout.Name = "selectPathButtonLayout";
+            this.selectPathButtonLayout.Size = new System.Drawing.Size(102, 50);
+            this.selectPathButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 19, 0);
+            this.selectPathButtonLayout.Text = "selectPathButtonLayout";
+            this.selectPathButtonLayout.TextSize = new System.Drawing.Size(0, 0);
+            this.selectPathButtonLayout.TextToControlDistance = 0;
+            this.selectPathButtonLayout.TextVisible = false;
+            // 
+            // fileLayoutControlItem
+            // 
+            this.fileLayoutControlItem.Control = this.fileSize;
+            this.fileLayoutControlItem.CustomizationFormText = "Максимальный размер файла (KB)";
+            this.fileLayoutControlItem.Location = new System.Drawing.Point(194, 0);
+            this.fileLayoutControlItem.MinSize = new System.Drawing.Size(174, 50);
+            this.fileLayoutControlItem.Name = "fileLayoutControlItem";
+            this.fileLayoutControlItem.Size = new System.Drawing.Size(204, 50);
+            this.fileLayoutControlItem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.fileLayoutControlItem.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 5, 5);
+            this.fileLayoutControlItem.Text = "Максимальный размер файла (KB)";
+            this.fileLayoutControlItem.TextLocation = DevExpress.Utils.Locations.Top;
+            this.fileLayoutControlItem.TextSize = new System.Drawing.Size(171, 13);
             // 
             // adminLayoutControlGroup
             // 
@@ -570,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pass.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).EndInit();
             this.layoutControl.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataPath.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.type.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSize.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reEnterPass.Properties)).EndInit();
@@ -588,10 +651,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.projectLayoutGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.titleLayoutControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.millLayoutControlItem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fileLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pipeNumberMaskLayoutItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeLayoutControlItem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPathLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPathButtonLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fileLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminLayoutControlGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginLayoutControlItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passLayoutControlItem)).EndInit();
@@ -643,5 +708,9 @@
         private DevExpress.XtraLayout.LayoutControlItem pipeNumberMaskLayoutItem;
         private DevExpress.XtraEditors.TextEdit type;
         private DevExpress.XtraLayout.LayoutControlItem typeLayoutControlItem;
+        private DevExpress.XtraEditors.SimpleButton selectPathButton;
+        private DevExpress.XtraEditors.TextEdit dataPath;
+        private DevExpress.XtraLayout.LayoutControlItem dataPathLayout;
+        private DevExpress.XtraLayout.LayoutControlItem selectPathButtonLayout;
     }
 }

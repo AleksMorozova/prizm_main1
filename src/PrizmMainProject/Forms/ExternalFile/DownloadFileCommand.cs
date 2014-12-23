@@ -30,7 +30,7 @@ namespace Prizm.Main.Forms.ExternalFile
         {
             if (CanExecute())
             {
-                string sourceFile = Path.Combine(Directories.TargetPath, viewModel.SelectedFile.NewName);
+                string sourceFile = Path.Combine(viewModel.TargetPath, viewModel.SelectedFile.NewName);
                 if (File.Exists(sourceFile))
                 {
                     File.Copy(sourceFile, viewModel.SelectedPath);

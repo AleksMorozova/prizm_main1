@@ -741,6 +741,15 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Выберите папку для хранения внешних файлов.
+        /// </summary>
+        internal static string DLG_SELECT_PATH_HEADER {
+            get {
+                return ResourceManager.GetString("DLG_SELECT_PATH_HEADER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Настройки успешно сохранены..
         /// </summary>
         internal static string DLG_SETUP_SAVED {

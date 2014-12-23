@@ -31,10 +31,10 @@ namespace Prizm.Main.Forms.ExternalFile
         {
             if (CanExecute())
             {
-                if (!Directory.Exists(Directories.TargetPath))
+                if (!Directory.Exists(viewModel.TargetPath))
                 {
-                    Directory.CreateDirectory(Directories.TargetPath);
-                    DirectoryInfo directoryInfo = new DirectoryInfo(Directories.TargetPath);
+                    Directory.CreateDirectory(viewModel.TargetPath);
+                    DirectoryInfo directoryInfo = new DirectoryInfo(viewModel.TargetPath);
                     directoryInfo.Attributes |= FileAttributes.Hidden;
                 }
                 foreach (KeyValuePair<string, string> kvp in viewModel.FilesToAttach)
@@ -51,10 +51,10 @@ namespace Prizm.Main.Forms.ExternalFile
                     repo.Save(fileEntity);
                     repo.Commit();
                     repo.Evict(fileEntity);
-                    System.IO.File.Copy(Directories.FilesToAttachFolder + fileEntity.NewName, Directories.TargetPath + fileEntity.NewName);
+                    System.IO.File.Copy(viewModel.FilesToAttachFolder + fileEntity.NewName, viewModel.TargetPath + fileEntity.NewName);
                 }
 
-                Directory.Delete(Directories.FilesToAttachFolder, true);
+                Directory.Delete(viewModel.FilesToAttachFolder, true);
                 notify.ShowNotify(Resources.DLG_FILE_ATTACH_SUCCESS, Resources.DLG_FILE_ATTACH_SUCCESS_HEADER);
             }
         }
