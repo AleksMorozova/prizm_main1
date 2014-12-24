@@ -286,7 +286,10 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
                 e.DisplayText = string.Empty;
 
             IList<Welder> welders = e.Value as IList<Welder>;
-            e.DisplayText = viewModel.FormatWeldersList(welders);
+            if (viewModel != null)
+            {
+                e.DisplayText = viewModel.FormatWeldersList(welders);
+            }
         }
 
         private void repositoryItemPopupWelders_QueryPopUp(object sender, CancelEventArgs e)
@@ -387,7 +390,10 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
                 e.DisplayText = string.Empty;
 
             IList<Inspector> inspectors = e.Value as IList<Inspector>;
-            e.DisplayText = viewModel.FormatInspectorList(inspectors);
+            if (viewModel != null)
+            {
+                e.DisplayText = viewModel.FormatInspectorList(inspectors);
+            }
         }
 
         /// <summary>
