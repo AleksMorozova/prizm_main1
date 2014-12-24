@@ -18,7 +18,7 @@ namespace Prizm.Data.DAL.ADO
         public MillReportsRepository() { }
         private SqlConnection connection = null;
 
-        public DataSet GetPipesByStatus(DateTime startDate, DateTime finalDate, List<Guid> categories, ReportType reportType, List <string> statuses)
+        public DataSet GetPipesByStatus(DateTime startDate, DateTime finalDate, List<Guid> categories, ReportType reportType, List <string> statuses, bool previewFlag = false)
         {
             CreateConnection();
             DataSet pipeDataSet = new DataSet();
@@ -38,6 +38,9 @@ namespace Prizm.Data.DAL.ADO
                         command.Parameters.AddWithValue("@startDate", startDate);
                         command.Parameters.AddWithValue("@finalDate", finalDate);
 
+                        //temporary SQLobject
+                        ISQLFlexible tempSQLObject;
+
                         switch (reportType)
                         {
                             case ReportType.ByCategories:
@@ -56,16 +59,38 @@ namespace Prizm.Data.DAL.ADO
                                         command.Parameters.AddWithValue(statusParameters[j], statuses[j]);
                                     }
 
-                                    command.CommandText = (categories.Count != 0) ? string.Format(SQLQueryString.GetAllActivePipesByDate + "AND PipeTest.categoryId IN ({0})", string.Join(", ", categoryParameters))
-                                                                                 : SQLQueryString.GetAllActivePipesByDate;
-                                    if(statuses.Count!=0)
-                                        command.CommandText += string.Format("AND PipeTestResult.status IN ({0})", string.Join(", ", statusParameters));
+                                    
+                                    tempSQLObject = SQLProvider.GetQuery("GetAllActivePipesByDate").WhereAnd().Where("Pipe.isActive", "=", "1").WhereAnd().Where("PipeTest.isRequired", "=", "1");
+
+                                    if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+
+                                    tempSQLObject = (categories.Count != 0) ? tempSQLObject.WhereAnd().Where("PipeTest.categoryId", "IN", "(" + string.Join(", ", categoryParameters) + ")")
+                                                                                 : tempSQLObject;
+                                    if (statuses.Count != 0)
+                                        tempSQLObject = tempSQLObject.WhereAnd().Where("PipeTestResult.status", "IN", "(" + string.Join(", ", statusParameters) + ")");
+
+                                    command.CommandText = tempSQLObject.ToString(); 
 
                                 }; break;
                             case ReportType.ByProducing:
-                                command.CommandText =SQLQueryString.GetAllProduced; break;
+                                tempSQLObject = SQLProvider.GetQuery("GetAllProduced").WhereAnd().Where("PipeMillStatus","=","'Produced'").WhereAnd().Where("Pipe.isActive","=","1");
+                                if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+                                command.CommandText =tempSQLObject.ToString(); 
+                                break;
                             case ReportType.ByShipped:
-                                command.CommandText = SQLQueryString.GetAllShipped; break;
+                                tempSQLObject = SQLProvider.GetQuery("GetAllShipped").WhereAnd().Where("PipeMillStatus","=","'Shipped'").WhereAnd().Where("Pipe.isActive","=","1");
+                                    if (previewFlag)
+                                    {
+                                        tempSQLObject.Top(1);
+                                    }
+                                command.CommandText =tempSQLObject.ToString();
+                                break;
                             default:
                                 { throw new Exception("Cannot form query"); }
                         }

@@ -96,5 +96,126 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
 		  inner join Component on (Component.id = Joint.[part2Id])
 		  where Joint.numberKP >=@startPK and Joint.numberKP <= @endPK";
     }
+
+    /// <summary>
+    /// Factory for creating objects to setup SQL-queries
+    /// </summary>
+    static class SQLProvider
+    {
+        /// <summary>
+        /// string constants keeping SQL-query templates
+        /// </summary>
+        private const string GetAllActivePipesByDate = @"select DISTINCT {select_options} Pipe.number as number,  PipeMillSizeType.type as type, pipeMillStatus as pipeMillStatus, PurchaseOrder.number as purchaseOrder_number, PurchaseOrder.date as PurchaseOrder_date, wallThickness as wallThickness, weight as weight,length as length,diameter as diameter,Plate.number as Plate_number, Heat.number Heat_number, Pipe.isActive as isActive
+              from  Pipe Pipe
+              left join Plate on (Plate.id = Pipe.plateId)
+              left  join PipeMillSizeType on (PipeMillSizeType.id = Pipe.typeId)
+              left  join Heat on (Heat.id = Plate.heatId)
+              left  join PipeTestResult on (PipeTestResult.pipeId = Pipe.id)
+              left  join PurchaseOrder on (PurchaseOrder.id = Pipe.purchaseOrderId)
+              inner  join PipeTest on (PipeTestResult.pipeTestId =  PipeTest.id )
+              WHERE productionDate >=  @startDate  and productionDate <= @finalDate 
+              {where_options}";
+
+        private const string GetAllShipped = @"SELECT {select_options} Pipe.number,  PipeMillSizeType.type, pipeMillStatus, PurchaseOrder.number, PurchaseOrder.date, wallThickness, weight,length,diameter,Plate.number, Heat.number, Pipe.isActive
+              FROM Pipe 
+              LEFT  JOIN PipeMillSizeType ON (PipeMillSizeType.id = Pipe.typeId)
+              LEFT  JOIN PurchaseOrder ON (PurchaseOrder.id = Pipe.purchaseOrderId) 
+              LEFT  JOIN Plate ON (Plate.id = Pipe.plateId)
+              LEFT  JOIN Heat ON (Heat.id = Plate.heatId)
+	          WHERE productionDate >=  @startDate  and productionDate <= @finalDate
+              {where_options}";
+
+        private const string GetAllProduced = @"SELECT {select_options} Pipe.number,  PipeMillSizeType.type, pipeMillStatus, PurchaseOrder.number, PurchaseOrder.date, wallThickness, weight,length,diameter,Plate.number, Heat.number, Pipe.isActive
+            FROM Pipe 
+            LEFT  JOIN PipeMillSizeType ON (PipeMillSizeType.id = Pipe.typeId)
+            LEFT  JOIN PurchaseOrder ON (PurchaseOrder.id = Pipe.purchaseOrderId) 
+            LEFT  JOIN Plate ON (Plate.id = Pipe.plateId)
+            LEFT  JOIN Heat ON (Heat.id = Plate.heatId)
+	            WHERE productionDate >=  @startDate and productionDate <= @finalDate
+                {where_options}";
+
+        /// <summary>
+        /// public method accepting queryName and returning object ready to be setup via interface methods
+        /// </summary>
+        /// <param name="queryName">queryName</param>
+        /// <returns>ISQLFlexible</returns>
+        public static ISQLFlexible GetQuery(string queryName)
+        {
+            switch (queryName)
+            {
+                case "GetAllActivePipesByDate":
+                    return new SQLFlexible(GetAllActivePipesByDate);
+                case "GetAllShipped":
+                    return new SQLFlexible(GetAllShipped);
+
+                case "GetAllProduced":
+                    return new SQLFlexible(GetAllProduced);
+
+                default:
+                    //returning EmptyObject
+                    return new SQLFlexible("");
+            }
+        }
+
+
+        /// <summary>
+        /// implements SQL object and methods to add options, returns interface to controlling methods
+        /// </summary>
+        private class SQLFlexible : ISQLFlexible
+        {
+            //storing parts of SQL object
+            private Dictionary<string, string> currentQuery = new Dictionary<string, string>();
+
+            //private constructor never used
+            private SQLFlexible()
+            { }
+
+            /// <summary>
+            /// public constructor create and initialize keys in Dictionary with default values
+            /// </summary>
+            /// <param name="queryText"></param>
+            public SQLFlexible(string queryText)
+            {
+                currentQuery["query"] = queryText;
+                currentQuery["select_options"] = "";
+                currentQuery["where_options"] = "";
+            }
+
+            /// <summary>
+            /// Inserts TOP # option to "select" area of further request
+            /// </summary>
+            /// <param name="count"></param>
+            /// <returns></returns>
+            public ISQLFlexible Top(int count)
+            {
+                if (count > 0)
+                {
+                    currentQuery["select_options"] += "TOP " + count.ToString();
+                }
+                return this;
+            }
+
+            public ISQLFlexible WhereAnd()
+            {
+                currentQuery["where_options"] += " AND ";
+                return this;
+            }
+
+            public ISQLFlexible Where(string a, string b, string c)
+            {
+                currentQuery["where_options"] += a + b + c;
+                return this;
+            }
+
+            public override string ToString()
+            {
+                string tempVal = currentQuery["query"];
+                tempVal = tempVal.Replace("{select_options}", currentQuery["select_options"]);
+                tempVal = tempVal.Replace("{where_options}", currentQuery["where_options"]);
+                return tempVal;
+            }
+        }
+    }
+
 }
             
