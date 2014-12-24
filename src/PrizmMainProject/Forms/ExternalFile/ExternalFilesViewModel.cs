@@ -19,7 +19,7 @@ namespace Prizm.Main.Forms.ExternalFile
 {
     public class ExternalFilesViewModel: ViewModelBase, IDisposable
     {
-        private readonly IFileRepository repo;
+        private readonly IWorkWithFilesRepository repo;
         private readonly AddExternalFileCommand addExternalFileCommand;
         private readonly DownloadFileCommand downloadFileCommand;
         private readonly ViewFileCommand viewFileCommand;
@@ -29,9 +29,10 @@ namespace Prizm.Main.Forms.ExternalFile
         private Prizm.Domain.Entity.File selectedFile;
         public Dictionary<string, string> FilesToAttach = new Dictionary<string, string>();
         public Guid Item { get; set; }
+        public string FilesToAttachFolder, TargetPath, TargetPathForView;
 
         [Inject]
-        public ExternalFilesViewModel(IFileRepository repo, Guid item, IUserNotify notify)
+        public ExternalFilesViewModel(IWorkWithFilesRepository repo, Guid item, IUserNotify notify)
         {
             this.repo = repo;
             this.item = item;
@@ -46,16 +47,22 @@ namespace Prizm.Main.Forms.ExternalFile
             }
 
             addExternalFileCommand =
-              ViewModelSource.Create(() => new AddExternalFileCommand(repo, this, notify));
+              ViewModelSource.Create(() => new AddExternalFileCommand(repo.RepoFile, this, notify));
             downloadFileCommand =
-              ViewModelSource.Create(() => new DownloadFileCommand(repo, this, notify));
+              ViewModelSource.Create(() => new DownloadFileCommand(repo.RepoFile, this, notify));
             viewFileCommand =
-              ViewModelSource.Create(() => new ViewFileCommand(repo, this, notify));
+              ViewModelSource.Create(() => new ViewFileCommand(repo.RepoFile, this, notify));
+
+            string externalFilesFolder = repo.RepoProject.GetSingle().ExternalFilesPath;;
+            FilesToAttachFolder = Path.Combine(externalFilesFolder, "Attachments\\FilesToAttach\\");
+            TargetPath = Path.Combine(externalFilesFolder, "Attachments\\");
+            TargetPathForView = Path.Combine(externalFilesFolder, "Attachments\\tmp\\");
+
         }
 
         public void RefreshFiles()
         {
-            var fileList = repo.GetByItem(item);
+            var fileList = repo.RepoFile.GetByItem(item);
             if (fileList != null)
             {
             files = new BindingList<Prizm.Domain.Entity.File>(fileList);
@@ -111,9 +118,9 @@ namespace Prizm.Main.Forms.ExternalFile
         public void Dispose()
         {
             repo.Dispose();
-            if (Directory.Exists(Directories.TargetPathForView))
+            if (Directory.Exists(TargetPathForView))
             {
-                Directory.Delete(Directories.TargetPathForView, true);
+                Directory.Delete(TargetPathForView, true);
             }
         }
         

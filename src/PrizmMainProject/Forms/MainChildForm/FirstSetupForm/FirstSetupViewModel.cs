@@ -39,6 +39,8 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
 
             var defaultProjName = ConfigurationManager.AppSettings["ProjectName"];
 
+            
+
             if(defaultStation == WorkstationType.Undef)
             {
                 defaultStation = WorkstationType.Mill;
@@ -124,6 +126,19 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
                 {
                     project.MillPipeNumberMask = value;
                     RaisePropertyChanged("MillPipeNumberMask");
+                }
+            }
+        }
+
+        public string ExternalFilesPath
+        {
+            get { return project.ExternalFilesPath; }
+            set
+            {
+                if (value != project.ExternalFilesPath)
+                {
+                    project.ExternalFilesPath = value;
+                    RaisePropertyChanged("ExternalFilesPath");
                 }
             }
         }

@@ -18,6 +18,7 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
     public partial class FirstSetupXtraForm : DevExpress.XtraEditors.XtraForm
     {
         FirstSetupViewModel viewModel;
+        FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 
         [Inject]
         public FirstSetupXtraForm(FirstSetupViewModel vm)
@@ -31,6 +32,8 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
         {
             BindToViewModel();
             pipeNumberMaskRulesLabel.Text = Resources.Mask_Label;
+            folderBrowserDialog.Description = Resources.DLG_SELECT_PATH_HEADER;
+            folderBrowserDialog.RootFolder = Environment.SpecialFolder.MyComputer;
         }
 
         private void BindToViewModel()
@@ -47,6 +50,7 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
             lastName.DataBindings.Add("EditValue", bindingSource, "LastName");
             firstName.DataBindings.Add("EditValue", bindingSource, "FirstName");
             middleName.DataBindings.Add("EditValue", bindingSource, "MiddleName");
+            dataPath.DataBindings.Add("EditValue", bindingSource, "ExternalFilesPath");
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -65,6 +69,16 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
         private void FirstSetupXtraForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             viewModel.Dispose();
+        }
+
+        private void selectPathButton_Click(object sender, EventArgs e)
+        {
+             
+             DialogResult result = folderBrowserDialog.ShowDialog();
+             if (result == DialogResult.OK)
+             {
+                 viewModel.ExternalFilesPath = folderBrowserDialog.SelectedPath;
+             }
         }
     }
 }

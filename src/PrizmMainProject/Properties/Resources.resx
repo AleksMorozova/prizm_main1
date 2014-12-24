@@ -686,4 +686,7 @@
   <data name="Wrong_Spool_Length_NullLength" xml:space="preserve">
     <value>Длинна катушки не может быть равна 0</value>
   </data>
+  <data name="DLG_SELECT_PATH_HEADER" xml:space="preserve">
+    <value>Выберите папку для хранения внешних файлов</value>
+  </data>
 </root>

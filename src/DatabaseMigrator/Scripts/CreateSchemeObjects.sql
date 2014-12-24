@@ -356,6 +356,7 @@ CREATE TABLE [dbo].[Project](
 	[workstationType] [nvarchar] (20) NULL,
 	[millPipeNumberMask] [nvarchar] (20) NULL,
 	[millPipeNumberMaskRegexp] [nvarchar] (1000) NULL,
+	[externalFilesPath] [nvarchar] (MAX),
  CONSTRAINT [PK_Project] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

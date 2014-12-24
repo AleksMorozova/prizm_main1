@@ -167,7 +167,6 @@
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandManager.cs" />
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\Directories.cs" />
     <Compile Include="Controls\ControlButtonsExtension.cs" />
     <Compile Include="Controls\ControlColorExtensions.cs" />
     <Compile Include="Controls\ControlMaskExtensions.cs" />
@@ -232,7 +231,9 @@
     <Compile Include="Forms\ExternalFile\AddExternalFileCommand.cs" />
     <Compile Include="Forms\ExternalFile\DownloadFileCommand.cs" />
     <Compile Include="Forms\ExternalFile\ExternalFilesViewModel.cs" />
+    <Compile Include="Forms\ExternalFile\IWorkWithFilesRepository.cs" />
     <Compile Include="Forms\ExternalFile\ViewFileCommand.cs" />
+    <Compile Include="Forms\ExternalFile\WorkWithFilesRepository.cs" />
     <Compile Include="Forms\GridViewExtensions.cs" />
     <Compile Include="Forms\Joint\NewEdit\JointDeactivationCommand.cs" />
     <Compile Include="Forms\Joint\NewEdit\NewSaveJointCommand.cs" />

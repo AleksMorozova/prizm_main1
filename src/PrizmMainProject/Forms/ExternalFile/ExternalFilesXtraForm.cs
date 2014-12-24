@@ -38,15 +38,15 @@ namespace Prizm.Main.Forms.ExternalFile
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
                 FileInfo fileInfo = new FileInfo(openFileDlg.FileName);
-                if (!Directory.Exists(Directories.FilesToAttachFolder))
+                if (!Directory.Exists(viewModel.FilesToAttachFolder))
                 {
-                    Directory.CreateDirectory(Directories.FilesToAttachFolder);
-                    DirectoryInfo directoryInfo = new DirectoryInfo(Directories.FilesToAttachFolder);
-                    DirectoryInfo directoryInfoParent = new DirectoryInfo(Directories.TargetPath);
+                    Directory.CreateDirectory(viewModel.FilesToAttachFolder);
+                    DirectoryInfo directoryInfo = new DirectoryInfo(viewModel.FilesToAttachFolder);
+                    DirectoryInfo directoryInfoParent = new DirectoryInfo(viewModel.TargetPath);
                     directoryInfo.Attributes |= FileAttributes.Hidden;
                     directoryInfoParent.Attributes |= FileAttributes.Hidden;
                 }
-                fileInfo.CopyTo(string.Format("{0}{1}{2}", Directories.FilesToAttachFolder, newNameId, fileInfo.Extension));
+                fileInfo.CopyTo(string.Format("{0}{1}{2}", viewModel.FilesToAttachFolder, newNameId, fileInfo.Extension));
                 viewModel.FilesToAttach.Add(newNameId.ToString() + fileInfo.Extension, fileInfo.Name);
                 Prizm.Domain.Entity.File newFile = new Prizm.Domain.Entity.File() {FileName = fileInfo.Name, UploadDate = DateTime.Now };
                 viewModel.Files.Add(newFile);
@@ -60,6 +60,7 @@ namespace Prizm.Main.Forms.ExternalFile
             {
                 viewModel.SelectedFile = selectedFile;
                 SaveFileDialog saveFileDlg = new SaveFileDialog();
+                saveFileDlg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 saveFileDlg.FileName = selectedFile.FileName;
                 if (saveFileDlg.ShowDialog() == DialogResult.OK)
                 {
