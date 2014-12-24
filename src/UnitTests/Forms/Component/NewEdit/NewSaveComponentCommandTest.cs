@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Prizm.UnitTests.Forms.Component.NewEdit
 {
     [TestFixture]
-    class TestNewSaveComponentCommand
+    class NewSaveComponentCommandTest
     {
         [Test]
         public void TestNewSaveComponent()

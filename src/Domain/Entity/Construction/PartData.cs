@@ -13,7 +13,7 @@ namespace Prizm.Domain.Entity.Construction
         public virtual string Number { get; set; }
         public virtual string PartTypeDescription { get; set; }
         public virtual int Length { get; set; }
-        public virtual int WallThickness { get; set; }
+        public virtual float WallThickness { get; set; }
         public virtual int Diameter { get; set; }
                        
 

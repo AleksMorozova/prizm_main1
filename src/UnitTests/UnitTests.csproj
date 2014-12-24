@@ -65,7 +65,7 @@
     <Compile Include="DisplayObjectInfo.cs" />
     <Compile Include="AuditTrailTests.cs" />
     <Compile Include="Forms\Common\PasswordEncryptorTest.cs" />
-    <Compile Include="Forms\Component\NewEdit\TestNewSaveComponentCommand.cs" />
+    <Compile Include="Forms\Component\NewEdit\NewSaveComponentCommandTest.cs" />
     <Compile Include="Forms\ExternalFile\AddExternalFileTest.cs" />
     <Compile Include="Forms\Joint\NewEdit\JointNewEditCommandTest.cs" />
     <Compile Include="Forms\PrizmMainForm.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="Forms\Railcar\Edit\UnshipRailcarCommandTest.cs" />
     <Compile Include="Forms\Railcar\Search\SearchRailcarCommandTest.cs" />
     <Compile Include="Forms\Settings\SaveSettingsCommandTest.cs" />
-    <Compile Include="Forms\Spool\TestSaveSpoolCommand.cs" />
+    <Compile Include="Forms\Spool\SaveSpoolCommandTest.cs" />
     <Compile Include="MainChildDocumentsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

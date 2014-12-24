@@ -29,6 +29,7 @@ using Prizm.Main.Forms.Parts.Search;
 using Prizm.Main.Forms.Parts.Inspection;
 using Prizm.Main.Forms.Common;
 using PrizmMain.Forms.Notifications;
+using DevExpress.XtraSplashScreen;
 
 namespace Prizm.Main.Forms.MainChildForm
 {
@@ -143,9 +144,17 @@ namespace Prizm.Main.Forms.MainChildForm
         /// <param name="form"></param>
         private void ShowChildForm(ChildForm form)
         {
-            form.Show();
-            form.WindowState = FormWindowState.Normal;
-            form.WindowState = FormWindowState.Maximized;
+            try
+            {
+                ShowProcessing();
+                form.Show();
+                form.WindowState = FormWindowState.Normal;
+                form.WindowState = FormWindowState.Maximized;
+            }
+            finally
+            {
+                HideProcessing();
+            }
         }
 
         /// <summary>
@@ -156,10 +165,18 @@ namespace Prizm.Main.Forms.MainChildForm
         /// <param name="parameters">input parameters passed to the newly created form</param>
         public void CreateChildForm(System.Type formType, params IParameter[] parameters)
         {
-            ChildForm form = CreateReturnChildForm(formType, parameters);
-            if (form != null)
+            try
             {
-                ShowChildForm(form);
+                ShowProcessing();
+                ChildForm form = CreateReturnChildForm(formType, parameters);
+                if (form != null)
+                {
+                    ShowChildForm(form);
+                }
+            }
+            finally
+            {
+                HideProcessing();
             }
         }
 
@@ -170,26 +187,33 @@ namespace Prizm.Main.Forms.MainChildForm
         /// <param name="parameters">form input parameters if any</param>
         public void CreateSettingsChildForm(int page, params IParameter[] parameters)
         {
-            SettingsXtraForm form = (SettingsXtraForm)CreateReturnChildForm(typeof(SettingsXtraForm), parameters);
-
-            if (form != null)
+            try
             {
-                if (form.settings.TabPages.Count > page)
+                SettingsXtraForm form = (SettingsXtraForm)CreateReturnChildForm(typeof(SettingsXtraForm), parameters);
+
+                if (form != null)
                 {
-                    form.settings.SelectedTabPage = form.settings.TabPages[page];
+                    if (form.settings.TabPages.Count > page)
+                    {
+                        form.settings.SelectedTabPage = form.settings.TabPages[page];
+                    }
+                    ShowChildForm(form);
                 }
-                ShowChildForm(form);
-            }
-            else
-            {
-                var forms = childForms[typeof(SettingsXtraForm).Name];
-
-                if (forms.Count > 0)
+                else
                 {
-                    SettingsXtraForm f = (SettingsXtraForm)forms[0];
-                    f.settings.SelectedTabPage = f.settings.TabPages[page];
-                    f.Activate();
-                }      
+                    var forms = childForms[typeof(SettingsXtraForm).Name];
+
+                    if (forms.Count > 0)
+                    {
+                        SettingsXtraForm f = (SettingsXtraForm)forms[0];
+                        f.settings.SelectedTabPage = f.settings.TabPages[page];
+                        f.Activate();
+                    }      
+                }
+            }
+            finally
+            {
+                HideProcessing();
             }
         }
 
@@ -410,6 +434,49 @@ namespace Prizm.Main.Forms.MainChildForm
             var str = string.Format("[{0}] - {1}", DateTime.Now.ToShortTimeString().Trim(), s);
             main.UpdateStatusBar(str);
         }
+
+        private int currentProcessingStep;
+        private int targetProcessingSteps;
+
+        /// <summary>
+        /// Show wait form. Call it at times when UI thread will be unresponsible
+        /// For now used 1. on Executing commands through the CommandManager
+        ///              2. when creating and showing child forms
+        /// </summary>
+        /// <param name="text">message body, optional</param>
+        /// <param name="header">message header, optional</param>
+        /// <param name="steps">overall steps provide to show progress bar, and on each step call IncProcessingState(), optional</param>
+        public void ShowProcessing(string text = "", string header = "", int steps = 0)
+        {
+            targetProcessingSteps = steps;
+            currentProcessingStep = 0;
+            SplashScreenManager.ShowForm(this, typeof(AppWaitForm), false, false, false);
+            if (!string.IsNullOrEmpty(header))
+                SplashScreenManager.Default.SetWaitFormCaption(header);
+            if (!string.IsNullOrEmpty(text))
+                SplashScreenManager.Default.SetWaitFormDescription(text);
+            this.Update();
+        }
+
+        /// <summary>
+        /// Hide wait form, when UI thread will be responsible again
+        /// </summary>
+        public void HideProcessing()
+        {
+            SplashScreenManager.CloseForm(false);
+        }
+
+        /// <summary>
+        /// Update progress on wait form, should be called on each processing step
+        /// of the long processing with known number of steps.
+        /// To init progress on the wait form you should previously call ShowProcessing(, , steps) 
+        /// </summary>
+        public void IncProcessingState()
+        {
+            currentProcessingStep++;
+            float percent = (float)currentProcessingStep / targetProcessingSteps * 100;
+            SplashScreenManager.Default.SetWaitFormDescription(percent.ToString() + "%");
+        }
         #endregion
 
         private void PrizmApplicationXtraForm_Load(object sender, EventArgs e)
@@ -452,9 +519,5 @@ namespace Prizm.Main.Forms.MainChildForm
             CreateChildForm(typeof(NotificationXtraForm));
         }
 
-
-
-
-     
     }
 }

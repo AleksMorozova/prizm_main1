@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject;
 
 namespace Prizm.Main.Commands
 {
@@ -47,7 +48,16 @@ namespace Prizm.Main.Commands
 
          if (executor.CanExecute())
          {
-            executor.Execute();
+            Prizm.Main.Forms.IUserNotify notify = Program.Kernel.Get<Prizm.Main.Forms.IUserNotify>();
+            try
+            {
+                notify.ShowProcessing();
+                executor.Execute();
+            }
+            finally
+            {
+                notify.HideProcessing();
+            }
          }
          return this;
       }
@@ -107,7 +117,17 @@ namespace Prizm.Main.Commands
             if (command == null)
                throw new InvalidOperationException("command is null");
 
-            command.Execute();
+            Prizm.Main.Forms.IUserNotify notify = Program.Kernel.Get<Prizm.Main.Forms.IUserNotify>();
+            try
+            {
+                notify.ShowProcessing();
+
+                command.Execute();
+            }
+            finally
+            {
+                notify.HideProcessing();
+            }
          }
 
       }

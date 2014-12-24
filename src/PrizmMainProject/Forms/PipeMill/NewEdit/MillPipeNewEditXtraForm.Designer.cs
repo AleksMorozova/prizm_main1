@@ -72,15 +72,15 @@
             this.certificateLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.destinationLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.shiptedDateLayout = new DevExpress.XtraLayout.LayoutControlItem();
-            this.coatingParametersLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.coatingHistoryLayout = new DevExpress.XtraLayout.LayoutControlItem();
-            this.weldingParametersLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.weldingHistoryLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.plateLayout = new DevExpress.XtraLayout.LayoutControlGroup();
             this.plateManufacturerLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.plateNumberLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.plateThicknessLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.steelGradeLayout = new DevExpress.XtraLayout.LayoutControlItem();
+            this.weldingParametersLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.weldingHistoryLayout = new DevExpress.XtraLayout.LayoutControlItem();
+            this.coatingParametersLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.coatingHistoryLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.heatPlateParametersPage = new DevExpress.XtraTab.XtraTabPage();
             this.tabPagesLayout = new DevExpress.XtraLayout.LayoutControl();
             this.heatLayoutGroup = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -180,15 +180,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.certificateLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinationLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiptedDateLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coatingParametersLayoutGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coatingHistoryLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weldingParametersLayoutGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weldingHistoryLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateManufacturerLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateNumberLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateThicknessLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.steelGradeLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weldingParametersLayoutGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weldingHistoryLayout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coatingParametersLayoutGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coatingHistoryLayout)).BeginInit();
             this.heatPlateParametersPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPagesLayout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.heatLayoutGroup)).BeginInit();
@@ -385,7 +385,7 @@
             // 
             this.plateThickness.Location = new System.Drawing.Point(307, 58);
             this.plateThickness.Name = "plateThickness";
-            this.plateThickness.Properties.Mask.EditMask = "d";
+            this.plateThickness.Properties.Mask.EditMask = "f2";
             this.plateThickness.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.plateThickness.Size = new System.Drawing.Size(101, 20);
             this.plateThickness.StyleController = this.pipeGeneralParametersLayout;
@@ -534,7 +534,7 @@
             // 
             this.thickness.Location = new System.Drawing.Point(1070, 101);
             this.thickness.Name = "thickness";
-            this.thickness.Properties.Mask.EditMask = "d";
+            this.thickness.Properties.Mask.EditMask = "f2";
             this.thickness.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.thickness.Size = new System.Drawing.Size(137, 20);
             this.thickness.StyleController = this.pipeGeneralParametersLayout;
@@ -699,56 +699,6 @@
             this.shiptedDateLayout.TextLocation = DevExpress.Utils.Locations.Top;
             this.shiptedDateLayout.TextSize = new System.Drawing.Size(101, 13);
             // 
-            // coatingParametersLayoutGroup
-            // 
-            this.coatingParametersLayoutGroup.CustomizationFormText = "Параметры покрытия";
-            this.coatingParametersLayoutGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.coatingHistoryLayout});
-            this.coatingParametersLayoutGroup.Location = new System.Drawing.Point(0, 167);
-            this.coatingParametersLayoutGroup.Name = "coatingParametersLayoutGroup";
-            this.coatingParametersLayoutGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.coatingParametersLayoutGroup.Size = new System.Drawing.Size(737, 217);
-            this.coatingParametersLayoutGroup.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 15, 0, 0);
-            this.coatingParametersLayoutGroup.Text = "Параметры покрытия";
-            // 
-            // coatingHistoryLayout
-            // 
-            this.coatingHistoryLayout.Control = this.coatingHistory;
-            this.coatingHistoryLayout.CustomizationFormText = "coatingHistoryLayout";
-            this.coatingHistoryLayout.Location = new System.Drawing.Point(0, 0);
-            this.coatingHistoryLayout.Name = "coatingHistoryLayout";
-            this.coatingHistoryLayout.Size = new System.Drawing.Size(716, 192);
-            this.coatingHistoryLayout.Text = "coatingHistoryLayout";
-            this.coatingHistoryLayout.TextSize = new System.Drawing.Size(0, 0);
-            this.coatingHistoryLayout.TextToControlDistance = 0;
-            this.coatingHistoryLayout.TextVisible = false;
-            // 
-            // weldingParametersLayoutGroup
-            // 
-            this.weldingParametersLayoutGroup.CustomizationFormText = "История сварки";
-            this.weldingParametersLayoutGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.weldingHistoryLayout});
-            this.weldingParametersLayoutGroup.Location = new System.Drawing.Point(424, 0);
-            this.weldingParametersLayoutGroup.Name = "weldingParametersLayoutGroup";
-            this.weldingParametersLayoutGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
-            this.weldingParametersLayoutGroup.Size = new System.Drawing.Size(527, 167);
-            this.weldingParametersLayoutGroup.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 0, 14);
-            this.weldingParametersLayoutGroup.Text = "История сварки";
-            // 
-            // weldingHistoryLayout
-            // 
-            this.weldingHistoryLayout.Control = this.weldingHistory;
-            this.weldingHistoryLayout.CustomizationFormText = "Сварщики";
-            this.weldingHistoryLayout.ImageToTextDistance = 0;
-            this.weldingHistoryLayout.Location = new System.Drawing.Point(0, 0);
-            this.weldingHistoryLayout.Name = "weldingHistoryLayout";
-            this.weldingHistoryLayout.Size = new System.Drawing.Size(491, 128);
-            this.weldingHistoryLayout.Text = "Сварщики";
-            this.weldingHistoryLayout.TextLocation = DevExpress.Utils.Locations.Top;
-            this.weldingHistoryLayout.TextSize = new System.Drawing.Size(0, 0);
-            this.weldingHistoryLayout.TextToControlDistance = 0;
-            this.weldingHistoryLayout.TextVisible = false;
-            // 
             // plateLayout
             // 
             this.plateLayout.CustomizationFormText = "Параметры листа";
@@ -811,6 +761,56 @@
             this.steelGradeLayout.Text = "Марка стали";
             this.steelGradeLayout.TextLocation = DevExpress.Utils.Locations.Top;
             this.steelGradeLayout.TextSize = new System.Drawing.Size(101, 13);
+            // 
+            // weldingParametersLayoutGroup
+            // 
+            this.weldingParametersLayoutGroup.CustomizationFormText = "История сварки";
+            this.weldingParametersLayoutGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.weldingHistoryLayout});
+            this.weldingParametersLayoutGroup.Location = new System.Drawing.Point(424, 0);
+            this.weldingParametersLayoutGroup.Name = "weldingParametersLayoutGroup";
+            this.weldingParametersLayoutGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.weldingParametersLayoutGroup.Size = new System.Drawing.Size(527, 167);
+            this.weldingParametersLayoutGroup.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 0, 14);
+            this.weldingParametersLayoutGroup.Text = "История сварки";
+            // 
+            // weldingHistoryLayout
+            // 
+            this.weldingHistoryLayout.Control = this.weldingHistory;
+            this.weldingHistoryLayout.CustomizationFormText = "Сварщики";
+            this.weldingHistoryLayout.ImageToTextDistance = 0;
+            this.weldingHistoryLayout.Location = new System.Drawing.Point(0, 0);
+            this.weldingHistoryLayout.Name = "weldingHistoryLayout";
+            this.weldingHistoryLayout.Size = new System.Drawing.Size(491, 128);
+            this.weldingHistoryLayout.Text = "Сварщики";
+            this.weldingHistoryLayout.TextLocation = DevExpress.Utils.Locations.Top;
+            this.weldingHistoryLayout.TextSize = new System.Drawing.Size(0, 0);
+            this.weldingHistoryLayout.TextToControlDistance = 0;
+            this.weldingHistoryLayout.TextVisible = false;
+            // 
+            // coatingParametersLayoutGroup
+            // 
+            this.coatingParametersLayoutGroup.CustomizationFormText = "Параметры покрытия";
+            this.coatingParametersLayoutGroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.coatingHistoryLayout});
+            this.coatingParametersLayoutGroup.Location = new System.Drawing.Point(0, 167);
+            this.coatingParametersLayoutGroup.Name = "coatingParametersLayoutGroup";
+            this.coatingParametersLayoutGroup.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 2);
+            this.coatingParametersLayoutGroup.Size = new System.Drawing.Size(737, 217);
+            this.coatingParametersLayoutGroup.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 15, 0, 0);
+            this.coatingParametersLayoutGroup.Text = "Параметры покрытия";
+            // 
+            // coatingHistoryLayout
+            // 
+            this.coatingHistoryLayout.Control = this.coatingHistory;
+            this.coatingHistoryLayout.CustomizationFormText = "coatingHistoryLayout";
+            this.coatingHistoryLayout.Location = new System.Drawing.Point(0, 0);
+            this.coatingHistoryLayout.Name = "coatingHistoryLayout";
+            this.coatingHistoryLayout.Size = new System.Drawing.Size(716, 192);
+            this.coatingHistoryLayout.Text = "coatingHistoryLayout";
+            this.coatingHistoryLayout.TextSize = new System.Drawing.Size(0, 0);
+            this.coatingHistoryLayout.TextToControlDistance = 0;
+            this.coatingHistoryLayout.TextVisible = false;
             // 
             // heatPlateParametersPage
             // 
@@ -1553,15 +1553,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.certificateLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.destinationLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.shiptedDateLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coatingParametersLayoutGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coatingHistoryLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weldingParametersLayoutGroup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.weldingHistoryLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateManufacturerLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateNumberLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.plateThicknessLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.steelGradeLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weldingParametersLayoutGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weldingHistoryLayout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coatingParametersLayoutGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coatingHistoryLayout)).EndInit();
             this.heatPlateParametersPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabPagesLayout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.heatLayoutGroup)).EndInit();

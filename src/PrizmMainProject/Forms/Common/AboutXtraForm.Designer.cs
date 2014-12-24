@@ -32,6 +32,7 @@
             this.assemblyLabel = new DevExpress.XtraEditors.LabelControl();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.titleLabel = new DevExpress.XtraEditors.LabelControl();
+            this.acceptButton = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,18 +69,29 @@
             this.titleLabel.Size = new System.Drawing.Size(0, 13);
             this.titleLabel.TabIndex = 5;
             // 
+            // acceptButton
+            // 
+            this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.acceptButton.Location = new System.Drawing.Point(452, 215);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(75, 23);
+            this.acceptButton.TabIndex = 6;
+            this.acceptButton.Text = "ОК";
+            // 
             // AboutXtraForm
             // 
+            this.AcceptButton = this.acceptButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 250);
+            this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.assemblyLabel);
             this.Controls.Add(this.labelVersion);
             this.Name = "AboutXtraForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "AboutXtraForm";
+            this.Text = "О программе";
             this.Load += new System.EventHandler(this.AboutXtraForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -93,5 +105,6 @@
         private DevExpress.XtraEditors.LabelControl assemblyLabel;
         private System.Windows.Forms.PictureBox pictureBox;
         private DevExpress.XtraEditors.LabelControl titleLabel;
+        private DevExpress.XtraEditors.SimpleButton acceptButton;
     }
 }

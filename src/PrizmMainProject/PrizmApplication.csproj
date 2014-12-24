@@ -166,6 +166,7 @@
     <Compile Include="Commands\IAttacher.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandManager.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Controls\ControlButtonsExtension.cs" />
     <Compile Include="Controls\ControlColorExtensions.cs" />
     <Compile Include="Controls\ControlMaskExtensions.cs" />
@@ -246,6 +247,18 @@
       <DependentUpon>FirstSetupXtraForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainChildForm\FirstSetupForm\IFirstSetupRepo.cs" />
+    <Compile Include="Forms\MainChildForm\AppSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppSplashScreen.designer.cs">
+      <DependentUpon>AppSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppWaitForm.Designer.cs">
+      <DependentUpon>AppWaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Notifications\NotificationViewModel.cs" />
     <Compile Include="Forms\Notifications\NotificationXtraForm.cs">
       <SubType>Form</SubType>
@@ -535,6 +548,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainChildForm\FirstSetupForm\FirstSetupXtraForm.resx">
       <DependentUpon>FirstSetupXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\AppSplashScreen.resx">
+      <DependentUpon>AppSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\AppWaitForm.resx">
+      <DependentUpon>AppWaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Parts\Inspection\PartInspectionXtraForm.resx">
       <DependentUpon>PartInspectionXtraForm.cs</DependentUpon>

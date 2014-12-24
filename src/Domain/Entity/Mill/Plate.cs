@@ -8,7 +8,7 @@
             this.Heat.Plates.Add(this);
         }
         public virtual string Number { get; set; }
-        public virtual int Thickness { get; set; }
+        public virtual float Thickness { get; set; }
 
         public virtual Heat Heat { get; set; }
         public virtual Pipe Pipe { get; set; }

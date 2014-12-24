@@ -16,6 +16,7 @@ using Prizm.Domain.Entity.Security;
 using Prizm.Data.DAL;
 using Prizm.Main.Forms.MainChildForm.FirstSetupForm;
 using Prizm.Main.Forms.Settings;
+using DevExpress.XtraSplashScreen;
 
 
 namespace Prizm.Main
@@ -37,6 +38,9 @@ namespace Prizm.Main
             bool cmdLineMode = false;
             try
             {
+                // Splash screen
+                SplashScreenManager.ShowForm(typeof(AppSplashScreen), true, false);
+
                 // Database
                 ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["PrizmDatabase"];
 
@@ -48,9 +52,12 @@ namespace Prizm.Main
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                while(!CreateProject())
+                // Hide splash screen
+                SplashScreenManager.CloseForm(false);
+
+                while (!CreateProject())
                 { }
-                
+
                 //Login
                 while (!Login())
                 {
@@ -71,6 +78,11 @@ namespace Prizm.Main
                 {
                     MessageBox.Show(error);
                 }
+            }
+            finally
+            {
+                // Hide splash screen
+                SplashScreenManager.CloseForm(false);
             }
         }
 

@@ -1,0 +1,857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B950DA6A-6F29-42FD-A021-433CECBE5046}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Prizm.Main</RootNamespace>
+    <AssemblyName>Prizm.Program</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\Publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>0.0.1.2</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Prizm.Main.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2B639A4916BD9A1ADCD7EA045E6854F38DB55FA7</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PrizmApplication_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\packages\FluentNHibernate.1.4.0.0\lib\net35\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Iesi.Collections.3.2.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.3.1.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NHibernate.3.3.4.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Commands\CommandInfo.cs" />
+    <Compile Include="Commands\CommandManager.cs" />
+    <Compile Include="Commands\Attacher.cs" />
+    <Compile Include="Commands\IAttacher.cs" />
+    <Compile Include="Commands\ICommand.cs" />
+    <Compile Include="Commands\ICommandManager.cs" />
+<<<<<<< HEAD
+    <Compile Include="Common\Constants.cs" />
+=======
+    <Compile Include="Common\Directories.cs" />
+>>>>>>> master
+    <Compile Include="Controls\ControlButtonsExtension.cs" />
+    <Compile Include="Controls\ControlColorExtensions.cs" />
+    <Compile Include="Controls\ControlMaskExtensions.cs" />
+    <Compile Include="Common\EnumWrapper.cs" />
+    <Compile Include="Common\LengthLimit.cs" />
+    <Compile Include="Controls\InspectorSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\InspectorSelectionControl.Designer.cs">
+      <DependentUpon>InspectorSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WeldersSelectionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WeldersSelectionControl.Designer.cs">
+      <DependentUpon>WeldersSelectionControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DummyData\ComponentryDummy.cs" />
+    <Compile Include="DummyData\InspectionDummy.cs" />
+    <Compile Include="DummyData\JointsDummy.cs" />
+    <Compile Include="DummyData\NotificationDummy.cs" />
+    <Compile Include="DummyData\PipesDummy.cs" />
+    <Compile Include="DummyData\RailcarsDummy.cs" />
+    <Compile Include="DummyData\RolesDummy.cs" />
+    <Compile Include="DummyData\UsersDummy.cs" />
+    <Compile Include="DummyData\WeldersDummy.cs" />
+    <Compile Include="Forms\Audit\AuditSearchCommand.cs" />
+    <Compile Include="Forms\Audit\AuditViewModel.cs" />
+    <Compile Include="Forms\Audit\AuditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Audit\AuditXtraForm.Designer.cs">
+      <DependentUpon>AuditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BindingListExtensions.cs" />
+    <Compile Include="Forms\Common\AboutXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Common\AboutXtraForm.Designer.cs">
+      <DependentUpon>AboutXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Common\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Common\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Common\PasswordEncryptor.cs" />
+    <Compile Include="Forms\Common\SaveDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Common\SaveDialog.Designer.cs">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Component\ComponentRepositories.cs" />
+    <Compile Include="Forms\Component\IComponentRepositories.cs" />
+    <Compile Include="Forms\Component\NewEdit\ComponentDeactivationCommand.cs" />
+    <Compile Include="Forms\Component\NewEdit\ComponentNewEditViewModel.cs" />
+    <Compile Include="Forms\Component\NewEdit\NewSaveComponentCommand.cs" />
+    <Compile Include="Forms\Component\NewEdit\SaveComponentCommand.cs" />
+    <Compile Include="Forms\ControlMaskExtensions.cs" />
+    <Compile Include="Forms\ExternalFile\AddExternalFileCommand.cs" />
+    <Compile Include="Forms\ExternalFile\DownloadFileCommand.cs" />
+    <Compile Include="Forms\ExternalFile\ExternalFilesViewModel.cs" />
+    <Compile Include="Forms\ExternalFile\ViewFileCommand.cs" />
+    <Compile Include="Forms\GridViewExtensions.cs" />
+    <Compile Include="Forms\Joint\NewEdit\JointDeactivationCommand.cs" />
+    <Compile Include="Forms\Joint\NewEdit\NewSaveJointCommand.cs" />
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupRepo.cs" />
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupSaveCommand.cs" />
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupViewModel.cs" />
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupXtraForm.Designer.cs">
+      <DependentUpon>FirstSetupXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\FirstSetupForm\IFirstSetupRepo.cs" />
+    <Compile Include="Forms\MainChildForm\AppSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppSplashScreen.designer.cs">
+      <DependentUpon>AppSplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppWaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\AppWaitForm.Designer.cs">
+      <DependentUpon>AppWaitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Notifications\NotificationViewModel.cs" />
+    <Compile Include="Forms\Notifications\NotificationXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Notifications\NotificationXtraForm.Designer.cs">
+      <DependentUpon>NotificationXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts\Inspection\PartInspectionXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts\Inspection\PartInspectionXtraForm.Designer.cs">
+      <DependentUpon>PartInspectionXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Parts\Search\Part.cs" />
+    <Compile Include="Forms\Parts\Search\PartQuery.cs" />
+    <Compile Include="Forms\Parts\Search\PartSearchCommand.cs" />
+    <Compile Include="Forms\Parts\Search\PartSearchViewModel.cs" />
+    <Compile Include="Forms\Parts\Search\PartSearchXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Parts\Search\PartSearchXtraForm.Designer.cs">
+      <DependentUpon>PartSearchXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ISupportModifiableView.cs" />
+    <Compile Include="Forms\IUserNotify.cs" />
+    <Compile Include="Forms\IViewModel.cs" />
+    <Compile Include="Forms\Joint\NewEdit\ExtractOperationsCommand.cs" />
+    <Compile Include="Forms\Joint\Search\JointSearchCommand.cs" />
+    <Compile Include="Forms\Joint\Search\JointSearchViewModel.cs" />
+    <Compile Include="Forms\MainChildForm\ChildForm.cs" />
+    <Compile Include="Forms\Component\NewEdit\ComponentNewEditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Joint\ConstructionRepository.cs" />
+    <Compile Include="Forms\Joint\IConstructionRepository.cs" />
+    <Compile Include="Forms\Joint\NewEdit\JointNewEditViewModel.cs" />
+    <Compile Include="Forms\Joint\NewEdit\SaveJointCommand.cs" />
+    <Compile Include="Forms\Component\NewEdit\ComponentNewEditXtraForm.Designer.cs">
+      <DependentUpon>ComponentNewEditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\PrizmApplicationViewModel.cs" />
+    <Compile Include="Forms\PipeMill\Heat\HeatNumberXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatNumberXtraForm.Designer.cs">
+      <DependentUpon>HeatNumberXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatRepositories.cs" />
+    <Compile Include="Forms\PipeMill\Heat\HeatViewModel.cs" />
+    <Compile Include="Forms\PipeMill\Heat\IHeatRepositories.cs" />
+    <Compile Include="Forms\PipeMill\Heat\SaveHeatCommand.cs" />
+    <Compile Include="Forms\PipeMill\IMillRepository.cs" />
+    <Compile Include="Forms\PipeMill\MillRepository.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\GetProjectCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\PipeDeactivationCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\GetPipeCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\ExtractHeatsCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\ExtractPipeTypeCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\ExtractPurchaseOrderCommand.cs" />
+    <Compile Include="Documents\IModifiable.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\NewSavePipeCommand.cs" />
+    <Compile Include="Forms\PipeMill\NewEdit\MillPipeNewEditViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\NewEdit\SavePipeCommand.cs" />
+    <Compile Include="Forms\PipeMill\Purchase\PurchaseOrderViewModel.cs" />
+    <Compile Include="Forms\PipeMill\Purchase\PurchaseOrderXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Purchase\PurchaseOrderXtraForm.Designer.cs">
+      <DependentUpon>PurchaseOrderXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Purchase\SaveOrderCommand.cs" />
+    <Compile Include="Forms\PipeMill\Search\MillPipeSearchCommand.cs" />
+    <Compile Include="Forms\PipeMill\Search\MillPipeSearchViewModel.cs" />
+    <Compile Include="Forms\PipeMill\Search\Pipe.cs" />
+    <Compile Include="Forms\PipeMill\Search\PipeQuery.cs" />
+    <Compile Include="Forms\Railcar\IRailcarRepositories.cs" />
+    <Compile Include="Forms\Railcar\Search\Railcar.cs" />
+    <Compile Include="Forms\Railcar\Search\RailcarQuery.cs" />
+    <Compile Include="Forms\Reports\Construction\ConstructionReportViewModel.cs" />
+    <Compile Include="Forms\Reports\Construction\CreateReportCommand.cs" />
+    <Compile Include="Forms\Reports\Construction\PreviewReportCommand.cs" />
+    <Compile Include="Forms\Reports\Construction\ReportType.cs" />
+    <Compile Include="Forms\Reports\Construction\TestReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Construction\TestReport.Designer.cs">
+      <DependentUpon>TestReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Construction\UsedProductsXtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Construction\UsedProductsXtraReport.Designer.cs">
+      <DependentUpon>UsedProductsXtraReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Incoming\CreateReportCommand.cs" />
+    <Compile Include="Forms\Reports\Incoming\InspectionReportsViewModel.cs" />
+    <Compile Include="Forms\Reports\Incoming\PreviewReportCommand.cs" />
+    <Compile Include="Forms\Reports\Incoming\IncomingReportsXtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Incoming\IncomingReportsXtraReport.Designer.cs">
+      <DependentUpon>IncomingReportsXtraReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Mill\MillReportsViewModel.cs" />
+    <Compile Include="Forms\Reports\Mill\PreviewReportCommand.cs" />
+    <Compile Include="Forms\Settings\ExtractCategoriesCommand.cs" />
+    <Compile Include="Forms\Settings\PasswordChangeDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\PasswordChangeDialog.Designer.cs">
+      <DependentUpon>PasswordChangeDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Spool\ISpoolRepositories.cs" />
+    <Compile Include="Forms\Spool\SaveSpoolComand.cs" />
+    <Compile Include="Forms\Spool\EditPipeForCutCommand.cs" />
+    <Compile Include="Forms\Spool\SpoolRepositories.cs" />
+    <Compile Include="Forms\Spool\SpoolViewModel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Security\ISecurityContext.cs" />
+    <Compile Include="Forms\Railcar\NewEdit\ShipRailcarCommand.cs" />
+    <Compile Include="Forms\Railcar\NewEdit\UnshipRailcarCommand.cs" />
+    <Compile Include="Forms\Railcar\RailcarRepositories.cs" />
+    <Compile Include="Forms\Railcar\Search\RailcarSearchViewModel.cs" />
+    <Compile Include="Forms\Railcar\Search\SearchRailcarCommand.cs" />
+    <Compile Include="Forms\Reports\Construction\ConstructionReportsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Construction\ConstructionReportsXtraForm.Designer.cs">
+      <DependentUpon>ConstructionReportsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ExternalFile\ExternalFilesXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExternalFile\ExternalFilesXtraForm.Designer.cs">
+      <DependentUpon>ExternalFilesXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Heat\HeatXtraForm.Designer.cs">
+      <DependentUpon>HeatXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Mill\MillReportsXtraReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Mill\MillReportsXtraReport.Designer.cs">
+      <DependentUpon>MillReportsXtraReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Railcar\NewEdit\RailcarViewModel.cs" />
+    <Compile Include="Forms\Railcar\NewEdit\SaveRailcarCommand.cs" />
+    <Compile Include="Forms\Reports\Mill\CreateReportCommand.cs" />
+    <Compile Include="Forms\Settings\ISettingsRepositories.cs" />
+    <Compile Include="Forms\Settings\SaveSettingsCommand.cs" />
+    <Compile Include="Forms\Settings\SettingsRepositories.cs" />
+    <Compile Include="Forms\Settings\SettingsViewModel.cs" />
+    <Compile Include="Forms\Settings\ViewTypes\CertificatedPersonSetupViewType.cs" />
+    <Compile Include="Forms\Settings\ViewTypes\InspectorViewType.cs" />
+    <Compile Include="Forms\Settings\ViewTypes\PersonSetupViewType.cs" />
+    <Compile Include="Forms\Settings\ViewTypes\WelderViewType.cs" />
+    <Compile Include="Forms\Spool\SpoolsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Spool\SpoolsXtraForm.Designer.cs">
+      <DependentUpon>SpoolsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Incoming\InspectionReportsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Incoming\InspectionReportsXtraForm.Designer.cs">
+      <DependentUpon>InspectionReportsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Joint\NewEdit\JointNewEditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Joint\NewEdit\JointNewEditXtraForm.Designer.cs">
+      <DependentUpon>JointNewEditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Joint\Search\JointSearchXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Joint\Search\JointSearchXtraForm.Designer.cs">
+      <DependentUpon>JointSearchXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Mill\MillReportsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Mill\MillReportsXtraForm.Designer.cs">
+      <DependentUpon>MillReportsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PipeMill\NewEdit\MillPipeNewEditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\NewEdit\MillPipeNewEditXtraForm.Designer.cs">
+      <DependentUpon>MillPipeNewEditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Search\MillPipeSearchXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PipeMill\Search\MillPipeSearchXtraForm.Designer.cs">
+      <DependentUpon>MillPipeSearchXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\PrizmApplicationXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainChildForm\PrizmApplicationXtraForm.Designer.cs">
+      <DependentUpon>PrizmApplicationXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Railcar\NewEdit\RailcarNewEditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Railcar\NewEdit\RailcarNewEditXtraForm.Designer.cs">
+      <DependentUpon>RailcarNewEditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Railcar\Search\RailcarSearchXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Railcar\Search\RailcarSearchXtraForm.Designer.cs">
+      <DependentUpon>RailcarSearchXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reports\Custom\CustomReportsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reports\Custom\CustomReportsXtraForm.Designer.cs">
+      <DependentUpon>CustomReportsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\Dictionary\SettingsEditDictionaryXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\Dictionary\SettingsEditDictionaryXtraForm.Designer.cs">
+      <DependentUpon>SettingsEditDictionaryXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\SettingsXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\SettingsXtraForm.Designer.cs">
+      <DependentUpon>SettingsXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserRole\User\UserInfoXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserRole\User\UserInfoXtraForm.Designer.cs">
+      <DependentUpon>UserInfoXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings\UserRole\Role\RolesPrivilegeEditXtraForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings\UserRole\Role\RolesPrivilegeEditXtraForm.Designer.cs">
+      <DependentUpon>RolesPrivilegeEditXtraForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrizmModule.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Privileges.cs" />
+    <Compile Include="Security\SecurityContext.cs" />
+    <EmbeddedResource Include="Controls\InspectorSelectionControl.resx">
+      <DependentUpon>InspectorSelectionControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WeldersSelectionControl.resx">
+      <DependentUpon>WeldersSelectionControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\AboutXtraForm.resx">
+      <DependentUpon>AboutXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Audit\AuditXtraForm.resx">
+      <DependentUpon>AuditXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Common\SaveDialog.resx">
+      <DependentUpon>SaveDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Component\NewEdit\ComponentNewEditXtraForm.resx">
+      <DependentUpon>ComponentNewEditXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\FirstSetupForm\FirstSetupXtraForm.resx">
+      <DependentUpon>FirstSetupXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\AppSplashScreen.resx">
+      <DependentUpon>AppSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\AppWaitForm.resx">
+      <DependentUpon>AppWaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts\Inspection\PartInspectionXtraForm.resx">
+      <DependentUpon>PartInspectionXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Parts\Search\PartSearchXtraForm.resx">
+      <DependentUpon>PartSearchXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\Heat\HeatNumberXtraForm.resx">
+      <DependentUpon>HeatNumberXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\Heat\HeatXtraForm.resx">
+      <DependentUpon>HeatXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\Purchase\PurchaseOrderXtraForm.resx">
+      <DependentUpon>PurchaseOrderXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Construction\ConstructionReportsXtraForm.resx">
+      <DependentUpon>ConstructionReportsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Construction\TestReport.resx">
+      <DependentUpon>TestReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Construction\UsedProductsXtraReport.resx">
+      <DependentUpon>UsedProductsXtraReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Custom\CustomReportsXtraForm.resx">
+      <DependentUpon>CustomReportsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ExternalFile\ExternalFilesXtraForm.resx">
+      <DependentUpon>ExternalFilesXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Incoming\InspectionReportsXtraForm.resx">
+      <DependentUpon>InspectionReportsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Joint\NewEdit\JointNewEditXtraForm.resx">
+      <DependentUpon>JointNewEditXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Joint\Search\JointSearchXtraForm.resx">
+      <DependentUpon>JointSearchXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Incoming\IncomingReportsXtraReport.resx">
+      <DependentUpon>IncomingReportsXtraReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Mill\MillReportsXtraReport.resx">
+      <DependentUpon>MillReportsXtraReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reports\Mill\MillReportsXtraForm.resx">
+      <DependentUpon>MillReportsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\NewEdit\MillPipeNewEditXtraForm.resx">
+      <DependentUpon>MillPipeNewEditXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PipeMill\Search\MillPipeSearchXtraForm.resx">
+      <DependentUpon>MillPipeSearchXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainChildForm\PrizmApplicationXtraForm.resx">
+      <DependentUpon>PrizmApplicationXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Railcar\NewEdit\RailcarNewEditXtraForm.resx">
+      <DependentUpon>RailcarNewEditXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\Dictionary\SettingsEditDictionaryXtraForm.resx">
+      <DependentUpon>SettingsEditDictionaryXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Railcar\Search\RailcarSearchXtraForm.resx">
+      <DependentUpon>RailcarSearchXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\PasswordChangeDialog.resx">
+      <DependentUpon>PasswordChangeDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\SettingsXtraForm.resx">
+      <DependentUpon>SettingsXtraForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Spool\SpoolsXtraForm.resx">
+      <DependentUpon>SpoolsXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserRole\User\UserInfoXtraForm.resx">
+      <DependentUpon>UserInfoXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\UserRole\Role\RolesPrivilegeEditXtraForm.resx">
+      <DependentUpon>RolesPrivilegeEditXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="PrizmApplication_TemporaryKey.pfx" />
+    <None Include="Properties\DataSources\Domain.Entity.AuditLog.datasource" />
+    <None Include="Properties\DataSources\Domain.Entity.Inspector.datasource" />
+    <None Include="Properties\DataSources\Domain.Entity.Mill.Weld.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.Inspection.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.InspectionDummy.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.PipesDummy.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.Role1.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.User.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.DummyData.WeldersDummy.datasource" />
+    <None Include="Properties\DataSources\PrizmMain.Forms.Railcar.Edit.RailcarViewModel.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevExpress.Data.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Office.v14.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Printing.v14.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.RichEdit.v14.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Sparkline.v14.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Utils.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraBars.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraEditors.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraGrid.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraLayout.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraPrinting.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraTreeList.v14.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{843da113-0ee6-4da3-a182-008b3bd09199}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{495328aa-7441-4e86-8003-3d881e8e0fdf}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\main-logo_03.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\critical_warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

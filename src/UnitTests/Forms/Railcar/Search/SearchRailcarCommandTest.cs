@@ -9,53 +9,54 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NHibernate;
+using NHibernate.Transform;
 
 namespace Prizm.UnitTests.Forms.Railcar.Search
 {
     [TestFixture]
     public class SearchRailcarCommandTest
     {
-        List<Prizm.Domain.Entity.Mill.Railcar> railcars;
-        Mock<IRailcarRepository> repo;
-        Mock<IUserNotify> notify;
-        SearchRailcarCommand command;
-        RailcarSearchViewModel viewModel;
-
-        [SetUp]
-        public void Init()
+        [Test]
+        public void RailcarSearchTest() 
         {
-            railcars = new List<Prizm.Domain.Entity.Mill.Railcar>()
+            var iQuery = new Mock<IQuery>();
+            var iSQLQuery = new Mock<ISQLQuery>();
+            var notify = new Mock<IUserNotify>();
+
+            Mock<IRailcarRepository> repo = new Mock<IRailcarRepository>();
+
+            var railcars = new List<Prizm.Main.Forms.Railcar.Search.Railcar>();
             {
-                new Prizm.Domain.Entity.Mill.Railcar {Number="test number",Certificate="test certificate", 
-                Destination="test destination"}
+                new Prizm.Main.Forms.Railcar.Search.Railcar { Number = "Test1" };
+                new Prizm.Main.Forms.Railcar.Search.Railcar { Number = "Test2" };
             };
 
-            repo = new Mock<IRailcarRepository>();
-            repo.Setup(_ => _.GetByCriteria(It.IsAny<NHibernate.Criterion.DetachedCriteria>()))
-                .Returns(railcars);
-            notify = new Mock<IUserNotify>();
-            viewModel = new RailcarSearchViewModel(repo.Object,notify.Object);
-            command = new SearchRailcarCommand(viewModel, repo.Object, notify.Object);
-        }
 
-        [Test]
-        public void RailcarSearchEmptyCriteria() 
-        {
-            var criteria = NHibernate.Criterion.DetachedCriteria.For<Prizm.Domain.Entity.Mill.Railcar>();
+            var viewModel = new RailcarSearchViewModel(repo.Object, notify.Object);
+            viewModel.RailcarNumber = "Test";
 
-            command.Execute();
+            iQuery.Setup(x => x.List<Prizm.Main.Forms.Railcar.Search.Railcar>())
+                .Returns(railcars).Verifiable();
 
-            repo.Verify(_ => _.GetByCriteria(criteria), Times.Never());
-        }
+            iSQLQuery.Setup(x => x.SetResultTransformer(It.IsAny<IResultTransformer>()))
+                .Returns(iQuery.Object).Verifiable();
 
-        [Test]
-        public void RailcarSearchFilledCriteria()
-        {
-            viewModel.Certificate = "Cerificare";
+            repo.Setup(x => x.CreateSQLQuery(It.IsAny<string>()))
+                .Returns(iSQLQuery.Object).Verifiable();
+
+            var command = new SearchRailcarCommand(viewModel, repo.Object, notify.Object);
 
             command.Execute();
 
-            repo.Verify(_ => _.GetByCriteria(It.IsAny<NHibernate.Criterion.DetachedCriteria>()));
+            repo.Verify(x => x.CreateSQLQuery(It.IsAny<string>()), Times.Once());
+
+            Assert.AreEqual(
+                repo.Object
+                .CreateSQLQuery(It.IsAny<string>())
+                .SetResultTransformer(It.IsAny<IResultTransformer>())
+                .List<Prizm.Main.Forms.Railcar.Search.Railcar>(), railcars);
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Prizm.Data.DAL.Mill;
+﻿using DevExpress.XtraRichEdit.Model;
+using Prizm.Data.DAL.Mill;
 using DevExpress.Mvvm.POCO;
 using Ninject;
 using Prizm.Main.Commands;
@@ -325,12 +326,12 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
             }
         }
 
-        public int WallThickness
+        public float WallThickness
         {
             get { return Pipe.WallThickness; }
             set
             {
-                if (value != Pipe.WallThickness)
+                if (Math.Abs(value - Math.Round(Pipe.WallThickness, 2)) > Constants.WallThicknessPrecision)
                 {
                     Pipe.WallThickness = value;
                     recalculateWeight = true;
@@ -443,12 +444,12 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
             }
         }
 
-        public int PlateThickness
+        public float PlateThickness
         {
             get { return Plate.Thickness; }
             set
             {
-                if (value != Plate.Thickness)
+                if (Math.Abs(value - Plate.Thickness) > Constants.WallThicknessPrecision)
                 {
                     Plate.Thickness = value;
                     RaisePropertyChanged("PlateThickness");

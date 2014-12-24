@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Prizm.UnitTests.Forms.Spool
 {
     [TestFixture]
-    class TestSaveSpoolCommand
+    class SaveSpoolCommandTest
     {
         [Test]
         public void TestSaveCommand()

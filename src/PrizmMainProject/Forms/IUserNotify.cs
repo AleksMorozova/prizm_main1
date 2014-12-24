@@ -16,6 +16,9 @@ namespace Prizm.Main.Forms
         void ShowSuccess(string text, string header);
         void ShowFailure(string text, string header);
         void ShowNotify(string text, string header);
+        void ShowProcessing(string text = "", string header = "", int steps = 0);
+        void HideProcessing();
+        void IncProcessingState();
     }
 
 }

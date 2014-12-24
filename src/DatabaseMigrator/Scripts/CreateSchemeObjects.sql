@@ -64,7 +64,7 @@ CREATE TABLE [dbo].[Connector](
 	[id] [uniqueidentifier] NOT NULL,
 	[isActive] [bit] NULL,
 	[diameter] [int] NULL,
-	[wallThickness] [int] NULL,
+	[wallThickness] [float] NULL,
 	[isUsed] [bit] NULL,
 	[componentId] [uniqueidentifier] NULL,
 
@@ -185,7 +185,7 @@ SET QUOTED_IDENTIFIER ON
 SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Pipe](
 	[id] [uniqueidentifier] NOT NULL,
-	[wallThickness] [int] NULL,
+	[wallThickness] [float] NULL,
 	[diameter] [int] NULL,
 	[weight] [real] NULL,
 	[mill] [nvarchar](250) NULL,
@@ -299,7 +299,7 @@ SET ANSI_PADDING ON
 CREATE TABLE [dbo].[Plate](
 	[id] [uniqueidentifier] NOT NULL,
 	[number] [nvarchar](20) NULL,
-	[thickness] [int] NULL,
+	[thickness] [float] NULL,
 	[heatId] [uniqueidentifier] NULL,
 
 	[isActive] [bit] NULL,
