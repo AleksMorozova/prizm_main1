@@ -203,32 +203,12 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
                 return this;
             }
 
-
             public ISQLFlexible Where(string a,string b,string c)
             {
                 currentQuery["where_options"] += a + b + c;
                 return this;
             }
 
-
-            public ISQLFlexible WhereActive(bool isActive)
-            {
-                currentQuery["where_options"] += "Pipe.isActive="+(isActive==true?1:0);
-                return this;
-            }
-
-            public ISQLFlexible WhereRequired(bool isRequired)
-            {
-                currentQuery["where_options"] += "PipeTest.isRequired=" + (isRequired == true ? 1 : 0);
-                return this;
-            }
-
-            public ISQLFlexible WherePipeMillStatus(string pipeMillStatus)
-            {
-                currentQuery["where_options"] += "pipeMillStatus='" + pipeMillStatus+"'";
-                return this;
-            }
-            
             public override string ToString ()
             {
                 string tempVal = currentQuery["query"];
