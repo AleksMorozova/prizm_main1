@@ -692,11 +692,7 @@
   <data name="DLG_JOINT_INCORRECT_DIAMETER_HEADER" xml:space="preserve">
     <value>Невозможно сохранить стык</value>
   </data>
-  <data name="DLG_COMPONENT_DIAMETER_FORMAT" xml:space="preserve">
-    <value>Диаметр коннектора не может быть отрицательным и нулевым числом. 
-Проверьте формат введенных данных.</value>
-  </data>
-  <data name="DLG_COMPONENT_DIAMETER_FORMAT_HEDER" xml:space="preserve">
-    <value>Неверный формат данных</value>
+  <data name="DIAMETER_VALUE_VALIDATION" xml:space="preserve">
+    <value>Величина диаметра должна быть больше нуля</value>
   </data>
 </root>

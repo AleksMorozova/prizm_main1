@@ -54,18 +54,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
             }
             else
             {
-                if (viewModel.Component.Connectors
-                    .Where<Connector>(x => x.Diameter <= 0)
-                    .Count<Connector>() > 0)
-                {
-                    notify.ShowInfo(
-                        Resources.DLG_COMPONENT_DIAMETER_FORMAT,
-                        Resources.DLG_COMPONENT_DIAMETER_FORMAT_HEDER);
-                }
-                else
-                {
-                    SaveComponent();
-                }
+                SaveComponent();
             }
         }
 

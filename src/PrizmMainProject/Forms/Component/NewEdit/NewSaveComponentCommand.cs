@@ -35,9 +35,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
         {
             viewModel.SaveCommand.Execute();
 
-            if (viewModel.Number != string.Empty &&
-                viewModel.Component.Connectors.Where<Connector>(x => x.Diameter <= 0)
-                .Count<Connector>() == 0)
+            if (viewModel.Number != string.Empty)
             {
                 viewModel.NewComponent();
             }

@@ -406,6 +406,15 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Величина диаметра должна быть больше нуля.
+        /// </summary>
+        internal static string DIAMETER_VALUE_VALIDATION {
+            get {
+                return ResourceManager.GetString("DIAMETER_VALUE_VALIDATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Нельзя добавить неуспешную контрольную операцию для трубы, которая находится в вагоне. Для этого необходимо данную труб из вагона. .
         /// </summary>
         internal static string DLG_AddFailedControlOperation {
@@ -449,25 +458,6 @@ namespace Prizm.Main.Properties {
         internal static string DLG_COMPONENT_DEACTIVATION_HEDER {
             get {
                 return ResourceManager.GetString("DLG_COMPONENT_DEACTIVATION_HEDER", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Диаметр коннектора не может быть отрицательным и нулевым числом. 
-        ///Проверьте формат введенных данных..
-        /// </summary>
-        internal static string DLG_COMPONENT_DIAMETER_FORMAT {
-            get {
-                return ResourceManager.GetString("DLG_COMPONENT_DIAMETER_FORMAT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Неверный формат данных.
-        /// </summary>
-        internal static string DLG_COMPONENT_DIAMETER_FORMAT_HEDER {
-            get {
-                return ResourceManager.GetString("DLG_COMPONENT_DIAMETER_FORMAT_HEDER", resourceCulture);
             }
         }
         
