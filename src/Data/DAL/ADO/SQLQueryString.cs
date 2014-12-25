@@ -75,8 +75,8 @@ namespace Prizm.Data.DAL.ADO
                     (con.jointId IS NULL OR
                     con.jointId = CAST(CAST(0 AS BINARY) AS UNIQUEIDENTIFIER))
                     
-            
             ORDER BY number";
+
         #endregion
 
 

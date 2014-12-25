@@ -453,6 +453,25 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Диаметр коннектора не может быть отрицательным и нулевым числом. 
+        ///Проверьте формат введенных данных..
+        /// </summary>
+        internal static string DLG_COMPONENT_DIAMETER_FORMAT {
+            get {
+                return ResourceManager.GetString("DLG_COMPONENT_DIAMETER_FORMAT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Неверный формат данных.
+        /// </summary>
+        internal static string DLG_COMPONENT_DIAMETER_FORMAT_HEDER {
+            get {
+                return ResourceManager.GetString("DLG_COMPONENT_DIAMETER_FORMAT_HEDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Уже существует комплектующий элемент с номером:.
         /// </summary>
         internal static string DLG_COMPONENT_DUPLICATE {

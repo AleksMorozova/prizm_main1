@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using DevExpress.Mvvm.POCO;
 using Prizm.Main.Properties;
+using Prizm.Domain.Entity.Construction;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {
@@ -53,33 +54,53 @@ namespace Prizm.Main.Forms.Component.NewEdit
             }
             else
             {
-                try
+                if (viewModel.Component.Connectors
+                    .Where<Connector>(x => x.Diameter <= 0)
+                    .Count<Connector>() > 0)
                 {
-                    repos.BeginTransaction();
-                    repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
-                    repos.Commit();
-                    repos.ComponentRepo.Evict(viewModel.Component);
-                    viewModel.CanDeactivateComponent = viewModel.DeactivationCommand.CanExecute();
-                    viewModel.ModifiableView.IsModified = false;
-
-                    //saving attached documents
-                    if (viewModel.FilesFormViewModel != null)
-                    {
-                        viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
-                        viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
-                        viewModel.FilesFormViewModel = null;
-                    }
-
-                    notify.ShowSuccess(
-                         string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),
-                         Resources.DLG_COMPONENT_SAVED_HEADER);
+                    notify.ShowInfo(
+                        Resources.DLG_COMPONENT_DIAMETER_FORMAT,
+                        Resources.DLG_COMPONENT_DIAMETER_FORMAT_HEDER);
                 }
-                catch (RepositoryException ex)
+                else
                 {
-                    notify.ShowFailure(ex.InnerException.Message, ex.Message);
+                    SaveComponent();
                 }
             }
         }
+
+
+
+        private void SaveComponent()
+        {
+            try
+            {
+                repos.BeginTransaction();
+                repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
+                repos.Commit();
+                repos.ComponentRepo.Evict(viewModel.Component);
+                viewModel.CanDeactivateComponent = viewModel.DeactivationCommand.CanExecute();
+                viewModel.ModifiableView.IsModified = false;
+
+                //saving attached documents
+                if (viewModel.FilesFormViewModel != null)
+                {
+                    viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
+                    viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
+                    viewModel.FilesFormViewModel = null;
+                }
+
+                notify.ShowSuccess(
+                     string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),
+                     Resources.DLG_COMPONENT_SAVED_HEADER);
+            }
+            catch (RepositoryException ex)
+            {
+                notify.ShowFailure(ex.InnerException.Message, ex.Message);
+            }
+        }
+
+
 
         public virtual bool IsExecutable { get; set; }
 

@@ -279,5 +279,6 @@ namespace Prizm.Main.Forms.Component.NewEdit
         }
 
         #endregion
+
     }
 }

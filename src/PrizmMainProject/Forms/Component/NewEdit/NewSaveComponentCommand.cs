@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DevExpress.Mvvm.POCO;
+using Prizm.Domain.Entity.Construction;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {
@@ -34,7 +35,9 @@ namespace Prizm.Main.Forms.Component.NewEdit
         {
             viewModel.SaveCommand.Execute();
 
-            if (viewModel.Number != string.Empty)
+            if (viewModel.Number != string.Empty &&
+                viewModel.Component.Connectors.Where<Connector>(x => x.Diameter <= 0)
+                .Count<Connector>() == 0)
             {
                 viewModel.NewComponent();
             }
