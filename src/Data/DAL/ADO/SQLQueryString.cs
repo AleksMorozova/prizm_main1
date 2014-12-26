@@ -141,20 +141,26 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
         /// <returns>ISQLFlexible</returns>
         public static ISQLFlexible GetQuery(string queryName)
         {
+            string queryText;
             switch (queryName)
             {
                 case "GetAllActivePipesByDate":
-                    return new SQLFlexible(GetAllActivePipesByDate);
+                    queryText=GetAllActivePipesByDate;
+                    break;
+
                 case "GetAllShipped":
-                    return new SQLFlexible(GetAllShipped);
+                    queryText=GetAllShipped;
+                    break;
 
                 case "GetAllProduced":
-                    return new SQLFlexible(GetAllProduced);
+                    queryText=GetAllProduced;
+                    break;
 
                 default:
-                    //returning EmptyObject
-                    return new SQLFlexible("");
+                    queryText="";
+                    break;
             }
+            return new SQLFlexible(queryText);
         }
 
 
@@ -164,7 +170,15 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
         private class SQLFlexible : ISQLFlexible
         {
             //storing parts of SQL object
-            private Dictionary<string, string> currentQuery = new Dictionary<string, string>();
+            private Dictionary<SQLParts, string> currentQuery = new Dictionary<SQLParts, string>();
+
+            //enumerated types for parts of SQLFlexible object
+            private enum SQLParts
+            {
+            QueryText,
+            SelectOptions,
+            WhereOptions
+            }
 
             //private constructor never used
             private SQLFlexible()
@@ -176,9 +190,9 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
             /// <param name="queryText"></param>
             public SQLFlexible(string queryText)
             {
-                currentQuery["query"] = queryText;
-                currentQuery["select_options"] = "";
-                currentQuery["where_options"] = "";
+                currentQuery[SQLParts.QueryText] = queryText;
+                currentQuery[SQLParts.SelectOptions] = "";
+                currentQuery[SQLParts.WhereOptions] = "";
             }
 
             /// <summary>
@@ -190,28 +204,28 @@ select Component.number as number, Joint.part2Type as type, Joint.numberKP
             {
                 if (count > 0)
                 {
-                    currentQuery["select_options"] += "TOP " + count.ToString();
+                    currentQuery[SQLParts.SelectOptions] += "TOP " + count.ToString();
                 }
                 return this;
             }
 
             public ISQLFlexible WhereAnd()
             {
-                currentQuery["where_options"] += " AND ";
+                currentQuery[SQLParts.WhereOptions] += " AND ";
                 return this;
             }
 
             public ISQLFlexible Where(string a, string b, string c)
             {
-                currentQuery["where_options"] += a + b + c;
+                currentQuery[SQLParts.WhereOptions] += a + " " + b + " " + c;
                 return this;
             }
 
             public override string ToString()
             {
-                string tempVal = currentQuery["query"];
-                tempVal = tempVal.Replace("{select_options}", currentQuery["select_options"]);
-                tempVal = tempVal.Replace("{where_options}", currentQuery["where_options"]);
+                string tempVal = currentQuery[SQLParts.QueryText];
+                tempVal = tempVal.Replace("{select_options}", currentQuery[SQLParts.SelectOptions]);
+                tempVal = tempVal.Replace("{where_options}", currentQuery[SQLParts.WhereOptions]);
                 return tempVal;
             }
         }
