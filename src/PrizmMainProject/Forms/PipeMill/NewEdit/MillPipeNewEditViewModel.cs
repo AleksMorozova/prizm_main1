@@ -663,6 +663,7 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
 
             this.PlateNumber = string.Empty;
             this.Pipe.IsActive = true;
+            this.Pipe.IsAvailableToJoint = true;
             this.Pipe.Status = PipeMillStatus.Produced;
 
             this.Number = string.Empty;

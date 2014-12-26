@@ -18,6 +18,10 @@ namespace Prizm.Main.Forms.Joint
         IInspectorRepository RepoInspector { get; }
         IWelderRepository RepoWelder { get; }
 
+        IPipeRepository RepoPipe { get; }
+        ISpoolRepository RepoSpool { get; }
+        IComponentRepository RepoComponent { get; }
+
         void Commit();
         void BeginTransaction();
     }

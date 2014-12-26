@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using DevExpress.Mvvm.POCO;
+using Prizm.Domain.Entity.Construction;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {

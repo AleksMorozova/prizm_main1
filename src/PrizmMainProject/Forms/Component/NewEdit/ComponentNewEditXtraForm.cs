@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using Prizm.Domain.Entity;
 using Prizm.Main.Commands;
 using Prizm.Main.Documents;
+using System.Linq;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {
@@ -275,9 +276,39 @@ namespace Prizm.Main.Forms.Component.NewEdit
 
         bool IValidatable.Validate()
         {
-            return dxValidationProvider.Validate();
+            for (int i = 0; i < componentParametersView.RowCount; i++)
+            {
+                if (Convert.ToInt32(componentParametersView.GetRowCellValue(i, "Diameter")) <= 0)
+                {
+                    componentParametersView.FocusedRowHandle = i;
+
+                    componentParametersView_ValidateRow(
+                        componentParametersView,
+                        new DevExpress.XtraGrid.Views.Base
+                            .ValidateRowEventArgs(i, componentParametersView.GetDataRow(i)));
+
+                }
+            }
+
+            return dxValidationProvider.Validate() &&
+                viewModel.Component.Connectors
+                .Where<Connector>(x => x.Diameter <= 0)
+                .Count<Connector>() <= 0;
         }
 
         #endregion
+
+        private void componentParametersView_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            GridView gv = sender as GridView;
+
+            var diameter = (int)gv.GetRowCellValue(e.RowHandle, diameterGridColumn);
+
+            if (diameter <= 0)
+            {
+                gv.SetColumnError(diameterGridColumn, Resources.DIAMETER_VALUE_VALIDATION);
+                e.Valid = false;
+            }
+        }
     }
 }

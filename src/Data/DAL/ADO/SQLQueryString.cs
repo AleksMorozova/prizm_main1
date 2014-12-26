@@ -42,22 +42,45 @@ namespace Prizm.Data.DAL.ADO
 
         public const string GetAudit =
             @"SELECT [user], auditDate, oldValue, newValue, tableName, fieldName
-FROM AuditLog 
+                FROM AuditLog 
                 WHERE auditDate >= @startDate and auditDate <= @finalDate
                 AND [user] LIKE @user";
 
+
+
+        #region ---- Get Pipeline Pieces ----
+
         public const string GetPipelinePieces =
-          @"SELECT id, number, N'Pipe' as type, diameter, wallThickness, length,'' as componentTypeName FROM pipe WHERE isActive = 1
-            UNION ALL
-            SELECT s.id, s.number, N'Spool' as type, p.diameter, p.wallThickness, s.length,'' as componentTypeName FROM spool s 
-            INNER JOIN pipe p ON s.pipeId = p.id WHERE s.isActive = 1
-            UNION ALL
-            SELECT c.id, c.number, N'Component' as type, con.diameter, con.wallThickness, c.length, ct.name as componentTypeName 
-            FROM component c 
-            inner join ComponentType ct on ct.Id = c.componentTypeId
-            INNER JOIN connector con ON c.id = con.componentId WHERE c.isActive = 1
-            ORDER BY number";
+
+          @"SELECT id, number, N'Pipe' as type, diameter, wallThickness, length,'' as componentTypeName, constructionStatus 
+            FROM pipe 
+            WHERE isActive = 1 AND isAvailableToJoint = 1
             
+            UNION ALL
+
+            SELECT s.id, s.number, N'Spool' as type, p.diameter, p.wallThickness, p.length,'' as componentTypeName, s.constructionStatus 
+            FROM spool s 
+            INNER JOIN pipe p ON s.pipeId = p.id 
+            WHERE s.isActive = 1  AND s.isAvailableToJoint = 1
+            
+            UNION ALL
+
+            SELECT c.id, c.number, N'Component' as type, con.diameter, con.wallThickness, c.length, ct.name as componentTypeName, c.constructionStatus 
+            FROM component c 
+            INNER JOIN ComponentType ct on ct.Id = c.componentTypeId
+            INNER JOIN connector con ON c.id = con.componentId 
+
+            WHERE   c.isActive = 1 AND 
+                    c.isAvailableToJoint = 1 AND 
+                    (con.jointId IS NULL OR
+                    con.jointId = CAST(CAST(0 AS BINARY) AS UNIQUEIDENTIFIER))
+                    
+            ORDER BY number";
+
+        #endregion
+
+
+
         public const string GetAllPipesFromInspection = @"select Pipe.number as number,  PipeMillSizeType.type as type, Pipe.wallThickness as wallThickness, Pipe.length as length, Heat.number as Heat_number
           from  InspectionTestResult InspectionTestResult
 		  inner join Pipe on (Pipe.id = InspectionTestResult.[partId])

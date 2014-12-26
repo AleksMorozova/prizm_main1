@@ -21,6 +21,10 @@ namespace Prizm.Main.Forms.Joint
         private readonly IInspectorRepository repoInspector;
         private readonly IWelderRepository repoWelder;
 
+        private readonly IPipeRepository repoPipe;
+        private readonly ISpoolRepository repoSpool;
+        private readonly IComponentRepository repoComponent;
+
         private readonly ISession session;
 
         [Inject]
@@ -33,6 +37,10 @@ namespace Prizm.Main.Forms.Joint
             this.repoJointOperation = new JointOperationRepository(session);
             this.repoInspector = new InspectorRepository(session);
             this.repoWelder = new WelderRepository(session);
+
+            this.repoPipe = new PipeRepository(session);
+            this.repoSpool = new SpoolRepository(session);
+            this.repoComponent = new ComponentRepository(session);
         }
         public void Commit()
         {
@@ -48,6 +56,23 @@ namespace Prizm.Main.Forms.Joint
         {
             session.Dispose();
         }
+
+
+        public IPipeRepository RepoPipe
+        {
+            get { return repoPipe; }
+        }
+
+        public ISpoolRepository RepoSpool
+        {
+            get { return repoSpool; }
+        }
+
+        public IComponentRepository RepoComponent
+        {
+            get { return repoComponent; }
+        }
+
 
         public IJointRepository RepoJoint
         {
@@ -73,6 +98,7 @@ namespace Prizm.Main.Forms.Joint
         {
             get { return repoWelder; }
         }
+
         public IJointWeldResultRepository RepoJointWeldResult
         {
             get { return repoJointWeldResult; }

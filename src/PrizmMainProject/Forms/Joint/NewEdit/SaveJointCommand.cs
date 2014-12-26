@@ -50,29 +50,41 @@ namespace Prizm.Main.Forms.Joint.NewEdit
             }
             else
             {
-                try
+                if (viewModel.MakeTheConnection())
                 {
-                    repo.BeginTransaction();
-                    repo.RepoJoint.SaveOrUpdate(viewModel.Joint);
-                    repo.Commit();
-                    repo.RepoJoint.Evict(viewModel.Joint);
-                    viewModel.ModifiableView.IsModified = false;
-
-                    //saving attached documents
-                    if (viewModel.FilesFormViewModel != null)
+                    try
                     {
-                        viewModel.FilesFormViewModel.Item = viewModel.Joint.Id;
-                        viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
-                        viewModel.FilesFormViewModel = null;
-                    }
+                        repo.BeginTransaction();
+                        repo.RepoJoint.SaveOrUpdate(viewModel.Joint);
+                        repo.Commit();
+                        repo.RepoJoint.Evict(viewModel.Joint);
 
-                    notify.ShowNotify(
-                        string.Concat(Resources.DLG_JOINT_SAVED, viewModel.Number),
-                        Resources.DLG_JOINT_SAVED_HEADER);
+                        viewModel.ModifiableView.IsModified = false;
+
+                        viewModel.JointDisconnection();
+
+                        //saving attached documents
+                        if (viewModel.FilesFormViewModel != null)
+                        {
+                            viewModel.FilesFormViewModel.Item = viewModel.Joint.Id;
+                            viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
+                            viewModel.FilesFormViewModel = null;
+                        }
+
+                        notify.ShowNotify(
+                            string.Concat(Resources.DLG_JOINT_SAVED, viewModel.Number),
+                            Resources.DLG_JOINT_SAVED_HEADER);
+                    }
+                    catch (RepositoryException ex)
+                    {
+                        notify.ShowFailure(ex.InnerException.Message, ex.Message);
+                    }
                 }
-                catch (RepositoryException ex)
+                else
                 {
-                    notify.ShowFailure(ex.InnerException.Message, ex.Message);
+                    notify.ShowInfo(
+                    Resources.DLG_JOINT_INCORRECT_DIAMETER,
+                    Resources.DLG_JOINT_INCORRECT_DIAMETER_HEADER);
                 }
             }
             viewModel.CheckDeactivation();
@@ -87,7 +99,10 @@ namespace Prizm.Main.Forms.Joint.NewEdit
 
         public bool CanExecute()
         {
-             bool condition = !string.IsNullOrEmpty(viewModel.Number) && viewModel.FirstElement!=null && viewModel.SecondElement !=null;
+             bool condition = !string.IsNullOrEmpty(viewModel.Number) 
+                 && viewModel.FirstElement!=null 
+                 && viewModel.SecondElement !=null;
+
              return condition;
         }
     }

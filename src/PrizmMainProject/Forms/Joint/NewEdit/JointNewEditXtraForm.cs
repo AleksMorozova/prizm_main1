@@ -105,14 +105,15 @@ namespace Prizm.Main.Forms.Joint.NewEdit
                .Add("DataSource", jointNewEditBindingSoure, "JointTestResults");
             repairOperations.DataBindings
                .Add("DataSource", jointNewEditBindingSoure, "JointWeldResults");
+
             firstJointElement.DataBindings
                 .Add("EditValue", jointNewEditBindingSoure, "FirstElementId");
             secondJointElement.DataBindings
                 .Add("EditValue", jointNewEditBindingSoure, "SecondElementId");
 
             pipelinePiecesBindingSource.DataSource = viewModel.PartDataList;
-            SetLookup(firstJointElement);
 
+            SetLookup(firstJointElement);
             SetLookup(secondJointElement);
 
             ControlOperationLookUpEdit.DataSource = viewModel.ControlOperations;
@@ -147,14 +148,6 @@ namespace Prizm.Main.Forms.Joint.NewEdit
         private void SetLookup(LookUpEdit lookup)
         {
             lookup.Properties.DataSource = pipelinePiecesBindingSource;
-            LookUpColumnInfoCollection firstEllementColumns = lookup.Properties.Columns;
-            firstEllementColumns.Add(new LookUpColumnInfo("Number", Resources.Number));
-            firstEllementColumns.Add(new LookUpColumnInfo("PartTypeDescription", Resources.Type));
-            firstEllementColumns.Add(new LookUpColumnInfo("Diameter", Resources.Diameter));
-            firstEllementColumns.Add(new LookUpColumnInfo("WallThickness", Resources.WallThickness));
-            firstEllementColumns.Add(new LookUpColumnInfo("Length", Resources.Length));
-            firstEllementColumns.Add(new LookUpColumnInfo("Id", Resources.Id));
-            firstEllementColumns[5].Visible = false;
             lookup.Properties.DisplayMember = "Number";
             lookup.Properties.ValueMember = "Id";
         }

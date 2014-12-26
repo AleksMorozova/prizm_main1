@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 using DevExpress.Mvvm.POCO;
 using Prizm.Main.Properties;
+using Prizm.Domain.Entity.Construction;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {
@@ -53,33 +54,42 @@ namespace Prizm.Main.Forms.Component.NewEdit
             }
             else
             {
-                try
-                {
-                    repos.BeginTransaction();
-                    repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
-                    repos.Commit();
-                    repos.ComponentRepo.Evict(viewModel.Component);
-                    viewModel.CanDeactivateComponent = viewModel.DeactivationCommand.CanExecute();
-                    viewModel.ModifiableView.IsModified = false;
-
-                    //saving attached documents
-                    if (viewModel.FilesFormViewModel != null)
-                    {
-                        viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
-                        viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
-                        viewModel.FilesFormViewModel = null;
-                    }
-
-                    notify.ShowSuccess(
-                         string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),
-                         Resources.DLG_COMPONENT_SAVED_HEADER);
-                }
-                catch (RepositoryException ex)
-                {
-                    notify.ShowFailure(ex.InnerException.Message, ex.Message);
-                }
+                SaveComponent();
             }
         }
+
+
+
+        private void SaveComponent()
+        {
+            try
+            {
+                repos.BeginTransaction();
+                repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
+                repos.Commit();
+                repos.ComponentRepo.Evict(viewModel.Component);
+                viewModel.CanDeactivateComponent = viewModel.DeactivationCommand.CanExecute();
+                viewModel.ModifiableView.IsModified = false;
+
+                //saving attached documents
+                if (viewModel.FilesFormViewModel != null)
+                {
+                    viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
+                    viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
+                    viewModel.FilesFormViewModel = null;
+                }
+
+                notify.ShowSuccess(
+                     string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),
+                     Resources.DLG_COMPONENT_SAVED_HEADER);
+            }
+            catch (RepositoryException ex)
+            {
+                notify.ShowFailure(ex.InnerException.Message, ex.Message);
+            }
+        }
+
+
 
         public virtual bool IsExecutable { get; set; }
 

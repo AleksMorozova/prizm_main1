@@ -14,6 +14,7 @@ namespace Prizm.Data.DAL.Mapping
         {
             Map(x => x.Number).Column("number");
             Map(x => x.Length).Column("length");
+            Map(x => x.IsAvailableToJoint).Column("isAvailableToJoint");
 
             Map(x => x.InspectionStatus).Column("inspectionStatus");
             Map(x => x.ConstructionStatus).Column("constructionStatus");

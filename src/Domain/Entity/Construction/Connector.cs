@@ -10,8 +10,13 @@ namespace Prizm.Domain.Entity.Construction
     {
         public virtual int Diameter { get; set; }
         public virtual float WallThickness { get; set; }
-        public virtual bool IsUsed { get; set; }
 
+        public virtual Joint Joint { get; set; }
         public virtual Component Component { get; set; }
+
+        public override string ToString()
+        {
+            return Convert.ToString(Diameter);
+        }
     }
 }

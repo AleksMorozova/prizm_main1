@@ -406,6 +406,15 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Величина диаметра должна быть больше нуля.
+        /// </summary>
+        internal static string DIAMETER_VALUE_VALIDATION {
+            get {
+                return ResourceManager.GetString("DIAMETER_VALUE_VALIDATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Нельзя добавить неуспешную контрольную операцию для трубы, которая находится в вагоне. Для этого необходимо данную труб из вагона. .
         /// </summary>
         internal static string DLG_AddFailedControlOperation {
@@ -584,6 +593,24 @@ namespace Prizm.Main.Properties {
         internal static string DLG_JOINT_DUPLICATE_HEADER {
             get {
                 return ResourceManager.GetString("DLG_JOINT_DUPLICATE_HEADER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Отсутствуют подходящие диаметры для формирования стыка..
+        /// </summary>
+        internal static string DLG_JOINT_INCORRECT_DIAMETER {
+            get {
+                return ResourceManager.GetString("DLG_JOINT_INCORRECT_DIAMETER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Невозможно сохранить стык.
+        /// </summary>
+        internal static string DLG_JOINT_INCORRECT_DIAMETER_HEADER {
+            get {
+                return ResourceManager.GetString("DLG_JOINT_INCORRECT_DIAMETER_HEADER", resourceCulture);
             }
         }
         

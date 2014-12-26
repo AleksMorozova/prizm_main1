@@ -236,6 +236,12 @@
     <Compile Include="Forms\ExternalFile\ExternalFilesViewModel.cs" />
     <Compile Include="Forms\ExternalFile\ViewFileCommand.cs" />
     <Compile Include="Forms\GridViewExtensions.cs" />
+    <Compile Include="Forms\Joint\NewEdit\ChoiceConnectedDiameter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Joint\NewEdit\ChoiceConnectedDiameter.Designer.cs">
+      <DependentUpon>ChoiceConnectedDiameter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Joint\NewEdit\JointDeactivationCommand.cs" />
     <Compile Include="Forms\Joint\NewEdit\NewSaveJointCommand.cs" />
     <Compile Include="Forms\MainChildForm\FirstSetupForm\FirstSetupRepo.cs" />
@@ -558,6 +564,9 @@
     <EmbeddedResource Include="Forms\Component\NewEdit\ComponentNewEditXtraForm.resx">
       <DependentUpon>ComponentNewEditXtraForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Joint\NewEdit\ChoiceConnectedDiameter.resx">
+      <DependentUpon>ChoiceConnectedDiameter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainChildForm\FirstSetupForm\FirstSetupXtraForm.resx">
       <DependentUpon>FirstSetupXtraForm.cs</DependentUpon>

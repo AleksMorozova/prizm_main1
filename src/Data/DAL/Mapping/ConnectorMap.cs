@@ -14,8 +14,8 @@ namespace Prizm.Data.DAL.Mapping
         {
             Map(_ => _.Diameter).Column("diameter");
             Map(_ => _.WallThickness).Column("wallThickness");
-            Map(_ => _.IsUsed).Column("isUsed");
 
+            References<Joint>(x => x.Joint).Column("jointId").Cascade.All();
             References<Component>(x => x.Component).Column("componentId");
         }
     }
