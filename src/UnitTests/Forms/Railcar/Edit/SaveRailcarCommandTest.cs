@@ -35,7 +35,7 @@ namespace Prizm.UnitTests.Forms.Railcar.Edit
 
             command.Execute();
 
-            repos.Verify(_ => _.BeginTransaction(), Times.Once);
+            repos.Verify(_ => _.BeginTransaction(), Times.Once());
             railcarRepo.Verify(_ => _.SaveOrUpdate(viewModel.Railcar), Times.Once());
             repos.Verify(_ => _.Commit(), Times.Once());
             railcarRepo.Verify(_ => _.Evict(viewModel.Railcar), Times.Once());

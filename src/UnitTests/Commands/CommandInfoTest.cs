@@ -22,7 +22,7 @@ namespace Prizm.UnitTests.Commands
          ci.Executor(testCommand.Object);
          ci.Execute();
 
-         testCommand.Verify(c => c.Execute(), Times.Once);
+         testCommand.Verify(c => c.Execute(), Times.Once());
       }
 
       [Test]
@@ -58,7 +58,7 @@ namespace Prizm.UnitTests.Commands
 
          Assert.IsTrue(canExec);
 
-         testCommand.Verify(c => c.CanExecute(), Times.Once);
+         testCommand.Verify(c => c.CanExecute(), Times.Once());
       }
       
       [Test]

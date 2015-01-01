@@ -54,18 +54,17 @@ namespace Prizm.UnitTests.Forms.PipeMill.Search
 
 
 
-            var pipes = new List<Pipe>();
+            var pipes = new List<Prizm.Domain.Entity.Mill.Pipe>()
             {
-                new Prizm.Domain.Entity.Mill.Pipe { Number = "test-1" };
-                new Prizm.Domain.Entity.Mill.Pipe { Number = "test-3" };
+                new Prizm.Domain.Entity.Mill.Pipe { Number = "test-1" },
+                new Prizm.Domain.Entity.Mill.Pipe { Number = "test-3" }
             };
-
 
             var viewModel = new MillPipeSearchViewModel(millRepos.Object, notify.Object);
             viewModel.PipeNumber = "Test Number";
             viewModel.CheckedPipeTypes = new List<PipeMillSizeType>();
 
-            iQuery.Setup(x => x.List<Pipe>())
+            iQuery.Setup(x => x.List<Prizm.Domain.Entity.Mill.Pipe>())
                 .Returns(pipes).Verifiable();
 
             iSQLQuery.Setup(x => x.SetResultTransformer(It.IsAny<IResultTransformer>()))
@@ -84,7 +83,7 @@ namespace Prizm.UnitTests.Forms.PipeMill.Search
                 repoPipe.Object
                 .CreateSQLQuery(It.IsAny<string>())
                 .SetResultTransformer(It.IsAny<IResultTransformer>())
-                .List<Pipe>(), pipes);
+                .List<Prizm.Domain.Entity.Mill.Pipe>(), pipes);
 
         }
 

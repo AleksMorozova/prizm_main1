@@ -52,7 +52,7 @@ namespace Prizm.UnitTests.Forms.ExternalFile
             
             fileViewModel.FilesToAttach.Add("test.txt", "test.txt");
 
-            var viewModel = new RailcarViewModel(repos.Object, "", notify.Object);
+            var viewModel = new RailcarViewModel(repos.Object, Guid.Empty, notify.Object);
             viewModel.ModifiableView = new Mock<IModifiable>().Object;
             viewModel.Railcar.Number = "Test Railcar";
             viewModel.ModifiableView = view.Object;
@@ -62,7 +62,7 @@ namespace Prizm.UnitTests.Forms.ExternalFile
 
             command.Execute();
             
-            fileRepo.Verify(_ => _.BeginTransaction(), Times.Once);
+            fileRepo.Verify(_ => _.BeginTransaction(), Times.Once());
             fileRepo.Verify(_ => _.Save(It.IsAny<Domain.Entity.File>()), Times.Once());
             fileRepo.Verify(_ => _.Commit(), Times.Once());
             fileRepo.Verify(_ => _.Evict(It.IsAny<Domain.Entity.File>()), Times.Once());

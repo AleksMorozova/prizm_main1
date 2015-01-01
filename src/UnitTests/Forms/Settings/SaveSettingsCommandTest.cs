@@ -104,10 +104,10 @@ namespace Prizm.UnitTests.Forms.Settings
             repoProjectSetting.Verify(_ => _.Evict(testProjectSetting), Times.Once());
             repoInspectors.Verify(_ => _.SaveOrUpdate(testInspector), Times.Once());
             repoInspectors.Verify(_ => _.Evict(testInspector), Times.Once());
-            repoUsers.Verify(_ => _.SaveOrUpdate(testUser), Times.Once);
-            repoUsers.Verify(_ => _.Evict(testUser), Times.Once);
-            repoRoles.Verify(_ => _.SaveOrUpdate(testRole), Times.Once);
-            repoRoles.Verify(_ => _.Evict(testRole), Times.Once);
+            repoUsers.Verify(_ => _.SaveOrUpdate(testUser), Times.Once());
+            repoUsers.Verify(_ => _.Evict(testUser), Times.Once());
+            repoRoles.Verify(_ => _.SaveOrUpdate(testRole), Times.Once());
+            repoRoles.Verify(_ => _.Evict(testRole), Times.Once());
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Prizm.Main.Forms.PipeMill.Search
 
             try
             {
-                var pipes = new List<Pipe>();
+                var pipes = new List<Prizm.Domain.Entity.Mill.Pipe>();
 
                 var query = repo
                     .CreateSQLQuery(PipeQuery.BuildSql(
@@ -50,7 +50,7 @@ namespace Prizm.Main.Forms.PipeMill.Search
                     viewModel.CheckedStatusTypes))
                     .SetResultTransformer(PipeQuery.Transformer);
 
-                var qpipes = query.List<Pipe>();
+                var qpipes = query.List<Prizm.Domain.Entity.Mill.Pipe>();
 
                 foreach (var item in qpipes)
                 {

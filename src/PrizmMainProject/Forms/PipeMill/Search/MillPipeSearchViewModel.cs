@@ -28,7 +28,7 @@ using Prizm.Main.Properties;
 
         readonly IMillRepository repoMill;
 
-        private IList<Pipe> pipes;
+        private IList<Prizm.Domain.Entity.Mill.Pipe> pipes;
         private IList<EnumWrapper<PipeMillStatus>> statusTypes;
         public IList<EnumWrapper<PipeMillStatus>> CheckedStatusTypes;
         private IList<PipeMillSizeType> pipeTypes;
@@ -76,7 +76,7 @@ using Prizm.Main.Properties;
             }
         }
 
-        public IList<Pipe> Pipes
+        public IList<Prizm.Domain.Entity.Mill.Pipe> Pipes
         {
             get
             {
