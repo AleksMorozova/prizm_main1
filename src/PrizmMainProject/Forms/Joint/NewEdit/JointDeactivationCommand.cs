@@ -33,8 +33,11 @@ namespace Prizm.Main.Forms.Joint.NewEdit
             if (notify.ShowYesNo(
                    Resources.DLG_JOINT_DEACTIVATION,
                    Resources.DLG_JOINT_DEACTIVATION_HEADER))
-            {
-                viewModel.SaveJointCommand.Execute();
+            {              
+                repo.BeginTransaction();
+                repo.RepoJoint.Save(viewModel.Joint);
+                repo.Commit();
+                repo.RepoJoint.Evict(viewModel.Joint);
             }
             else
             {

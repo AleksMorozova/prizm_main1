@@ -676,10 +676,13 @@ namespace Prizm.Main.Forms.Joint.NewEdit
 
                 if (part is construction.Component)
                 {
-                    connector.Diameter = ((construction.Component)part)
-                        .Connectors
-                        .First<Connector>(x => x.Joint != null && x.Joint.Id == this.Joint.Id)
-                        .Diameter;
+                    if (Joint.IsActive)
+                    {
+                        connector.Diameter = ((construction.Component)part)
+                            .Connectors
+                            .First<Connector>(x => x.Joint != null && x.Joint.Id == this.Joint.Id)
+                            .Diameter;
+                    }
                 }
                 else if (part is Pipe)
                 {
