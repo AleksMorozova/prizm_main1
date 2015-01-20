@@ -867,4 +867,10 @@
   <data name="Deactivated" xml:space="preserve">
     <value>Деактивирован</value>
   </data>
+  <data name="CHECK_VALUES" xml:space="preserve">
+    <value>Проверте значения</value>
+  </data>
+  <data name="UNIQUE_VALUE_REQUIRED" xml:space="preserve">
+    <value>Введите уникальное значение</value>
+  </data>
 </root>

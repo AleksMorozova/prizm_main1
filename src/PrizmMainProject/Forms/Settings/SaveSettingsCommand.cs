@@ -39,6 +39,7 @@ namespace Prizm.Main.Forms.Settings
         {
             if(!viewModel.validatableView.Validate())
             {
+                notify.ShowError(Resources.CHECK_VALUES, Resources.DLG_ERROR_HEADER);
                 return;
             }
 

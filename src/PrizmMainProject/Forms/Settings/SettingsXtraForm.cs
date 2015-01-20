@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-
+using System.Linq;
 using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
@@ -231,11 +231,16 @@ namespace Prizm.Main.Forms.Settings
 
         private void pipesSizeListGridView_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            GridView view = sender as GridView;
+            object sizeType = view.GetRow(view.FocusedRowHandle);
 
-            GridView v = sender as GridView;
-            object sizeType = v.GetRow(e.FocusedRowHandle);
+            var eArg = new DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs(
+                view.FocusedRowHandle,
+                pipesSizeListGridView.GetDataRow(view.FocusedRowHandle)
+                );
+            pipesSizeListGridView_ValidateRow(pipesSizeListGridView, eArg);
 
-            if(sizeType != null)
+            if (sizeType != null)
             {
                 viewModel.UpdatePipeTests(sizeType);
             }
@@ -243,7 +248,40 @@ namespace Prizm.Main.Forms.Settings
             CurrentPipeMillSizeType = sizeType as PipeMillSizeType;
             viewModel.CurrentPipeMillSizeType = CurrentPipeMillSizeType;
             viewModel.ModifiableView.UpdateState();
+        }
 
+        private void pipesSizeListGridView_ValidateRow(object sender, ValidateRowEventArgs e)
+        {
+            var view = sender as GridView;
+            var pipeSizes = viewModel.PipeMillSizeType;
+
+            var duplicates = pipeSizes.GroupBy(x => x.Type)
+                                 .Where(g => g.Count() > 1)
+                                 .Select(g => g.Key)
+                                 .ToList();
+
+            if (duplicates.Count > 0)
+            {
+                if (e.Valid)
+                {
+                    for (int i = 0; i < pipeSizes.Count; i++)
+                    {
+                        var item = duplicates.Exists(j => j == pipeSizes[i].Type);
+                        if (false != item)
+                        {
+                            view.FocusedRowHandle = i;
+                            view.SetColumnError(pipeSizeGridColumn, Resources.UNIQUE_VALUE_REQUIRED);
+                            break;
+                        }
+                    }
+                }
+                e.Valid = false;
+            }
+            else
+            {
+                e.Valid = true;
+                view.ClearColumnErrors();
+            }
         }
 
         private void cloneTypeSizeButton_Click(object sender, EventArgs e)
@@ -865,22 +903,17 @@ namespace Prizm.Main.Forms.Settings
                                 .ValidateRowEventArgs(i, inspectionView.GetDataRow(i)));
                     }
                 }
-
-                foreach(PipeTest t in viewModel.PipeTests)
-                {
-                    if(t.Code != null && t.Name != null && t.Category != null)
-                    {
-                        codeValidate = true;
-                    }
-                    else
-                    {
-                        codeValidate = false;
-                    }
-                }
             }
 
+            var pipeSizeEventArg = new DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs(
+                                        pipesSizeListGridView.FocusedRowHandle,
+                                        pipesSizeListGridView.GetDataRow(pipesSizeListGridView.FocusedRowHandle)
+                                   );
+            pipesSizeListGridView_ValidateRow(pipesSizeListGridView, pipeSizeEventArg);
 
-            return dxValidationProvider.Validate() && codeValidate;
+            codeValidate = PipeTestsCheck();
+
+            return dxValidationProvider.Validate() && codeValidate && pipeSizeEventArg.Valid;
         }
 
         private void inspectionView_ValidateRow(object sender, ValidateRowEventArgs e)
@@ -969,6 +1002,25 @@ namespace Prizm.Main.Forms.Settings
         private void CellModifiedGridView_CellValueChanged(object sender, CellValueChangedEventArgs e)
         {
             IsModified = true;
+        }
+
+        private bool PipeTestsCheck()
+        {
+            bool codeValidate = false;
+
+            foreach (PipeTest t in viewModel.PipeTests)
+            {
+                if (t.Code != null && t.Name != null)
+                {
+                    codeValidate = true;
+                }
+                else
+                {
+                    codeValidate = false;
+                    inspectionView.SetColumnError(inspectionCodeGridColumn, Resources.CHECK_VALUES);
+                }
+            }
+            return codeValidate;
         }
         
     }
