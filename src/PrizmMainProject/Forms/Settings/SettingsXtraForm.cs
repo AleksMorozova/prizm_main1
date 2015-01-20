@@ -1006,18 +1006,15 @@ namespace Prizm.Main.Forms.Settings
 
         private bool PipeTestsCheck()
         {
-            bool codeValidate = false;
+            bool codeValidate = true;
 
             foreach (PipeTest t in viewModel.PipeTests)
             {
-                if (t.Code != null && t.Name != null)
-                {
-                    codeValidate = true;
-                }
-                else
+                if (t.Code == null && t.Name == null)
                 {
                     codeValidate = false;
                     inspectionView.SetColumnError(inspectionCodeGridColumn, Resources.CHECK_VALUES);
+                    break;
                 }
             }
             return codeValidate;
