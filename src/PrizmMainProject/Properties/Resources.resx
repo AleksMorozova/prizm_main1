@@ -882,4 +882,10 @@
   <data name="YES" xml:space="preserve">
     <value>Да</value>
   </data>
+  <data name="DLG_RAILCAR_CLOSE_EXIST" xml:space="preserve">
+    <value>Пожалуйста сначала закройте редактируемое разрешение на отгрузку</value>
+  </data>
+  <data name="DLG_RAILCAR_OPEN_READONLY" xml:space="preserve">
+    <value>Форма Разрешение на отгрузку уже открыта, хотите открыть разрешение в режиме просмотра?</value>
+  </data>
 </root>

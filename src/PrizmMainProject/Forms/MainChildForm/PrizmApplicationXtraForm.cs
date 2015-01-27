@@ -92,6 +92,22 @@ namespace Prizm.Main.Forms.MainChildForm
         }
 
         /// <summary>
+        /// Gives any ChildForm index in corresponding childForms list that contains the element having mode equal ReadMode.
+        /// </summary>
+        /// <param name="formTypeName">string representation of form type name</param>
+        /// <param name="ReadMode"></param>
+        /// <returns>The zero-based index of the first occurrence of an element that matches the
+        /// conditions defined by match, if found; otherwise, –1.</returns>
+        private int GetFormIndex(string formTypeName, bool ReadMode)
+        {
+            int index = -1;
+            index = childForms[formTypeName]
+                .FindIndex(x => x.IsEditMode == ReadMode);
+            return index;
+        }
+
+
+        /// <summary>
         /// Creates an instance of child form of given form type
         /// </summary>
         /// <param name="formType">type of form to be created, for example SettingsXtraForm</param>
@@ -252,6 +268,96 @@ namespace Prizm.Main.Forms.MainChildForm
             }
         }
 
+        public void CreateRailcarForm(Guid id = default(Guid))
+        {
+            ChildForm form = null;
+            try
+            {
+
+                Type formType = typeof(RailcarNewEditXtraForm);
+
+                if (!childForms.ContainsKey(formType.Name))
+                {
+                    childForms.Add(formType.Name, new List<ChildForm>());
+                }
+
+                var forms = childForms[formType.Name];
+
+                if (forms.Count > 0)
+                {
+                    int indexById = GetFormIndex(formType.Name, id);
+
+                    if (indexById >= 0)
+                    {
+                        form = forms[indexById];
+                        form.Activate();
+                    }
+                    else
+                    {
+                        if (id == default(Guid))
+                        {
+                            int indexByEditMode = GetFormIndex(formType.Name, true);
+
+                            if (indexByEditMode >= 0)
+                            {
+                                string text = Resources.DLG_RAILCAR_CLOSE_EXIST;
+                                ShowWarning(text, "");
+                                form = forms[indexByEditMode];
+                                form.Activate();
+                            }
+                        }
+                        else
+                        {
+                            int indexByEditMode = GetFormIndex(formType.Name, true);
+
+                            if (indexByEditMode >= 0)
+                            {
+                                string text = Resources.DLG_RAILCAR_OPEN_READONLY;
+                                bool readMode = this.ShowYesNo(text, "");
+                                if (readMode)
+                                {
+                                    ShowProcessing();
+                                    form = CreateChildForm(formType, id, string.Empty);
+                                    if (form != null)
+                                    {
+                                        ((ChildForm)form).IsEditMode = true;
+                                        ((ChildForm)form).IsEditMode = false;
+                                        ShowChildForm(form);
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                ShowProcessing();
+                                form = CreateChildForm(formType, id, string.Empty);
+                                if (form != null)
+                                {
+                                    ((ChildForm)form).IsEditMode = true;
+                                    ShowChildForm(form);
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    ShowProcessing();
+                    form = CreateChildForm(formType, id, string.Empty);
+                    if (form != null)
+                    {
+                        ((ChildForm)form).IsEditMode = true;
+                        ShowChildForm(form);
+                    }
+                }
+
+            }
+            finally
+            {
+                HideProcessing();
+            }
+        }
+
+
         #region Menu buttons
         private void barButtonItemNewPipe_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -260,7 +366,7 @@ namespace Prizm.Main.Forms.MainChildForm
 
         private void barButtonItemNewRailcar_ItemClick(object sender, ItemClickEventArgs e)
         {
-            OpenChildForm(typeof(RailcarNewEditXtraForm));
+            CreateRailcarForm();
         }
 
         private void barButtonItemMillFindEditPipes_ItemClick(object sender, ItemClickEventArgs e)
