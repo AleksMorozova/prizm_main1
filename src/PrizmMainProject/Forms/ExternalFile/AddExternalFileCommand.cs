@@ -31,7 +31,7 @@ namespace Prizm.Main.Forms.ExternalFile
         [Command(UseCommandManager = false)]
         public void Execute()
         {
-            if (CanExecute())
+          /*  if (CanExecute())
             {
                 if (!Directory.Exists(Directories.TargetPath))
                 {
@@ -53,12 +53,12 @@ namespace Prizm.Main.Forms.ExternalFile
                     repo.Save(fileEntity);
                     repo.Commit();
                     repo.Evict(fileEntity);
-                    System.IO.File.Copy(Directories.FilesToAttachFolder + fileEntity.NewName, Directories.TargetPath + fileEntity.NewName);
+                    //System.IO.File.Copy(Directories.FilesToAttachFolder + fileEntity.NewName, Directories.TargetPath + fileEntity.NewName);
                 }
 
                 Directory.Delete(Directories.FilesToAttachFolder, true);
                 notify.ShowNotify(Resources.DLG_FILE_ATTACH_SUCCESS, Resources.DLG_FILE_ATTACH_SUCCESS_HEADER);
-            }
+            }*/
         }
 
         public bool CanExecute()

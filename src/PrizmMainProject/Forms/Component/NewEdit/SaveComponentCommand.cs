@@ -62,6 +62,23 @@ namespace Prizm.Main.Forms.Component.NewEdit
                 {
                     viewModel.Component.InspectionStatus = viewModel.Component.GetPartInspectionStatus();
                     repos.BeginTransaction();
+
+                    var filesViewModel = viewModel.FilesFormViewModel;
+
+                    if (null != filesViewModel)
+                    {
+                        var filesToAttach = filesViewModel.FilesToAttach;
+
+                        if (filesToAttach.Count != 0)
+                        {
+                            if (viewModel.FilesFormViewModel.TrySaveFiles())
+                            {
+                                viewModel.FilesFormViewModel.PersistFiles();
+                            }
+                        }
+                    }
+                   
+
                     repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
                     repos.Commit();
                     repos.ComponentRepo.Evict(viewModel.Component);
@@ -69,12 +86,19 @@ namespace Prizm.Main.Forms.Component.NewEdit
                     viewModel.ModifiableView.UpdateState();
 
                     //saving attached documents
-                    if (viewModel.FilesFormViewModel != null)
+                   /* if (viewModel.FilesFormViewModel != null)
                     {
                         viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
                         viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
                         viewModel.FilesFormViewModel = null;
-                    }
+                    }*/
+
+                   /* foreach (var file in viewModel.FilesFormViewModel.Files)
+                    {
+                        repos.FileRepo.Evict(file);
+                    }*/
+
+                    //viewModel.FilesFormViewModel = null;
 
                     notify.ShowSuccess(
                          string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),

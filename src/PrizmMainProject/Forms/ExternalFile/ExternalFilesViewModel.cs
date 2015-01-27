@@ -14,6 +14,7 @@ using Prizm.Main.Commands;
 using DevExpress.Mvvm.POCO;
 using Prizm.Main.Forms;
 using Prizm.Main.Common;
+using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.ExternalFile
 {
@@ -115,6 +116,61 @@ namespace Prizm.Main.Forms.ExternalFile
             {
                 Directory.Delete(Directories.TargetPathForView, true);
             }
+        }
+
+        public bool TrySaveFiles()
+        {
+            bool result = true;
+            if (FilesToAttach.Count > 0)
+            {
+                if (!Directory.Exists(Directories.TargetPath))
+                {
+                    Directory.CreateDirectory(Directories.TargetPath);
+                    DirectoryInfo directoryInfo = new DirectoryInfo(Directories.TargetPath);
+                    directoryInfo.Attributes |= FileAttributes.Hidden;
+                }
+
+                foreach (KeyValuePair<string, string> kvp in FilesToAttach)
+                {
+                    var newFileName = kvp.Key;
+                    try
+                    {
+                        System.IO.File.Copy(
+                             Directories.FilesToAttachFolder + newFileName,
+                             Directories.TargetPath + newFileName
+                            );
+                    }
+                    catch (Exception e)
+                    {
+                        result = false;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        public void PersistFiles()
+        {
+            //repo.BeginTransaction();
+            foreach (KeyValuePair<string, string> kvp in FilesToAttach)
+            {
+                Prizm.Domain.Entity.File fileEntity = new Domain.Entity.File()
+                {
+                    FileName = kvp.Value,
+                    UploadDate = DateTime.Now,
+                    Item = Item,
+                    IsActive = true,
+                    NewName = kvp.Key
+                };
+                //repo.BeginTransaction();
+                repo.Save(fileEntity);
+                repo.Commit();
+                //repo.Evict(fileEntity);
+            }
+
+            Directory.Delete(Directories.FilesToAttachFolder, true);
+            notify.ShowNotify(Resources.DLG_FILE_ATTACH_SUCCESS, Resources.DLG_FILE_ATTACH_SUCCESS_HEADER);
         }
         
     }
