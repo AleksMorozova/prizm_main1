@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using Prizm.Main.Forms.Component;
 using Prizm.Main.Forms.ExternalFile;
 using Prizm.Main.Commands;
 using DevExpress.Mvvm.POCO;
@@ -150,9 +151,8 @@ namespace Prizm.Main.Forms.ExternalFile
             return result;
         }
 
-        public void PersistFiles()
+        public void PersistFiles(IComponentRepositories repos)
         {
-            //repo.BeginTransaction();
             foreach (KeyValuePair<string, string> kvp in FilesToAttach)
             {
                 Prizm.Domain.Entity.File fileEntity = new Domain.Entity.File()
@@ -163,10 +163,7 @@ namespace Prizm.Main.Forms.ExternalFile
                     IsActive = true,
                     NewName = kvp.Key
                 };
-                //repo.BeginTransaction();
-                repo.Save(fileEntity);
-                repo.Commit();
-                //repo.Evict(fileEntity);
+                repos.FileRepo.Save(fileEntity);
             }
 
             Directory.Delete(Directories.FilesToAttachFolder, true);

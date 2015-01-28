@@ -64,21 +64,16 @@ namespace Prizm.Main.Forms.Component.NewEdit
                     repos.BeginTransaction();
 
                     var filesViewModel = viewModel.FilesFormViewModel;
+                    viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
 
-                    if (null != filesViewModel)
+                    if ((null != filesViewModel) && (filesViewModel.FilesToAttach.Count != 0))
                     {
-                        var filesToAttach = filesViewModel.FilesToAttach;
-
-                        if (filesToAttach.Count != 0)
-                        {
-                            if (viewModel.FilesFormViewModel.TrySaveFiles())
-                            {
-                                viewModel.FilesFormViewModel.PersistFiles();
-                            }
-                        }
+                       if (viewModel.FilesFormViewModel.TrySaveFiles())
+                       {
+                           viewModel.FilesFormViewModel.PersistFiles(repos);
+                       }
                     }
-                   
-
+        
                     repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
                     repos.Commit();
                     repos.ComponentRepo.Evict(viewModel.Component);
@@ -93,12 +88,14 @@ namespace Prizm.Main.Forms.Component.NewEdit
                         viewModel.FilesFormViewModel = null;
                     }*/
 
-                   /* foreach (var file in viewModel.FilesFormViewModel.Files)
+                    if ((null != filesViewModel) && (filesViewModel.Files.Count > 0))
                     {
-                        repos.FileRepo.Evict(file);
-                    }*/
-
-                    //viewModel.FilesFormViewModel = null;
+                        foreach (var file in viewModel.FilesFormViewModel.Files)
+                        {
+                            repos.FileRepo.Evict(file);
+                        }
+                        viewModel.FilesFormViewModel = null;
+                    }
 
                     notify.ShowSuccess(
                          string.Concat(Resources.DLG_COMPONENT_SAVED, viewModel.Number),
