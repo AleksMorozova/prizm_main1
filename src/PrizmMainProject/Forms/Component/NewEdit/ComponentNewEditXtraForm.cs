@@ -18,7 +18,6 @@ using System.Linq;
 using Prizm.Main.Security;
 using DevExpress.XtraGrid.Views.Base;
 using Prizm.Main.Languages;
-using System.Drawing;
 
 namespace Prizm.Main.Forms.Component.NewEdit
 {
@@ -44,10 +43,6 @@ namespace Prizm.Main.Forms.Component.NewEdit
             this.id = id;
 
             InitializeComponent();
-
-            Bitmap bmp = Resources.components_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
-
             viewModel = (ComponentNewEditViewModel)Program
                .Kernel
                .Get<ComponentNewEditViewModel>(new ConstructorArgument("id", id));

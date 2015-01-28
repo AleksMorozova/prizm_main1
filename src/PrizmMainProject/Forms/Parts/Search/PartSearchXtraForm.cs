@@ -33,8 +33,6 @@ namespace Prizm.Main.Forms.Parts.Search
         {
             InitializeComponent();
             number.SetAsIdentifier();
-            Bitmap bmp = Resources.search_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void PartsSearchXtraForm_Load(object sender, EventArgs e)

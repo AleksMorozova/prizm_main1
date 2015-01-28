@@ -297,16 +297,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap components_icon {
-            get {
-                object obj = ResourceManager.GetObject("components_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Точки отсчета.
         /// </summary>
         internal static string Constraction_Report_label {
@@ -1071,16 +1061,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap history_item_16 {
-            get {
-                object obj = ResourceManager.GetObject("history_item_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Задержано.
         /// </summary>
         internal static string Hold {
@@ -1217,16 +1197,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap inControl_icon {
-            get {
-                object obj = ResourceManager.GetObject("inControl_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Входной контроль.
         /// </summary>
         internal static string Inspection {
@@ -1304,16 +1274,6 @@ namespace Prizm.Main.Properties {
         internal static string Joint {
             get {
                 return ResourceManager.GetString("Joint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap joint_icon {
-            get {
-                object obj = ResourceManager.GetObject("joint_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1414,16 +1374,6 @@ namespace Prizm.Main.Properties {
         internal static string Mill {
             get {
                 return ResourceManager.GetString("Mill", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap mill_pipe_icon {
-            get {
-                object obj = ResourceManager.GetObject("mill_pipe_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1559,16 +1509,6 @@ namespace Prizm.Main.Properties {
         internal static string Order {
             get {
                 return ResourceManager.GetString("Order", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap page_setup_16 {
-            get {
-                object obj = ResourceManager.GetObject("page_setup_16", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -1809,16 +1749,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap prizma_appIcon_32 {
-            get {
-                object obj = ResourceManager.GetObject("prizma_appIcon_32", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Производится.
         /// </summary>
         internal static string Produced {
@@ -1901,16 +1831,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap reports_icon {
-            get {
-                object obj = ResourceManager.GetObject("reports_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Сварка стыка.
         /// </summary>
         internal static string RequiredWeldJointOperation {
@@ -1934,16 +1854,6 @@ namespace Prizm.Main.Properties {
         internal static string Role {
             get {
                 return ResourceManager.GetString("Role", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap search_icon {
-            get {
-                object obj = ResourceManager.GetObject("search_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -2110,16 +2020,6 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap shipment_icon {
-            get {
-                object obj = ResourceManager.GetObject("shipment_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Отгружена.
         /// </summary>
         internal static string Shipped {
@@ -2152,16 +2052,6 @@ namespace Prizm.Main.Properties {
         internal static string SPOOL_EDIT_FORM_TEXT {
             get {
                 return ResourceManager.GetString("SPOOL_EDIT_FORM_TEXT", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap spool_icon {
-            get {
-                object obj = ResourceManager.GetObject("spool_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

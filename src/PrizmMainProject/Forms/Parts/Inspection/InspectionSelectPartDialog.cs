@@ -11,7 +11,6 @@ using DevExpress.XtraEditors;
 using Prizm.Main.Forms.Parts.Search;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Languages;
-using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Parts.Inspection
 {
@@ -25,9 +24,6 @@ namespace Prizm.Main.Forms.Parts.Inspection
             this.parts = parts;
             this.viewModel = viewModel;
             InitializeComponent();
-
-            Bitmap bmp = Resources.inControl_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void NumbersDialog_Load(object sender, EventArgs e)

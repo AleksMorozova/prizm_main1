@@ -17,8 +17,6 @@ using Prizm.Main.DummyData;
 using Prizm.Main.Commands;
 using Prizm.Main.Languages;
 using System.Collections.Generic;
-using Prizm.Main.Properties;
-using System.Drawing;
 
 
 namespace Prizm.Main.Forms.Railcar.Search
@@ -32,8 +30,6 @@ namespace Prizm.Main.Forms.Railcar.Search
         public RailcarSearchXtraForm()
         {
             InitializeComponent();
-            Bitmap bmp = Resources.search_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
             releaseNoteDate.Properties.NullDate = DateTime.MinValue;
             releaseNoteDate.Properties.NullText = string.Empty;
             this.certificateNumber.SetAsIdentifier();

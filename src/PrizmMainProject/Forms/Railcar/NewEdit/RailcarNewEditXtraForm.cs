@@ -18,7 +18,6 @@ using Prizm.Main.Documents;
 using Prizm.Main.Security;
 using DevExpress.XtraGrid.Views.Base;
 using Prizm.Main.Languages;
-using System.Drawing;
 
 namespace Prizm.Main.Forms.Railcar.NewEdit
 {
@@ -39,8 +38,6 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
             this.id = id;
 
             InitializeComponent();
-            Bitmap bmp = Resources.shipment_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
             viewModel = (RailcarViewModel)Program.Kernel.Get<RailcarViewModel>(new ConstructorArgument("id", id));
             viewModel.ModifiableView = this;
             viewModel.validatableView = this;

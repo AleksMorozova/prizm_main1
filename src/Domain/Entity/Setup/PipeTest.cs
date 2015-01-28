@@ -50,7 +50,6 @@ namespace Prizm.Domain.Entity.Setup
         public virtual bool IsRequired { get; set; }
 
         public virtual PipeMillSizeType pipeType { get; set; }
-        public virtual PipeTestFrequency Frequency { get; set; }
         //enums
         public virtual PipeTestControlType ControlType { get; set; }
         public virtual PipeTestResultType ResultType { get; set; }

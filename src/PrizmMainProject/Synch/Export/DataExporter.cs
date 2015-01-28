@@ -36,7 +36,7 @@ namespace Prizm.Main.Synch.Export
 
       public bool AnyNewDataToExport()
       {
-          IList<Pipe> pipesToExport = exportRepo.PipeRepo.GetPipesToExport();
+         IList<Pipe> pipesToExport = exportRepo.PipeRepo.GetPipesToExport();
          IList<Joint> jointsToExport = exportRepo.JointRepo.GetJointsToExport();
          IList<Component> componentsToExport = exportRepo.ComponentRepo.GetComponentsToExport();
 

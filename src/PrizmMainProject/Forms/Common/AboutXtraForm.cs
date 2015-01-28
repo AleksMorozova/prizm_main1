@@ -21,8 +21,6 @@ namespace Prizm.Main.Forms.Common
         public AboutXtraForm()
         {
             InitializeComponent();
-            Bitmap bmp = Resources.prizma_appIcon_32;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void AboutXtraForm_Load(object sender, EventArgs e)

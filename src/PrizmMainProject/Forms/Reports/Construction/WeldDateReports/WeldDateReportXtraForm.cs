@@ -11,7 +11,6 @@ using DevExpress.XtraEditors;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Commands;
 using Prizm.Main.Languages;
-using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Reports.Construction.WeldDateReports
 {
@@ -24,9 +23,6 @@ namespace Prizm.Main.Forms.Reports.Construction.WeldDateReports
         public WeldDateReportXtraForm()
         {
             InitializeComponent();
-
-            Bitmap bmp = Resources.reports_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
 
             weldDateFrom.Properties.NullDate = DateTime.MinValue;
             weldDateFrom.Properties.NullText = string.Empty;

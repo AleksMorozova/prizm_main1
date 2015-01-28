@@ -90,7 +90,6 @@
     <Compile Include="Synch\SerializableEntities\ProjectObjectTest.cs" />
     <Compile Include="Synch\SerializableEntities\PurchaseOrderObjectTest.cs" />
     <Compile Include="Synch\SerializableEntities\RailcarObjectTest.cs" />
-    <Compile Include="Synch\SerializableEntities\ReleaseObjectTest.cs" />
     <Compile Include="Synch\SerializableEntities\RoleObjectTest.cs" />
     <Compile Include="Synch\SerializableEntities\SeamTypeObjectTest.cs" />
     <Compile Include="Synch\SerializableEntities\SizeTypeObjectTest.cs" />

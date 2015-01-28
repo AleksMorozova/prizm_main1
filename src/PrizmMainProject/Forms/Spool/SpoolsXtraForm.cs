@@ -17,7 +17,6 @@ using System.Text;
 using Prizm.Main.Security;
 using Prizm.Main.Languages;
 using Prizm.Main.Common;
-using System.Drawing;
 
 namespace Prizm.Main.Forms.Spool
 {
@@ -41,8 +40,6 @@ namespace Prizm.Main.Forms.Spool
             this.id = id;
 
             InitializeComponent();
-            Bitmap bmp = Resources.spool_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
             SetControlsTextLength();
             viewModel = (SpoolViewModel)Program.Kernel.Get<SpoolViewModel>(new ConstructorArgument("id", id));
             viewModel.ModifiableView = this;

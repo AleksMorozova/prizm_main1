@@ -25,8 +25,6 @@ namespace Prizm.Main.Forms.MainChildForm.FirstSetupForm
         public FirstSetupXtraForm(FirstSetupViewModel vm)
         {
             InitializeComponent();
-            Bitmap bmp = Resources.prizma_appIcon_32;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
             viewModel = vm;
             this.Text += ": [" + viewModel.Type + "]";
         }

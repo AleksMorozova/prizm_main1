@@ -41,7 +41,6 @@ using System.Resources;
 using Prizm.Main.Forms.Reports.Construction.WeldDateReports;
 using Prizm.Main.Languages;
 using Prizm.Domain.Entity.Setup;
-using System.Drawing;
 
 namespace Prizm.Main.Forms.MainChildForm
 {
@@ -59,8 +58,6 @@ namespace Prizm.Main.Forms.MainChildForm
         public PrizmApplicationXtraForm()
         {
             InitializeComponent();
-            Bitmap bmp = Resources.prizma_appIcon_32;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         /// <summary>

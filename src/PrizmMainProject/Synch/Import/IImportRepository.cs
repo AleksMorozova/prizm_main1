@@ -28,6 +28,5 @@ namespace Prizm.Main.Synch.Import
       IComponentRepository ComponentRepo { get; }
       ISpoolRepository SpoolRepo { get; }
       IComponentTypeRepository ComponentTypeRepo { get; }
-      IReleaseNoteRepository ReleaseNoteRepo { get; }
    }
 }

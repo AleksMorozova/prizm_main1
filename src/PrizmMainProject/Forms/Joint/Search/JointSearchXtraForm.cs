@@ -30,8 +30,6 @@ namespace Prizm.Main.Forms.Joint.Search
         {
             viewModel = vm;
             InitializeComponent();
-            Bitmap bmp = Resources.search_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
             weldingDateFrom.Properties.NullDate = DateTime.MinValue;
             weldingDateFrom.Properties.NullText = string.Empty;
             weldingDateTo.Properties.NullDate = DateTime.MinValue;

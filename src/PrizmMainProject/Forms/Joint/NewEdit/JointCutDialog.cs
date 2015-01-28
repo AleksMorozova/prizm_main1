@@ -11,7 +11,6 @@ using DevExpress.XtraEditors;
 using Prizm.Domain.Entity;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Languages;
-using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Joint
 {
@@ -24,8 +23,6 @@ namespace Prizm.Main.Forms.Joint
         public JointCutDialog()
         {
             InitializeComponent();
-            Bitmap bmp = Resources.joint_icon;
-            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         public JointCutDialog(Part part1, Part part2) 

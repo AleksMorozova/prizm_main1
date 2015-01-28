@@ -195,10 +195,6 @@ namespace Prizm.Main.Synch.Import
             pipe.ProductionDate = pipeObj.ProductionDate;
             pipe.Type = ImportSizeType(pipeObj.Type);
             pipe.Railcar = ImportRailcar(pipeObj.Railcar);
-            if (pipeObj.Railcar!=null)
-            {
-                pipe.Railcar.ReleaseNote = ImportReleaseNote(pipeObj.Railcar.ReleaseNote);
-            }
             pipe.PurchaseOrder = ImportPurchaseOrder(pipeObj.PurchaseOrder);
             pipe.Status = pipeObj.Status;
 
@@ -912,33 +908,6 @@ namespace Prizm.Main.Synch.Import
                 importRepo.RailcarRepo.SaveOrUpdate(railcar);
 
             return railcar;
-        }
-        private ReleaseNote ImportReleaseNote(ReleaseNoteObject releaseNoteObj)
-        {
-            if (releaseNoteObj == null)
-                return null;
-
-            bool isNew = false;
-            ReleaseNote releaseNote = importRepo.ReleaseNoteRepo.Get(releaseNoteObj.Id);
-            if (releaseNoteObj == null)
-            {
-                releaseNote = new ReleaseNote();
-                isNew = true;
-            }
-
-            releaseNote.Id = releaseNoteObj.Id;
-            releaseNote.IsActive = releaseNoteObj.IsActive;
-            releaseNote.Number = releaseNoteObj.Number;
-            releaseNote.Shipped = releaseNoteObj.Shipped;
-            releaseNote.Date = releaseNote.Date;
-
-
-            if (isNew)
-                importRepo.ReleaseNoteRepo.Save(releaseNote);
-            else
-                importRepo.ReleaseNoteRepo.SaveOrUpdate(releaseNote);
-
-            return releaseNote;
         }
 
         private PurchaseOrder ImportPurchaseOrder(PurchaseOrderObject purchaseOrderObj)
