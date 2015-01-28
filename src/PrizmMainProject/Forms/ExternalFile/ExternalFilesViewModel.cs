@@ -144,11 +144,25 @@ namespace Prizm.Main.Forms.ExternalFile
                     catch (Exception e)
                     {
                         result = false;
+                        System.IO.Directory.Delete(Directories.FilesToAttachFolder, true);
+                        RemoveCopiedFilesIfError();
+                        break;
                     }
                 }
             }
 
             return result;
+        }
+
+        private void RemoveCopiedFilesIfError()
+        {
+            foreach (KeyValuePair<string, string> kvp in FilesToAttach)
+            {
+                if (System.IO.File.Exists(Directories.TargetPath + kvp.Key))
+                {
+                    System.IO.File.Delete(Directories.TargetPath + kvp.Key);
+                }             
+            }
         }
 
         public void PersistFiles(IComponentRepositories repos)
