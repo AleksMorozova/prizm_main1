@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Prizm.Domain.Entity.Construction;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Languages;
+using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Joint.NewEdit
 {
@@ -23,6 +24,10 @@ namespace Prizm.Main.Forms.Joint.NewEdit
         public SelectDiameterDialog()
         {
             InitializeComponent();
+
+            Bitmap bmp = Resources.joint_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
+
             saveChosenDiameter.Enabled = false;
         }
 

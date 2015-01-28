@@ -46,14 +46,14 @@ namespace Prizm.Main.Synch.SerializableEntities
       [XmlAttribute("Destination")]
       public string Destination { get; set; }
 
-      [XmlAttribute("ShippingDate")]
-      public DateTime ShippingDate { get; set; }
-
       [XmlAttribute("IsShipped")]
       public bool IsShipped { get; set; }
 
-      [XmlAttribute("ReleaseNote")]
-      public ReleaseNote ReleaseNote { get; set; }
+      [XmlAttribute("toExport")]
+      public bool ToExport { get; set; }
+
+      [XmlElement("ReleaseNote")]
+      public ReleaseNoteObject ReleaseNote { get; set; }
 
    }
 }

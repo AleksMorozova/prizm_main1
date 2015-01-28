@@ -27,6 +27,7 @@ using Prizm.Domain.Entity.Mill;
 using Prizm.Main.Security;
 using DevExpress.XtraGrid.Views.Base;
 using Prizm.Main.Languages;
+using System.Drawing;
 
 namespace Prizm.Main.Forms.Joint.NewEdit
 {
@@ -49,6 +50,10 @@ namespace Prizm.Main.Forms.Joint.NewEdit
             this.id = id;
 
             InitializeComponent();
+
+            Bitmap bmp = Resources.joint_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
+
             SetControlsTextLength();
             viewModel = (JointNewEditViewModel)Program
                .Kernel

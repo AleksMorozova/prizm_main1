@@ -16,6 +16,7 @@ using System.Linq;
 using construct = Prizm.Domain.Entity.Construction;
 using Prizm.Main.Languages;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Prizm.Main.Forms.Reports.Construction
 {
@@ -28,6 +29,8 @@ namespace Prizm.Main.Forms.Reports.Construction
         public ConstructionReportsXtraForm()
         {
             InitializeComponent();
+            Bitmap bmp = Resources.reports_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void BindToViewModel()

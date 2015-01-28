@@ -63,6 +63,9 @@
   <PropertyGroup>
     <SignManifests>true</SignManifests>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>prizma_appIcon_256.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
     <Reference Include="DevExpress.Charts.v14.2.Core, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
@@ -483,6 +486,7 @@
     <Compile Include="Forms\Reports\Mill\MillReportsViewModel.cs" />
     <Compile Include="Forms\Reports\Mill\PreviewReportCommand.cs" />
     <Compile Include="Forms\Settings\ExtractCategoriesCommand.cs" />
+    <Compile Include="Forms\Settings\Inspections\MillInspectionViewModel.cs" />
     <Compile Include="Forms\Settings\Inspections\MillInspectionXtraForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -826,6 +830,9 @@
     <EmbeddedResource Include="Forms\Railcar\Search\RailcarSearchXtraForm.resx">
       <DependentUpon>RailcarSearchXtraForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings\Inspections\MillInspectionXtraForm.resx">
+      <DependentUpon>MillInspectionXtraForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Settings\PasswordChangeDialog.resx">
       <DependentUpon>PasswordChangeDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -1062,7 +1069,24 @@
   <ItemGroup>
     <None Include="Resources\import.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="prizma_appIcon_16.ico" />
+    <Content Include="prizma_appIcon_256.ico" />
+    <Content Include="prizma_appIcon_32.ico" />
+    <Content Include="prizma_appIcon_48.ico" />
+    <None Include="Resources\history_item_16.png" />
+    <None Include="Resources\page_setup_16.png" />
+    <None Include="Resources\properties_16.png" />
+    <None Include="Resources\spool_icon.png" />
+    <None Include="Resources\shipment_icon.png" />
+    <None Include="Resources\search_icon.png" />
+    <None Include="Resources\reports_icon.png" />
+    <None Include="Resources\prizma_appIcon_32.png" />
+    <None Include="Resources\mill_pipe_icon.png" />
+    <None Include="Resources\joint_icon.png" />
+    <None Include="Resources\inControl_icon.png" />
+    <None Include="Resources\components_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

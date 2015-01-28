@@ -54,7 +54,7 @@ namespace Prizm.Main.Forms.Railcar.Search
                         {
                             Id = release.Id,
                             NoteNumber = release.Number,
-                            NoteDate = release.Date.Value.ToShortDateString(),
+                            NoteDate = release.Date.ToShortDateString(),
                             CarNumber = car.Number,
                             CarCertificate = car.Certificate,
                             CarDestination = car.Destination,

@@ -61,6 +61,8 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
             this.id = id;
 
             InitializeComponent();
+            Bitmap bmp = Resources.mill_pipe_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
             SetControlsTextLength();
             viewModel = (MillPipeNewEditViewModel)Program
                 .Kernel

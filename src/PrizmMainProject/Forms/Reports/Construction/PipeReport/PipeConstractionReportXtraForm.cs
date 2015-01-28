@@ -12,6 +12,7 @@ using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Commands;
 using Prizm.Domain.Entity.Setup;
 using Prizm.Main.Languages;
+using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Reports.Construction.PipeReport
 {
@@ -24,6 +25,8 @@ namespace Prizm.Main.Forms.Reports.Construction.PipeReport
         public PipeConstractionReportXtraForm()
         {
             InitializeComponent();
+            Bitmap bmp = Resources.reports_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void PipeConstractionReportXtraForm_Load(object sender, EventArgs e)

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Commands;
 using Prizm.Main.Languages;
+using Prizm.Main.Properties;
 
 namespace Prizm.Main.Forms.Audit
 {
@@ -23,6 +24,8 @@ namespace Prizm.Main.Forms.Audit
         public AuditXtraForm()
         {
             InitializeComponent();
+            Bitmap bmp = Resources.history_item_16;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
             viewModel = (AuditViewModel)Program.Kernel.GetService(typeof(AuditViewModel));
         }
 

@@ -21,6 +21,7 @@ namespace Prizm.Main.Synch.Import
       readonly IPlateRepository plateRepo;
       readonly IHeatRepository heatRepo;
       readonly IRailcarRepository railcarRepo;
+      readonly IReleaseNoteRepository releaseNoteRepo;
       readonly IPlateManufacturerRepository plateManufacturerRepo;
       readonly IMillPipeSizeTypeRepository sizeTypeRepo;
       readonly ISeamTypeRepository seamTypeRepo;
@@ -40,6 +41,7 @@ namespace Prizm.Main.Synch.Import
          plateRepo = new PlateRepository(session);
          heatRepo = new HeatRepository(session);
          railcarRepo = new RailcarRepository(session);
+         releaseNoteRepo = new ReleaseNoteRepository(session);
          plateManufacturerRepo = new PlateManufacturerRepository(session);
          sizeTypeRepo = new MillPipeSizeTypeRepository(session);
          seamTypeRepo = new SeamTypeRepository(session);
@@ -123,9 +125,9 @@ namespace Prizm.Main.Synch.Import
          get { return spoolRepo; }
       }
 
-      public IComponentTypeRepository ComponentTypeRepo
+      public IReleaseNoteRepository ReleaseNoteRepo
       {
-         get { return componentTypeRepo; }
+          get { return releaseNoteRepo; }
       }
 
       public void Dispose()
@@ -145,7 +147,14 @@ namespace Prizm.Main.Synch.Import
          componentRepo.Dispose();
          spoolRepo.Dispose();
          componentTypeRepo.Dispose();
+         releaseNoteRepo.Dispose();
       }
-     
+
+
+
+      public IComponentTypeRepository ComponentTypeRepo
+      {
+          get { return componentTypeRepo; }
+      }
    }
 }

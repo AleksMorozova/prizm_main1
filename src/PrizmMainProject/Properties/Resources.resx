@@ -887,5 +887,38 @@
   </data>
   <data name="DLG_RAILCAR_OPEN_READONLY" xml:space="preserve">
     <value>Форма Разрешение на отгрузку уже открыта, хотите открыть разрешение в режиме просмотра?</value>
+     </data> 
+  <data name="components_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\components_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inControl_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\inControl_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="joint_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\joint_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mill_pipe_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mill_pipe_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prizma_appIcon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prizma_appIcon_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="reports_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reports_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="search_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shipment_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shipment_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spool_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\spool_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="page_setup_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\page_setup_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="history_item_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\history_item_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

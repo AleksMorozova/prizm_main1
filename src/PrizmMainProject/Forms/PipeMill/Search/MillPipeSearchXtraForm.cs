@@ -25,6 +25,8 @@ namespace Prizm.Main.Forms.PipeMill.Search
         {
             InitializeComponent();
             pipeNumber.SetAsIdentifier();
+            Bitmap bmp = Resources.search_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
 
         private void BindToViewModel()

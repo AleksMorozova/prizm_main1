@@ -2,8 +2,10 @@
 using Prizm.Main.Commands;
 using Prizm.Main.Forms.MainChildForm;
 using Prizm.Main.Languages;
+using Prizm.Main.Properties;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 
 namespace Prizm.Main.Forms.Reports.Incoming
 {
@@ -16,6 +18,8 @@ namespace Prizm.Main.Forms.Reports.Incoming
         public InspectionReportsXtraForm()
         {
             InitializeComponent();
+            Bitmap bmp = Resources.reports_icon;
+            this.Icon = Icon.FromHandle(bmp.GetHicon());
         }
         private void BindToViewModel()
         {

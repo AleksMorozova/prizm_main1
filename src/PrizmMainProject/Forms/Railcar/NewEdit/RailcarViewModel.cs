@@ -103,14 +103,15 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
         {
             get
             {
-                if (ReleaseNote.Date.HasValue)
-                {
-                    return ReleaseNote.Date.Value;
-                }
-                else
-                {
-                    return DateTime.MinValue;
-                }
+                return ReleaseNote.Date;
+                //if (ReleaseNote.Date)
+                //{
+                //    return ReleaseNote.Date;
+                //}
+                //else
+                //{
+                //    return DateTime.MinValue;
+                //}
 
             }
             set
