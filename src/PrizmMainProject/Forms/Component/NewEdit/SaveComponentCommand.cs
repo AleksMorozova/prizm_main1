@@ -104,7 +104,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
                             }
                             viewModel.FilesFormViewModel = null;
                         }
-                 
+
                         notify.ShowSuccess(
                             string.Concat(Program.LanguageManager.GetString(StringResources.ComponentNewEdit_Saved),viewModel.Number),
                             Program.LanguageManager.GetString(StringResources.ComponentNewEdit_SavedHeader));
@@ -114,6 +114,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
                         notify.ShowError(Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied),
                             Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied_Header));
                     }
+   
                 }
                 catch (RepositoryException ex)
                 {

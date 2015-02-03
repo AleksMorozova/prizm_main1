@@ -23,8 +23,6 @@ namespace Prizm.Main.Forms.Component
         private readonly IInspectorRepository repoInspector;
         private readonly IFileRepository fileRepo;
 
-        private readonly IFileRepository fileRepo;
-
 
         [Inject]
         public ComponentRepositories(ISession session)
@@ -33,7 +31,6 @@ namespace Prizm.Main.Forms.Component
             this.componentRepo = new ComponentRepository(session);
             this.componentTypeRepo = new ComponentTypeRepository(session);
             this.repoInspector = new InspectorRepository(session);
-            this.fileRepo = new FileRepository(session);
             this.fileRepo = new FileRepository(session);
         }
 
