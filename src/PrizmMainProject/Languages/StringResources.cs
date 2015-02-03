@@ -266,6 +266,18 @@ namespace Prizm.Main.Languages
             Description = "Для просмотра и скачивания вложений необходимо их предварительное сохранение"
         };
 
+        public static StringResource ExternalFiles_NotCopied = new StringResource
+        {
+            Id = "ExternalFiles_NotCopied",
+            Description = "Ошибка сохрания файлов"
+        };
+
+        public static StringResource ExternalFiles_NotCopied_Header = new StringResource
+        {
+            Id = "ExternalFiles_NotCopied_Header",
+            Description = "Ошибка сохранения прикрепленных файлов"
+        };
+
         public static StringResource ExternalFiles_FileViewDownloadFailHeader = new StringResource
         {
             Id = "ExternalFiles_FileViewDownloadFailHeader",

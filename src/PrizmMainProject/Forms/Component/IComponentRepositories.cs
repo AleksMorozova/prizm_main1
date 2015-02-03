@@ -18,5 +18,6 @@ namespace Prizm.Main.Forms.Component
 
         void Commit();
         void BeginTransaction();
+        void Rollback();
     }
 }
