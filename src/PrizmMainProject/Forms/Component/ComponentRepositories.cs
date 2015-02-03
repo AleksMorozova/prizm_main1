@@ -66,5 +66,10 @@ namespace Prizm.Main.Forms.Component
         {
             get { return fileRepo; }
         }
+
+        public void Rollback()
+        {
+            session.Transaction.Rollback();
+        }
     }
 }
