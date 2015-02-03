@@ -27,13 +27,9 @@ namespace Prizm.Main.Forms.ExternalFile
                 .Get<ExternalFilesViewModel>(
                 new ConstructorArgument("item", item));
 
-            if(isEditMode)
+            if (!isEditMode)
             {
-                buttonLayoutControlGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
-            }
-            else
-            {
-                buttonLayoutControlGroup.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                buttonLayoutControlGroup.Enabled = false;
             }
         }
 
