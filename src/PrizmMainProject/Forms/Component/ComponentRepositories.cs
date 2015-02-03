@@ -1,5 +1,7 @@
 ﻿using Prizm.DAL.Hibernate;
 using Prizm.Data.DAL;
+using Prizm.DAL.Hibernate;
+using Prizm.Data.DAL;
 using Prizm.Data.DAL.Construction;
 using Prizm.Data.DAL.Hibernate;
 using Prizm.Data.DAL.Mill;
@@ -21,6 +23,8 @@ namespace Prizm.Main.Forms.Component
         private readonly IInspectorRepository repoInspector;
         private readonly IFileRepository fileRepo;
 
+        private readonly IFileRepository fileRepo;
+
 
         [Inject]
         public ComponentRepositories(ISession session)
@@ -29,6 +33,7 @@ namespace Prizm.Main.Forms.Component
             this.componentRepo = new ComponentRepository(session);
             this.componentTypeRepo = new ComponentTypeRepository(session);
             this.repoInspector = new InspectorRepository(session);
+            this.fileRepo = new FileRepository(session);
             this.fileRepo = new FileRepository(session);
         }
 
@@ -60,6 +65,11 @@ namespace Prizm.Main.Forms.Component
         public void Dispose()
         {
             session.Dispose();
+        }
+
+        public IFileRepository FileRepo
+        {
+            get { return fileRepo; }
         }
 
         public IFileRepository FileRepo

@@ -104,7 +104,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
                             }
                             viewModel.FilesFormViewModel = null;
                         }
-
+                 
                         notify.ShowSuccess(
                             string.Concat(Program.LanguageManager.GetString(StringResources.ComponentNewEdit_Saved),viewModel.Number),
                             Program.LanguageManager.GetString(StringResources.ComponentNewEdit_SavedHeader));
