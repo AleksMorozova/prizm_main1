@@ -278,6 +278,14 @@ namespace Prizm.Main.Languages
             Description = "Ошибка сохранения прикрепленных файлов"
         };
 
+        };
+
+        public static StringResource ExternalFiles_NotCopied_Header = new StringResource
+        {
+            Id = "ExternalFiles_NotCopied_Header",
+            Description = "Ошибка сохранения прикрепленных файлов"
+        };
+
         public static StringResource ExternalFiles_FileViewDownloadFailHeader = new StringResource
         {
             Id = "ExternalFiles_FileViewDownloadFailHeader",
