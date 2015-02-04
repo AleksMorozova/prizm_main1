@@ -269,7 +269,7 @@ namespace Prizm.Main.Languages
         public static StringResource ExternalFiles_NotCopied = new StringResource
         {
             Id = "ExternalFiles_NotCopied",
-            Description = "Ошибка сохрания файлов"
+            Description = "Прикрепленные файлы не сохранены"
         };
 
         public static StringResource ExternalFiles_NotCopied_Header = new StringResource
