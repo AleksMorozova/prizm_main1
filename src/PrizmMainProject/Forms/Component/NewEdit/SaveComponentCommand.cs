@@ -65,23 +65,51 @@ namespace Prizm.Main.Forms.Component.NewEdit
                 {
                     viewModel.Component.InspectionStatus = viewModel.Component.GetPartInspectionStatus();
                     repos.BeginTransaction();
-                    repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
-                    repos.Commit();
-                    repos.ComponentRepo.Evict(viewModel.Component);
-                    viewModel.ModifiableView.IsModified = false;
-                    viewModel.ModifiableView.UpdateState();
+
+                    var filesViewModel = viewModel.FilesFormViewModel;
+                    viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
 
                     //saving attached documents
-                    if (viewModel.FilesFormViewModel != null)
+                    bool fileCopySuccess = true;
+                    if ((null != filesViewModel) && (filesViewModel.FilesToAttach.Count != 0))
                     {
-                        viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
-                        viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
-                        viewModel.FilesFormViewModel = null;
+                        if (viewModel.FilesFormViewModel.TrySaveFiles())
+                        {
+                            viewModel.FilesFormViewModel.PersistFiles(repos);
+                        }
+                        else
+                        {
+                            fileCopySuccess = false;
+                            repos.Rollback();
+                        }
                     }
 
-                    notify.ShowSuccess(
-                         string.Concat(Program.LanguageManager.GetString(StringResources.ComponentNewEdit_Saved), viewModel.Number),
-                         Program.LanguageManager.GetString(StringResources.ComponentNewEdit_SavedHeader));
+                    if (fileCopySuccess)
+                    {
+                        repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
+                        repos.Commit();
+                        repos.ComponentRepo.Evict(viewModel.Component);
+                        viewModel.ModifiableView.IsModified = false;
+                        viewModel.ModifiableView.UpdateState();
+
+                        if ((null != filesViewModel) && (filesViewModel.Files.Count > 0))
+                        {
+                            foreach (var file in viewModel.FilesFormViewModel.Files)
+                            {
+                                repos.FileRepo.Evict(file);
+                            }
+                            viewModel.FilesFormViewModel = null;
+                        }
+
+                        notify.ShowSuccess(
+                            string.Concat(Program.LanguageManager.GetString(StringResources.ComponentNewEdit_Saved), viewModel.Number),
+                            Program.LanguageManager.GetString(StringResources.ComponentNewEdit_SavedHeader));
+                    }
+                    else
+                    {
+                        notify.ShowError(Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied),
+                            Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied_Header));
+                    }
 
                     log.Info(string.Format("The entity #{0}, id:{1} has been saved in DB.", 
                         viewModel.Component.Number, 

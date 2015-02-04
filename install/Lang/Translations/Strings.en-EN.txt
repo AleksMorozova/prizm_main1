@@ -1998,3 +1998,9 @@ ConstractionReport_ReportTypeUsedProductReport=By used products
 
 ;Отчеты на строительстве.Текст информационного поля отчета по использованным изделиям
 ConstractionReport_TracingReportInfoLabelText = This report type contains all welded elements located between selected points regardless of their connectivity
+
+;Ошибка сохранения прикрепленных файлов
+ExternalFiles_NotCopied_Header=External files saving error
+
+;Прикрепленные файлы не сохранены
+ExternalFiles_NotCopied=Attached files weren't saved
