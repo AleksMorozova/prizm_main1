@@ -66,10 +66,13 @@ namespace Prizm.Main.Forms.Component.NewEdit
                     viewModel.Component.InspectionStatus = viewModel.Component.GetPartInspectionStatus();
                     repos.BeginTransaction();
                     
+
                     var filesViewModel = viewModel.FilesFormViewModel;
                     viewModel.FilesFormViewModel.Item = viewModel.Component.Id;
-                
+
+                    
                     //saving attached documents
+
                     bool fileCopySuccess = true;
                     if ((null != filesViewModel) && (filesViewModel.FilesToAttach.Count != 0))
                     {
@@ -83,6 +86,7 @@ namespace Prizm.Main.Forms.Component.NewEdit
                             repos.Rollback();
                         }
                     }
+
 
                     if (fileCopySuccess)
                     {
@@ -110,6 +114,10 @@ namespace Prizm.Main.Forms.Component.NewEdit
                         notify.ShowError(Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied),
                             Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied_Header));
                     }
+<<<<<<< HEAD
+   
+=======
+>>>>>>> Remove white spaces in SaveComponentCommand.cs
                 }
                 catch (RepositoryException ex)
                 {
