@@ -73,6 +73,7 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
                 repos.Commit();
 
                 repos.ReleaseNoteRepo.Evict(viewModel.ReleaseNote);
+                viewModel.IsNew = false;
                 viewModel.ModifiableView.IsModified = false;
 
                 //saving attached documents

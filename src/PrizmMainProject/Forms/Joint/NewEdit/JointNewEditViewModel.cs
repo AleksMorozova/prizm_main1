@@ -44,7 +44,7 @@ namespace Prizm.Main.Forms.Joint.NewEdit
         private BindingList<JointTestResult> jointTestResults;
         private BindingList<JointWeldResult> jointWeldResults;
         private JointStatus jointStatus = JointStatus.Welded;
-
+        private bool isNew;
         private PartData firstElement;
         private PartData secondElement;
 
@@ -56,8 +56,6 @@ namespace Prizm.Main.Forms.Joint.NewEdit
         public IList<Welder> Welders { get; set; }
         public ExternalFilesViewModel FilesFormViewModel { get; set; }
 
-
-        public bool IsNew { get { return this.Joint.IsNew(); } }
 
         [Inject]
         public JointNewEditViewModel(
@@ -171,6 +169,17 @@ namespace Prizm.Main.Forms.Joint.NewEdit
                 return string.Empty;
 
             return String.Join(",", (from welder in welders select welder.Name.LastName).ToArray<string>());
+        }
+
+
+        public bool IsNew 
+        { 
+            get { return isNew; }
+            set 
+            {
+                if (value != isNew)
+                { isNew = value; }
+            }
         }
 
         public Documents.IModifiable ModifiableView
@@ -796,6 +805,7 @@ namespace Prizm.Main.Forms.Joint.NewEdit
 
         public void NewJoint()
         {
+            this.isNew = true;
             this.Joint = new construction.Joint();
             Joint.FirstElement = new PartData();
             Joint.SecondElement = new PartData();

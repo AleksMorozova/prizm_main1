@@ -38,7 +38,7 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
         public Dictionary<Pipe, Prizm.Domain.Entity.Mill.Railcar> pipesList =
            new Dictionary<Pipe, Prizm.Domain.Entity.Mill.Railcar>();
         public Pipe pipeToAdd;
-        public bool IsNew { get { return this.Railcar.IsNew(); } }
+        private bool isNew;
 
         [Inject]
         public RailcarViewModel(IRailcarRepositories repos, Guid id, IUserNotify notify, ISecurityContext ctx)
@@ -372,6 +372,7 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
 
         public void NewRailcar()
         {
+            this.isNew = true;
             if (ReleaseNote == null)
             {
                 ReleaseNote = new ReleaseNote { Shipped = false, IsActive = true };
@@ -407,6 +408,18 @@ namespace Prizm.Main.Forms.Railcar.NewEdit
            {
               modifiableView = value;
            }
+        }
+
+        public bool IsNew 
+        { 
+            get { return isNew; }
+            set
+            {
+                if (value != isNew)
+                {
+                    isNew = value;
+                }
+            }
         }
     }
 }

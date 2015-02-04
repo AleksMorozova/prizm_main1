@@ -61,6 +61,7 @@ namespace Prizm.Main.Forms.Spool
                             viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
                             viewModel.FilesFormViewModel = null;
                         }
+                        viewModel.IsNew = false;
                         viewModel.ModifiableView.IsModified = false;
 
                         notify.ShowNotify(

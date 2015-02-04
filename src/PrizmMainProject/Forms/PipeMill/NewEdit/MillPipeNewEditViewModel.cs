@@ -50,7 +50,7 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
         private IModifiable modifiableView;
         private IValidatable validatableView;
         public ExternalFilesViewModel FilesFormViewModel { get; set; }
-
+        private bool isNew;
         public Pipe Pipe { get; set; }
         public Guid PipeId { get; set; }
         public Project Project { get; set; }
@@ -60,8 +60,6 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
         public IList<Inspector> Inspectors { get; set; }
         public BindingList<PipeTest> AvailableTests;
         bool recalculateWeight = false;
-
-        public bool IsNew { get { return this.Pipe.IsNew(); } }
 
         [Inject]
         public MillPipeNewEditViewModel(IMillRepository repoMill, Guid id, IUserNotify notify, ISecurityContext ctx)
@@ -613,6 +611,7 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
             extractHeatsCommand.Execute();
             extractPipeTypeCommand.Execute();
 
+            this.isNew = true;
             this.Pipe = new Pipe();
             this.PipePurchaseOrder = null;
             this.Heat = null;
@@ -1080,6 +1079,17 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
             Pipe.WeldSubStatus=UpdateSubStatus(weldOperation, weldTestsResults);
             Pipe.InternalCoatSubStatus = UpdateSubStatus(internalCoatOperation, internalCoatTestsResults);
             Pipe.ExternalCoatSubStatus = UpdateSubStatus(externalCoatOperation, externalCoatTestsResults);
+        }
+
+
+        public bool IsNew
+        { 
+            get { return isNew; }
+            set
+            {
+                if (value != isNew)
+                { isNew = value; }
+            }
         }
 
         public PipeMillSubStatus UpdateSubStatus(List<PipeTestResult> allResults, List<string> testsResult) 

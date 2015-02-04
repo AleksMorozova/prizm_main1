@@ -79,7 +79,7 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit
                             viewModel.FilesFormViewModel.AddExternalFileCommand.Execute();
                             viewModel.FilesFormViewModel = null;
                         }
-
+                        viewModel.IsNew = false;
                         viewModel.ModifiableView.IsModified = false;
                         viewModel.ModifiableView.UpdateState();
                         notify.ShowNotify(

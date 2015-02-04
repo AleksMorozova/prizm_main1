@@ -68,8 +68,9 @@ namespace Prizm.Main.Forms.Component.NewEdit
                     repos.ComponentRepo.SaveOrUpdate(viewModel.Component);
                     repos.Commit();
                     repos.ComponentRepo.Evict(viewModel.Component);
+                    viewModel.IsNew = false;
                     viewModel.ModifiableView.IsModified = false;
-                    viewModel.ModifiableView.UpdateState();
+                    viewModel.ModifiableView.UpdateState();                  
 
                     //saving attached documents
                     if (viewModel.FilesFormViewModel != null)

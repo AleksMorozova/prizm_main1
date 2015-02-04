@@ -43,7 +43,7 @@ namespace Prizm.Main.Forms.Joint.NewEdit
                 repo.RepoJoint.SaveOrUpdate(viewModel.Joint);
                 repo.Commit();
                 repo.RepoJoint.Evict(viewModel.Joint);
-
+                viewModel.IsNew = false;
                 viewModel.ModifiableView.IsModified = false;
 
                 //saving attached documents

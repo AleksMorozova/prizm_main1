@@ -39,8 +39,7 @@ namespace Prizm.Main.Forms.Spool
         public BindingList<Pipe> allPipes { get; set; }
         public ExternalFilesViewModel FilesFormViewModel { get; set; }
         private readonly ISecurityContext ctx;
-
-        public bool IsNew { get { return this.Spool.IsNew(); } }
+        private bool isNew;
 
         [Inject]
         public SpoolViewModel(ISpoolRepositories repos, Guid id, IUserNotify notify, ISecurityContext ctx)
@@ -245,8 +244,19 @@ namespace Prizm.Main.Forms.Spool
             }
         }
 
+        public bool IsNew 
+        {
+            get { return isNew; }
+            set
+            {
+                if (value != isNew)
+                { isNew = value; }
+            }
+        }
+
         public void NewSpool() 
         {
+            this.isNew = true;
             Spool = new Prizm.Domain.Entity.Construction.Spool();
             Spool.Number = string.Empty;
             Spool.InspectionTestResults = new BindingList<InspectionTestResult>();

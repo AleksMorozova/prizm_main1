@@ -136,7 +136,7 @@ namespace Prizm.Main.Forms.Spool
                 (!viewModel.IsNew || viewModel.SpoolNumber != String.Empty);
 
             viewModel.PropertyChanged += (s, eve) => IsModified = true;
-            IsEditMode = ((this.id != Guid.Empty|| viewModel.SpoolNumber != String.Empty) && viewModel.SpoolIsActive);
+            IsEditMode = ((!viewModel.IsNew || viewModel.SpoolNumber != String.Empty) && viewModel.SpoolIsActive);
             BindCommands();
         }
 
