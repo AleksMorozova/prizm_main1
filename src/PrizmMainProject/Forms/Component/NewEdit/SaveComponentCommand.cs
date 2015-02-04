@@ -114,8 +114,6 @@ namespace Prizm.Main.Forms.Component.NewEdit
                         notify.ShowError(Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied),
                             Program.LanguageManager.GetString(StringResources.ExternalFiles_NotCopied_Header));
                     }
-   
-
                 }
                 catch (RepositoryException ex)
                 {
