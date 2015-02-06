@@ -148,7 +148,7 @@ namespace Prizm.Main.Languages
             {
                 if (manager == null)
                 {
-                    manager = ResourceManager.CreateFileBasedResourceManager(Directories.BaseLanguageFileName, Directories.LanguagesFolderName, null);
+                    manager = ResourceManager.CreateFileBasedResourceManager(Directories.BaseLanguageFileName, Directories.LanguagesResourcesFolderName, null);
                 }
                 return manager ?? Default;
             } 
