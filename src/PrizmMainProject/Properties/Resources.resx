@@ -1123,4 +1123,22 @@
   <data name="FixedCategoryLengthPassedHeader" xml:space="preserve">
     <value>Не заданы результаты измерений</value>
   </data>
+  <data name="ExternalFiles_FileAttachSuccess" xml:space="preserve">
+    <value>Вложения успешно добавлены</value>
+  </data>
+  <data name="ExternalFiles_FileAttachSuccessHeader" xml:space="preserve">
+    <value>Добавление вложений</value>
+  </data>
+  <data name="ExternalFiles_FileDownloadHeader" xml:space="preserve">
+    <value>Загрузка файла</value>
+  </data>
+  <data name="ExternalFiles_FileDownloadSuccess" xml:space="preserve">
+    <value>Файл успешно загружен</value>
+  </data>
+  <data name="ExternalFiles_FileViewDownloadFail" xml:space="preserve">
+    <value>Для просмотра и скачивания вложений необходимо их предварительное сохранение</value>
+  </data>
+  <data name="ExternalFiles_FileViewDownloadFailHeader" xml:space="preserve">
+    <value>Просмотр и загрузка несохрaненных файлов</value>
+  </data>
 </root>

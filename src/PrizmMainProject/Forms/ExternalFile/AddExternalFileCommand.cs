@@ -64,6 +64,8 @@ namespace Prizm.Main.Forms.ExternalFile
                             fileEntity.FileName,
                             fileEntity.Id));
                     }
+                    viewModel.FilesToAttach.Clear();
+                    viewModel.RefreshFiles(viewModel.Item);
                 }
                 catch (RepositoryException ex)
                 {

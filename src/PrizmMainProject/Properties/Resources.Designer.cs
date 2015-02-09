@@ -508,6 +508,60 @@ namespace Prizm.Main.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Вложения успешно добавлены.
+        /// </summary>
+        internal static string ExternalFiles_FileAttachSuccess {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileAttachSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Добавление вложений.
+        /// </summary>
+        internal static string ExternalFiles_FileAttachSuccessHeader {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileAttachSuccessHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Загрузка файла.
+        /// </summary>
+        internal static string ExternalFiles_FileDownloadHeader {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileDownloadHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Файл успешно загружен.
+        /// </summary>
+        internal static string ExternalFiles_FileDownloadSuccess {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileDownloadSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Для просмотра и скачивания вложений необходимо их предварительное сохранение.
+        /// </summary>
+        internal static string ExternalFiles_FileViewDownloadFail {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileViewDownloadFail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Просмотр и загрузка несохрaненных файлов.
+        /// </summary>
+        internal static string ExternalFiles_FileViewDownloadFailHeader {
+            get {
+                return ResourceManager.GetString("ExternalFiles_FileViewDownloadFailHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Результаты измерения длины должны быть введены..
         /// </summary>
         internal static string FixedCategoryLengthPassed {
