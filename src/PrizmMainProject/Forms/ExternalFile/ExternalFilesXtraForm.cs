@@ -129,5 +129,18 @@ namespace Prizm.Main.Forms.ExternalFile
             }
         }
 
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+
     }
 }
