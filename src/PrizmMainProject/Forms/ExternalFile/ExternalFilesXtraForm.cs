@@ -82,12 +82,6 @@ namespace Prizm.Main.Forms.ExternalFile
             }
         }
 
-
-        private void cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void downloadButton_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             Prizm.Domain.Entity.File selectedFile = filesView.GetRow(filesView.FocusedRowHandle) as Prizm.Domain.Entity.File;
@@ -134,5 +128,19 @@ namespace Prizm.Main.Forms.ExternalFile
                     viewModel = value;
             }
         }
+
+        private void acceptButton_Click(object sender, EventArgs e)
+        {
+            this.acceptButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+
     }
 }
