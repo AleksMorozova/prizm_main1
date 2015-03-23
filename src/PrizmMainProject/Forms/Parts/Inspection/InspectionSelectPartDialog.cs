@@ -35,6 +35,7 @@ namespace Prizm.Main.Forms.Parts.Inspection
         }
         private void NumbersDialog_Load(object sender, EventArgs e)
         {
+            localizedPartTypes.Clear();
             foreach (var item in EnumWrapper<PartType>.EnumerateItems(skip0: true))
             {
                 localizedPartTypes.Add(item.Item2);
