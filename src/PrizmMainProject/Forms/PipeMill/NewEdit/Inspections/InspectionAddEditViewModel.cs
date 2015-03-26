@@ -44,7 +44,7 @@ namespace Prizm.Main.Forms.PipeMill.NewEdit.Inspections
             PipeTestResult current, 
             IList<EnumWrapper<PipeTestResultStatus>> statuses)
         {
-            this.availableTests = tests;
+            this.availableTests = tests.Where(_ => _.IsActive).OrderBy(_ => _.Code).ToList<PipeTest>();
             this.inspectors = inspectors;
             this.statuses = statuses;
             if (current == null)
