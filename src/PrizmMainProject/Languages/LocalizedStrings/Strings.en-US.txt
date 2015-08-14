@@ -534,7 +534,7 @@ SettingsPipe_SizesLabel=Pipe size parameters
 SettingsPipe_InspectionsLabel=List &of inspection operations for selected pipe size
 
 ;Настройки-труба. Наружный диаметр трубы с заданым типоразмером, мм
-SettingsPipe_DiameterLabel=Pipe external &diameter, mm
+SettingsPipe_DiameterLabel=Pipe outer &diameter, mm
 
 ;Настройки-труба. Толщина стенки для трубы с заданым типоразмером, mm
 SettingsPipe_WallThicknessLabel=&Wall thickness, mm
@@ -1145,7 +1145,7 @@ ComponentNewEdit_ReasonColumn=Reason
 ComponentNewEdit_OrderColumn=Order
 
 ;Наружный диаметр отверстия, мм
-ComponentNewEdit_DiameterGridColumn=External diameter, mm
+ComponentNewEdit_DiameterGridColumn=Outer diameter, mm
 
 ;Толщина стенки, мм
 ComponentNewEdit_WallThicknessGridColumn=Wall thickness, mm
@@ -1229,10 +1229,10 @@ JointNew_DistanceFromPKLayout=Distance from &KP
 JointNew_GPSLabelLayout=GPS
 
 ;&Широта
-JointNew_GPSLatLayout=&Lat
+JointNew_GPSLatLayout=&Latitude
 
 ;До&лгота
-JointNew_GPSLongLayout=Lon&g
+JointNew_GPSLongLayout=Lon&gitude
 
 ;В&ысота
 JointNew_ElevationLayout=Ele&vation
@@ -1643,7 +1643,7 @@ NewEditPipe_PipeWeightLabel=Weight
 NewEditPipe_TypeSizeLengthLabel=Length, mm
 
 ;Труба. Наружный диаметр по типоразмеру, мм
-NewEditPipe_TypeSizeDiameterLabel=External diameter, mm
+NewEditPipe_TypeSizeDiameterLabel=Outer diameter, mm
 
 ;Труба. Толщина по типоразмеру, мм
 NewEditPipe_TypeSizeThicknessLabel=Thickness, mm
