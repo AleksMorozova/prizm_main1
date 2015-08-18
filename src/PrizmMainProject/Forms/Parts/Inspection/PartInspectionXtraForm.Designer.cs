@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PartInspectionXtraForm));
             this.inspectionLayoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.saveAndClearButton = new DevExpress.XtraEditors.SimpleButton();
@@ -59,8 +60,8 @@
             this.saveButtonLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.saveAndClearLayout = new DevExpress.XtraLayout.LayoutControlItem();
             this.buttonsEmptySpaceItem = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.bindingSource = new System.Windows.Forms.BindingSource();
-            this.inspectorsDataSource = new System.Windows.Forms.BindingSource();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inspectorsDataSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.inspectionLayoutControl)).BeginInit();
             this.inspectionLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.inspections)).BeginInit();
@@ -198,10 +199,15 @@
             this.resultStatusLookUpEdit.AutoHeight = false;
             this.resultStatusLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+
+            //this.resultStatusLookUpEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            //new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Результат")});
+         //   this.resultStatusLookUpEdit.DisplayMember = "Name";
             this.resultStatusLookUpEdit.Name = "resultStatusLookUpEdit";
             this.resultStatusLookUpEdit.NullText = "";
             this.resultStatusLookUpEdit.EditValueChanged += new System.EventHandler(this.resultStatusLookUpEdit_EditValueChanged);
             this.resultStatusLookUpEdit.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.resultStatusLookUpEdit_CustomDisplayText);
+            
             // 
             // colInspector
             // 
@@ -292,7 +298,6 @@
             this.InspectionLayoutControlGroup.Location = new System.Drawing.Point(0, 0);
             this.InspectionLayoutControlGroup.Name = "InspectionLayoutControlGroup";
             this.InspectionLayoutControlGroup.Size = new System.Drawing.Size(901, 493);
-            this.InspectionLayoutControlGroup.Text = "InspectionLayoutControlGroup";
             this.InspectionLayoutControlGroup.TextVisible = false;
             // 
             // searchElementGroup
@@ -315,7 +320,6 @@
             this.searchButtonLayout.Name = "searchButtonLayout";
             this.searchButtonLayout.Size = new System.Drawing.Size(266, 46);
             this.searchButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(15, 15, 15, 5);
-            this.searchButtonLayout.Text = "searchButtonLayout";
             this.searchButtonLayout.TextSize = new System.Drawing.Size(0, 0);
             this.searchButtonLayout.TextVisible = false;
             // 
@@ -340,7 +344,6 @@
             this.findElementEmptySpace.Location = new System.Drawing.Point(490, 0);
             this.findElementEmptySpace.Name = "findElementEmptySpace";
             this.findElementEmptySpace.Size = new System.Drawing.Size(367, 46);
-            this.findElementEmptySpace.Text = "findElementEmptySpace";
             this.findElementEmptySpace.TextSize = new System.Drawing.Size(0, 0);
             // 
             // inspectionControlGroup
@@ -395,7 +398,6 @@
             this.inspectionsLayout.Name = "inspectionsLayout";
             this.inspectionsLayout.Size = new System.Drawing.Size(857, 275);
             this.inspectionsLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 0, 15, 0);
-            this.inspectionsLayout.Text = "inspectionsLayout";
             this.inspectionsLayout.TextLocation = DevExpress.Utils.Locations.Top;
             this.inspectionsLayout.TextSize = new System.Drawing.Size(0, 0);
             this.inspectionsLayout.TextVisible = false;
@@ -407,7 +409,6 @@
             this.elementEmptySpaceItem.Location = new System.Drawing.Point(358, 0);
             this.elementEmptySpaceItem.Name = "elementEmptySpaceItem";
             this.elementEmptySpaceItem.Size = new System.Drawing.Size(499, 40);
-            this.elementEmptySpaceItem.Text = "elementEmptySpaceItem";
             this.elementEmptySpaceItem.TextSize = new System.Drawing.Size(0, 0);
             // 
             // saveButtonLayout
@@ -418,7 +419,6 @@
             this.saveButtonLayout.Name = "saveButtonLayout";
             this.saveButtonLayout.Size = new System.Drawing.Size(101, 26);
             this.saveButtonLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 5, 0, 0);
-            this.saveButtonLayout.Text = "saveButtonLayout";
             this.saveButtonLayout.TextSize = new System.Drawing.Size(0, 0);
             this.saveButtonLayout.TextVisible = false;
             // 
@@ -430,7 +430,6 @@
             this.saveAndClearLayout.Name = "saveAndClearLayout";
             this.saveAndClearLayout.Size = new System.Drawing.Size(159, 26);
             this.saveAndClearLayout.Spacing = new DevExpress.XtraLayout.Utils.Padding(10, 0, 0, 0);
-            this.saveAndClearLayout.Text = "saveAndClearLayout";
             this.saveAndClearLayout.TextSize = new System.Drawing.Size(0, 0);
             this.saveAndClearLayout.TextVisible = false;
             // 
@@ -441,7 +440,6 @@
             this.buttonsEmptySpaceItem.Location = new System.Drawing.Point(0, 315);
             this.buttonsEmptySpaceItem.Name = "buttonsEmptySpaceItem";
             this.buttonsEmptySpaceItem.Size = new System.Drawing.Size(597, 26);
-            this.buttonsEmptySpaceItem.Text = "buttonsEmptySpaceItem";
             this.buttonsEmptySpaceItem.TextSize = new System.Drawing.Size(0, 0);
             // 
             // PartInspectionXtraForm

@@ -70,6 +70,8 @@ namespace Prizm.Main.Forms.Joint.Search
                                 Program.ThisWorkstationType
                             );
 
+                        list.OrderBy(n => n.Number).ToList();
+
                         viewModel.Joints.Clear();
                         foreach(var item in list)
                         {
@@ -77,6 +79,7 @@ namespace Prizm.Main.Forms.Joint.Search
                         }
 
                         viewModel.Amount = list.Count();
+
                         RefreshVisualStateEvent();
                     }
                 }
